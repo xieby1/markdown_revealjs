@@ -1,5 +1,6 @@
 #!/bin/bash
 
+TEMPLATE="$(dirname $(realpath $0))/template.html"
 HEADER=$(dirname $(realpath $0))/head.html
 MD=$1
 REVEALJS_REMOTE="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/3.9.2/"
@@ -50,6 +51,7 @@ fi
 CMD=(
     "pandoc"
     "-t revealjs"
+    "--template=${TEMPLATE}"
     "-V theme=white"
     "-V revealjs-url=${REVEALJS}"
     "-V width=1200"
