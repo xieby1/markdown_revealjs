@@ -1,11 +1,47 @@
-<!-- mdrevealjs.sh <input.md> -->
-<style type="text/css">
-    /* override default border color */
-    .reveal section img {
-        border: transparent;
-    }
+<style>
+/* override default border color */
+.reveal section img {
+    border: transparent;
+}
 
-    div.sourceCode {
-        margin: 0;
-    }
+/* no margin in styled code div, the same to unstyled code */
+div.sourceCode {
+    margin: 0;
+}
+.reveal pre {
+    display: flex;
+    justify-content: center;
+}
+
+.reveal pre code {
+    max-height: none;
+}
+
+a.sourceLine {
+    /* styled code line is higher than unstyled, make them the same */
+    line-height: 0;
+}
+
+#TOC > ul {
+    /* multiple column in first level TOC */
+    column-width: 290px;
+    width: 100%;
+    column-rule-style: solid;
+    /* no margin in first level TOC */
+    margin: 0 0 0 0;
+}
+
+#TOC ul {
+    /* no bullet */
+    list-style-type: none;
+    /* no margin, no padding in TOC ul */
+    margin-block-start: 0;
+    margin-block-end: 0;
+    padding-inline-start: 0;
+}
+
+table {
+    /* 42px / sprt 2 */
+    font-size: 30px;
+}
 </style>

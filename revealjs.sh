@@ -41,7 +41,7 @@ fi
 
 if [[ -n ${REVEALJS_LOCAL} ]]
 then
-    echo "${MD%/*} ${REVEALJS_LOCAL}"
+    #echo "${MD%/*} ${REVEALJS_LOCAL}"
     REVEALJS=$(realpath --relative-to="$(dirname ${MD%/*})" "${REVEALJS_LOCAL}")
 else
     REVEALJS=${REVEALJS_REMOTE}
@@ -58,7 +58,7 @@ CMD=(
     "--slide-level=2"
     # table of content
     "--toc"
-    "--toc-depth=1"
+    "--toc-depth=2"
     # number sections
     "-N"
     "${MD}"
