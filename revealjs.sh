@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/usr/bin/env bash
 
 TEMPLATE="$(dirname $(realpath $0))/template.html"
 HEADER=$(dirname $(realpath $0))/head.html
