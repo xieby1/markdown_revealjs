@@ -1,10 +1,12 @@
 <!DOCTYPE html>
+<!-- Export by pandoc -D revealjs, pandoc version 2.5 -->
+<!-- pandoc-types 1.17.5.4, texmath 0.11.2.2, skylighting 0.7.7 -->
 <html>
 <head>
   <meta charset="utf-8">
   <meta name="generator" content="pandoc">
   <meta name="author" content="🤓xieby1">
-  <title>Markdown RevealJ</title>
+  <title>Markdown RevealJS</title>
   <meta name="apple-mobile-web-app-capable" content="yes">
   <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
@@ -14,6 +16,71 @@
       span.smallcaps{font-variant: small-caps;}
       span.underline{text-decoration: underline;}
       div.column{display: inline-block; vertical-align: top; width: 50%;}
+  </style>
+  <style type="text/css">
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+    color: #aaaaaa;
+  }
+pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+code span.al { color: #ff0000; font-weight: bold; } /* Alert */
+code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
+code span.at { color: #7d9029; } /* Attribute */
+code span.bn { color: #40a070; } /* BaseN */
+code span.bu { } /* BuiltIn */
+code span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
+code span.ch { color: #4070a0; } /* Char */
+code span.cn { color: #880000; } /* Constant */
+code span.co { color: #60a0b0; font-style: italic; } /* Comment */
+code span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
+code span.do { color: #ba2121; font-style: italic; } /* Documentation */
+code span.dt { color: #902000; } /* DataType */
+code span.dv { color: #40a070; } /* DecVal */
+code span.er { color: #ff0000; font-weight: bold; } /* Error */
+code span.ex { } /* Extension */
+code span.fl { color: #40a070; } /* Float */
+code span.fu { color: #06287e; } /* Function */
+code span.im { } /* Import */
+code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+code span.kw { color: #007020; font-weight: bold; } /* Keyword */
+code span.op { color: #666666; } /* Operator */
+code span.ot { color: #007020; } /* Other */
+code span.pp { color: #bc7a00; } /* Preprocessor */
+code span.sc { color: #4070a0; } /* SpecialChar */
+code span.ss { color: #bb6688; } /* SpecialString */
+code span.st { color: #4070a0; } /* String */
+code span.va { color: #19177c; } /* Variable */
+code span.vs { color: #4070a0; } /* VerbatimString */
+code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
   </style>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/3.9.2//css/theme/white.css" id="theme">
   <!-- Printing and PDF exports -->
@@ -27,16 +94,52 @@
   <!--[if lt IE 9]>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/3.9.2//lib/js/html5shiv.js"></script>
   <![endif]-->
-  <!-- mdrevealjs.sh <input.md> -->
-  <style type="text/css">
-      /* override default border color */
-      .reveal section img {
-          border: transparent;
-      }
-  
-      div.sourceCode {
-          margin: 0;
-      }
+  <style>
+  /* override default border color */
+  .reveal section img {
+      border: transparent;
+  }
+
+  /* no margin in styled code div, the same to unstyled code */
+  div.sourceCode {
+      margin: 0;
+  }
+  .reveal pre {
+      display: flex;
+      justify-content: center;
+  }
+
+  .reveal pre code {
+      max-height: none;
+  }
+
+  a.sourceLine {
+      /* styled code line is higher than unstyled, make them the same */
+      line-height: 0;
+  }
+
+  #TOC > ul {
+      /* multiple column in first level TOC */
+      column-width: 290px;
+      width: 100%;
+      column-rule-style: solid;
+      /* no margin in first level TOC */
+      margin: 0 0 0 0;
+  }
+
+  #TOC ul {
+      /* no bullet */
+      list-style-type: none;
+      /* no margin, no padding in TOC ul */
+      margin-block-start: 0;
+      margin-block-end: 0;
+      padding-inline-start: 0;
+  }
+
+  table {
+      /* 42px / sprt 2 */
+      font-size: 30px;
+  }
   </style>
 </head>
 <body>
@@ -44,21 +147,104 @@
     <div class="slides">
 
 <section id="title-slide">
-  <h1 class="title">Markdown RevealJ</h1>
+  <h1 class="title">Markdown RevealJS</h1>
   <p class="author">🤓xieby1</p>
-  <p class="date">Convert markdown file to reveal.js slides by pandoc.</p>
+  <p class="date">Convert markdown file to reveal.js slides by pandoc. <a href="https://xieby1.github.io/markdown_revealjs/README.html">Demo</a></p>
 </section>
 <section id="TOC">
 <ul>
-<li><a href="#/intro"><span class="toc-section-number">1</span> Intro</a></li>
+<li><a href="#/intro"><span class="toc-section-number">1</span> Intro</a>
+<ul>
+<li><a href="#/demo"><span class="toc-section-number">1.1</span> Demo</a></li>
+<li><a href="#/prerequisite"><span class="toc-section-number">1.2</span> Prerequisite</a></li>
+<li><a href="#/install"><span class="toc-section-number">1.3</span> Install</a></li>
+</ul></li>
+<li><a href="#/usage"><span class="toc-section-number">2</span> Usage</a>
+<ul>
+<li><a href="#/basic"><span class="toc-section-number">2.1</span> Basic</a></li>
+<li><a href="#/special-syntax"><span class="toc-section-number">2.2</span> Special syntax</a></li>
+<li><a href="#/print"><span class="toc-section-number">2.3</span> Print</a></li>
+<li><a href="#/local-revealjs"><span class="toc-section-number">2.4</span> Local revealjs</a></li>
+</ul></li>
+<li><a href="#/thanks"><span class="toc-section-number">3</span> Thanks</a></li>
 </ul>
 </section>
 
-<section><section id="intro" class="title-slide slide level1"><h1><span class="header-section-number">1</span> Intro</h1></section><section id="install" class="slide level2">
-<h2><span class="header-section-number">1.1</span> Install</h2>
-</section><section id="usage" class="slide level2">
-<h2><span class="header-section-number">1.2</span> Usage</h2>
+<section>
+<section id="intro" class="title-slide slide level1" data-number="1">
+<h1 data-number="1"><span class="header-section-number">1</span> Intro</h1>
+
+</section>
+<section id="demo" class="slide level2" data-number="1.1">
+<h2 data-number="1.1"><span class="header-section-number">1.1</span> Demo</h2>
+<pre><code> ____  _____ __  __  ___
+|  _ \| ____|  \/  |/ _ \
+| | | |  _| | |\/| | | | |
+| |_| | |___| |  | | |_| |
+|____/|_____|_|  |_|\___/</code></pre>
+<p>Click: <a href="https://xieby1.github.io/markdown_revealjs/README.html">Demo</a> to see demo hosted on Github pages.</p>
+</section>
+<section id="prerequisite" class="slide level2" data-number="1.2">
+<h2 data-number="1.2"><span class="header-section-number">1.2</span> Prerequisite</h2>
+<ul>
+<li>shell<img src="https://www.emojiall.com/img/platform/wechat/wx035.png" style="height: 1em;" /></li>
+<li>pandoc</li>
+</ul>
+</section>
+<section id="install" class="slide level2" data-number="1.3">
+<h2 data-number="1.3"><span class="header-section-number">1.3</span> Install</h2>
+<div class="sourceCode" id="cb2"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> clone https://github.com/xieby1/markdown_revealjs</span>
+<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a><span class="fu">ln</span> <span class="at">-s</span> <span class="op">&lt;</span>path/to<span class="op">&gt;</span>/revealjs.sh /usr/bin/</span>
+<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a><span class="co"># or /usr/local/bin/, or ~/.local/bin/</span></span></code></pre></div>
 </section></section>
+<section>
+<section id="usage" class="title-slide slide level1" data-number="2">
+<h1 data-number="2"><span class="header-section-number">2</span> Usage</h1>
+
+</section>
+<section id="basic" class="slide level2" data-number="2.1">
+<h2 data-number="2.1"><span class="header-section-number">2.1</span> Basic</h2>
+<p><code>cheatsheet.sh</code> convert &lt;.md&gt; to &lt;revealjs.html&gt;.</p>
+<div class="sourceCode" id="cb3"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="ex">revealjs.sh</span> <span class="op">&lt;</span>input.md<span class="op">&gt;</span></span>
+<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a><span class="co"># output: xxx.html</span></span></code></pre></div>
+</section>
+<section id="special-syntax" class="slide level2" data-number="2.2">
+<h2 data-number="2.2"><span class="header-section-number">2.2</span> Special syntax</h2>
+<p>Following markdown syntax are special:</p>
+<table>
+<thead>
+<tr class="header">
+<th>syntax</th>
+<th>meaning</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>1st-level header</td>
+<td>New horizontal slide</td>
+</tr>
+<tr class="even">
+<td>2nd-level header</td>
+<td>New vertical slide</td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="print" class="slide level2" data-number="2.3">
+<h2 data-number="2.3"><span class="header-section-number">2.3</span> Print</h2>
+<p>Refers to <a href="https://revealjs.com/pdf-export/">revealjs: PDF Export</a></p>
+<p>Append <code>?print-pdf</code> to your URL.</p>
+</section>
+<section id="local-revealjs" class="slide level2" data-number="2.4">
+<h2 data-number="2.4"><span class="header-section-number">2.4</span> Local revealjs</h2>
+<p>Default revealjs version is 3.9.2 from cloudflare.</p>
+<p>If want to use local revealjs, use <code>-l &lt;path/to/revealjs&gt;</code></p>
+</section></section>
+<section id="thanks" class="title-slide slide level1" data-number="3">
+<h1 data-number="3"><span class="header-section-number">3</span> Thanks</h1>
+<p>QnA</p>
+<p>🙋🙋🙋</p>
+</section>
     </div>
   </div>
 
@@ -70,8 +256,54 @@
       // Full list of configuration options available at:
       // https://github.com/hakimel/reveal.js#configuration
       Reveal.initialize({
+        // Display controls in the bottom right corner
+        controls: true,
+        // Display a presentation progress bar
+        progress: true,
+        // Display the page number of the current slide
+        slideNumber: false,
         // Push each slide change to the browser history
-        history: true,
+        history: false,
+        // Enable keyboard shortcuts for navigation
+        keyboard: true,
+        // Enable the slide overview mode
+        overview: true,
+        // Vertical centering of slides
+        center: true,
+        // Enables touch navigation on devices with touch input
+        touch: true,
+        // Loop the presentation
+        loop: false,
+        // Change the presentation direction to be RTL
+        rtl: false,
+        // Turns fragments on and off globally
+        fragments: true,
+        // Flags if the presentation is running in an embedded mode,
+        // i.e. contained within a limited portion of the screen
+        embedded: false,
+        // Flags if we should show a help overlay when the questionmark
+        // key is pressed
+        help: true,
+        // Flags if speaker notes should be visible to all viewers
+        showNotes: false,
+        // Number of milliseconds between automatically proceeding to the
+        // next slide, disabled when set to 0, this value can be overwritten
+        // by using a data-autoslide attribute on your slides
+        autoSlide: 0,
+        // Stop auto-sliding after user input
+        autoSlideStoppable: true,
+        // Enable slide navigation via mouse wheel
+        mouseWheel: false,
+        // Opens links in an iframe preview overlay
+        previewLinks: false,
+        // Transition style
+        transition: 'slide', // none/fade/slide/convex/concave/zoom
+        // Transition speed
+        transitionSpeed: 'default', // default/fast/slow
+        // Transition style for full page slide backgrounds
+        backgroundTransition: 'fade', // none/fade/slide/convex/concave/zoom
+        // Number of slides away from the current that are visible
+        viewDistance: 3,
         // The "normal" size of the presentation, aspect ratio will be preserved
         // when the presentation is scaled to fit different resolutions. Can be
         // specified using percentage units.
