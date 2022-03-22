@@ -3,7 +3,7 @@
 TEMPLATE="$(dirname $(realpath $0))/template.html"
 HEADER=$(dirname $(realpath $0))/head.html
 MD=$1
-REVEALJS_REMOTE="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/3.9.2/"
+REVEALJS_REMOTE="https://cdn.bootcdn.net/ajax/libs/reveal.js/3.9.2/"
 
 usage()
 {
