@@ -10,7 +10,7 @@
   <meta name="apple-mobile-web-app-capable" content="yes">
   <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/3.9.2//css/reveal.css">
+  <link rel="stylesheet" href="https://cdn.bootcdn.net/ajax/libs/reveal.js/3.9.2//css/reveal.css">
   <style type="text/css">
       code{white-space: pre-wrap;}
       span.smallcaps{font-variant: small-caps;}
@@ -82,17 +82,17 @@ code span.va { color: #19177c; } /* Variable */
 code span.vs { color: #4070a0; } /* VerbatimString */
 code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
   </style>
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/3.9.2//css/theme/white.css" id="theme">
+  <link rel="stylesheet" href="https://cdn.bootcdn.net/ajax/libs/reveal.js/3.9.2//css/theme/white.css" id="theme">
   <!-- Printing and PDF exports -->
   <script>
     var link = document.createElement( 'link' );
     link.rel = 'stylesheet';
     link.type = 'text/css';
-    link.href = window.location.search.match( /print-pdf/gi ) ? 'https://cdnjs.cloudflare.com/ajax/libs/reveal.js/3.9.2//css/print/pdf.css' : 'https://cdnjs.cloudflare.com/ajax/libs/reveal.js/3.9.2//css/print/paper.css';
+    link.href = window.location.search.match( /print-pdf/gi ) ? 'https://cdn.bootcdn.net/ajax/libs/reveal.js/3.9.2//css/print/pdf.css' : 'https://cdn.bootcdn.net/ajax/libs/reveal.js/3.9.2//css/print/paper.css';
     document.getElementsByTagName( 'head' )[0].appendChild( link );
   </script>
   <!--[if lt IE 9]>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/3.9.2//lib/js/html5shiv.js"></script>
+  <script src="https://cdn.bootcdn.net/ajax/libs/reveal.js/3.9.2//lib/js/html5shiv.js"></script>
   <![endif]-->
   <style>
   /* override default border color */
@@ -140,6 +140,16 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
       /* 42px / sprt 2 */
       font-size: 30px;
   }
+
+  /* enable multiple columns */
+  /* https://stackoverflow.com/questions/30861845 */
+  .container {
+    display: flex;
+    align-items: center;
+  }
+  .col {
+    flex: auto;
+  }
   </style>
 </head>
 <body>
@@ -163,8 +173,9 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <ul>
 <li><a href="#/basic"><span class="toc-section-number">2.1</span> Basic</a></li>
 <li><a href="#/special-syntax"><span class="toc-section-number">2.2</span> Special syntax</a></li>
-<li><a href="#/print"><span class="toc-section-number">2.3</span> Print</a></li>
-<li><a href="#/local-revealjs"><span class="toc-section-number">2.4</span> Local revealjs</a></li>
+<li><a href="#/multiple-columns"><span class="toc-section-number">2.3</span> Multiple columns</a></li>
+<li><a href="#/print"><span class="toc-section-number">2.4</span> Print</a></li>
+<li><a href="#/local-revealjs"><span class="toc-section-number">2.5</span> Local revealjs</a></li>
 </ul></li>
 <li><a href="#/thanks"><span class="toc-section-number">3</span> Thanks</a></li>
 </ul>
@@ -230,13 +241,36 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </tbody>
 </table>
 </section>
-<section id="print" class="slide level2" data-number="2.3">
-<h2 data-number="2.3"><span class="header-section-number">2.3</span> Print</h2>
+<section id="multiple-columns" class="slide level2" data-number="2.3">
+<h2 data-number="2.3"><span class="header-section-number">2.3</span> Multiple columns</h2>
+<div class="container">
+<div class="col">
+<p>By leveraging pandoc’s</p>
+<p><code>fenced_divs</code> extension</p>
+<p>See example on the right</p>
+</div>
+<div class="col">
+<pre><code>::: {.container}
+:::: {.col}
+Column 1
+::::
+:::: {.col}
+Column 2
+::::
+:::: {.col}
+...
+::::
+:::</code></pre>
+</div>
+</div>
+</section>
+<section id="print" class="slide level2" data-number="2.4">
+<h2 data-number="2.4"><span class="header-section-number">2.4</span> Print</h2>
 <p>Refers to <a href="https://revealjs.com/pdf-export/">revealjs: PDF Export</a></p>
 <p>Append <code>?print-pdf</code> to your URL.</p>
 </section>
-<section id="local-revealjs" class="slide level2" data-number="2.4">
-<h2 data-number="2.4"><span class="header-section-number">2.4</span> Local revealjs</h2>
+<section id="local-revealjs" class="slide level2" data-number="2.5">
+<h2 data-number="2.5"><span class="header-section-number">2.5</span> Local revealjs</h2>
 <p>Default revealjs version is 3.9.2 from cloudflare.</p>
 <p>If want to use local revealjs, use <code>-l &lt;path/to/revealjs&gt;</code></p>
 </section></section>
@@ -248,14 +282,15 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
     </div>
   </div>
 
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/3.9.2//lib/js/head.min.js"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/3.9.2//js/reveal.js"></script>
+  <script src="https://cdn.bootcdn.net/ajax/libs/reveal.js/3.9.2//lib/js/head.min.js"></script>
+  <script src="https://cdn.bootcdn.net/ajax/libs/reveal.js/3.9.2//js/reveal.js"></script>
 
   <script>
 
       // Full list of configuration options available at:
       // https://github.com/hakimel/reveal.js#configuration
       Reveal.initialize({
+        hash: true,
         // Display controls in the bottom right corner
         controls: true,
         // Display a presentation progress bar
@@ -312,9 +347,9 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 
         // Optional reveal.js plugins
         dependencies: [
-          { src: 'https://cdnjs.cloudflare.com/ajax/libs/reveal.js/3.9.2//lib/js/classList.js', condition: function() { return !document.body.classList; } },
-          { src: 'https://cdnjs.cloudflare.com/ajax/libs/reveal.js/3.9.2//plugin/zoom-js/zoom.js', async: true },
-          { src: 'https://cdnjs.cloudflare.com/ajax/libs/reveal.js/3.9.2//plugin/notes/notes.js', async: true }
+          { src: 'https://cdn.bootcdn.net/ajax/libs/reveal.js/3.9.2//lib/js/classList.js', condition: function() { return !document.body.classList; } },
+          { src: 'https://cdn.bootcdn.net/ajax/libs/reveal.js/3.9.2//plugin/zoom-js/zoom.js', async: true },
+          { src: 'https://cdn.bootcdn.net/ajax/libs/reveal.js/3.9.2//plugin/notes/notes.js', async: true }
         ]
       });
     </script>

@@ -49,6 +49,33 @@ Following markdown syntax are special:
 | 1st-level header | New horizontal slide |
 | 2nd-level header | New vertical slide   |
 
+## Multiple columns
+
+::: {.container}
+:::: {.col}
+By leveraging pandoc's
+
+`fenced_divs` extension
+
+See example on the right
+::::
+:::: {.col}
+```
+::: {.container}
+:::: {.col}
+Column 1
+::::
+:::: {.col}
+Column 2
+::::
+:::: {.col}
+...
+::::
+:::
+```
+::::
+:::
+
 ## Print
 
 Refers to [revealjs: PDF Export](https://revealjs.com/pdf-export/)
