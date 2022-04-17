@@ -160,7 +160,8 @@
   }
   </style>
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/reveal.js-plugins@4.1.5/chalkboard/style.css">
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
+  <link rel="stylesheet" href="https://cdn.bootcdn.net/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/reveal.js-plugins@4.1.5/customcontrols/style.css">
 </head>
 <body>
   <div class="reveal">
@@ -301,6 +302,7 @@ Column 2
   <script src="https://cdn.bootcdn.net/ajax/libs/reveal.js/4.3.1/plugin/search/search.js"></script>
   <script src="https://cdn.bootcdn.net/ajax/libs/reveal.js/4.3.1/plugin/zoom/zoom.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/reveal.js-plugins@4.1.5/chalkboard/plugin.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/reveal.js-plugins@4.1.5/customcontrols/plugin.js"></script>
 
   <script>
 
@@ -457,9 +459,22 @@ Column 2
         chalkboard: {
           theme: "whiteboard",
         },
+        customcontrols: {
+          controls: [
+            { icon: '<i class="fa fa-pen-square"></i>',
+              title: 'Toggle chalkboard (B)',
+              action: 'RevealChalkboard.toggleChalkboard();'
+            },
+            { icon: '<i class="fa fa-pen"></i>',
+              title: 'Toggle notes canvas (C)',
+              action: 'RevealChalkboard.toggleNotesCanvas();'
+            }
+          ]
+        },
         // reveal.js plugins
         plugins: [
           RevealChalkboard,
+          RevealCustomControls,
           RevealNotes,
           RevealSearch,
           RevealZoom
