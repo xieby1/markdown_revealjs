@@ -3,7 +3,7 @@
 TEMPLATE="$(dirname $(realpath $0))/template.html"
 HEADER=$(dirname $(realpath $0))/head.html
 MD=$1
-REVEALJS_REMOTE="https://cdn.bootcdn.net/ajax/libs/reveal.js/3.9.2/"
+REVEALJS_REMOTE="https://cdn.bootcdn.net/ajax/libs/reveal.js/4.3.1"
 
 usage()
 {
@@ -56,6 +56,7 @@ CMD=(
     "-V revealjs-url=${REVEALJS}"
     "-V width=1200"
     "-V height=700"
+    "-V hash"
     "-H  ${HEADER}"
     "--slide-level=2"
     # table of content
