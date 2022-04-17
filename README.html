@@ -159,6 +159,8 @@
       text-transform: none;
   }
   </style>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/reveal.js-plugins@4.1.5/chalkboard/style.css">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
 </head>
 <body>
   <div class="reveal">
@@ -298,6 +300,7 @@ Column 2
   <script src="https://cdn.bootcdn.net/ajax/libs/reveal.js/4.3.1/plugin/notes/notes.js"></script>
   <script src="https://cdn.bootcdn.net/ajax/libs/reveal.js/4.3.1/plugin/search/search.js"></script>
   <script src="https://cdn.bootcdn.net/ajax/libs/reveal.js/4.3.1/plugin/zoom/zoom.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/reveal.js-plugins@4.1.5/chalkboard/plugin.js"></script>
 
   <script>
 
@@ -451,8 +454,12 @@ Column 2
 
         height: 700,
 
+        chalkboard: {
+          theme: "whiteboard",
+        },
         // reveal.js plugins
         plugins: [
+          RevealChalkboard,
           RevealNotes,
           RevealSearch,
           RevealZoom

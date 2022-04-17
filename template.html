@@ -39,6 +39,10 @@ $endif$
 $for(header-includes)$
   $header-includes$
 $endfor$
+$if(chalkboard)$
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/reveal.js-plugins@4.1.5/chalkboard/style.css">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
+$endif$
 </head>
 <body>
 $for(include-before)$
@@ -87,6 +91,9 @@ $body$
   <script src="$revealjs-url$/plugin/zoom/zoom.js"></script>
 $if(mathjax)$
   <script src="$revealjs-url$/plugin/math/math.js"></script>
+$endif$
+$if(chalkboard)$
+  <script src="https://cdn.jsdelivr.net/npm/reveal.js-plugins@4.1.5/chalkboard/plugin.js"></script>
 $endif$
 
   <script>
@@ -303,11 +310,19 @@ $if(mathjax)$
           },
         },
 $endif$
+$if(chalkboard)$
 
+        chalkboard: {
+          theme: "whiteboard",
+        },
+$endif$
         // reveal.js plugins
         plugins: [
 $if(mathjax)$
           RevealMath,
+$endif$
+$if(chalkboard)$
+          RevealChalkboard,
 $endif$
           RevealNotes,
           RevealSearch,

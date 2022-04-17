@@ -57,6 +57,7 @@ CMD=(
     "-V width=1200"
     "-V height=700"
     "-V hash"
+    "-V chalkboard"
     "-H  ${HEADER}"
     "--slide-level=2"
     # table of content
