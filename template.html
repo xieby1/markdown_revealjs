@@ -317,8 +317,15 @@ $if(chalkboard)$
         chalkboard: {
           theme: "whiteboard",
         },
+$endif$
         customcontrols: {
           controls: [
+            {
+              icon: '<i class="fa fa-th"></i>',
+              title: 'Toggle overview (O,Esc)',
+              action: 'Reveal.toggleOverview();'
+            },
+$if(chalkboard)$
             // { icon: '<i class="fa fa-pen-square"></i>',
             //   title: 'Toggle chalkboard (B)',
             //   action: 'RevealChalkboard.toggleChalkboard();'
@@ -326,10 +333,10 @@ $if(chalkboard)$
             { icon: '<i class="fa fa-pen"></i>',
               title: 'Toggle notes canvas (C)',
               action: 'RevealChalkboard.toggleNotesCanvas();'
-            }
+            },
+$endif$
           ]
         },
-$endif$
         // reveal.js plugins
         plugins: [
 $if(mathjax)$
