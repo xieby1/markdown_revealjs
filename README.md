@@ -76,6 +76,10 @@ Column 2
 ::::
 :::
 
+## bracketed_spans
+
+[This is *some text*]{.class key="val"}
+
 ## Print
 
 Refers to [revealjs: PDF Export](https://revealjs.com/pdf-export/)
