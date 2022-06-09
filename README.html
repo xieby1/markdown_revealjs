@@ -134,6 +134,11 @@
       padding-inline-start: 0;
   }
 
+  /* change first level toc background */
+  nav > ul > li > a {
+      background: lightgrey;
+  }
+
   table {
       /* 42px / sprt 2 */
       font-size: 30px;
@@ -170,70 +175,97 @@
 <section id="title-slide">
   <h1 class="title">Markdown RevealJS</h1>
   <p class="author">🤓xieby1</p>
-  <p class="date">Convert markdown file to reveal.js slides by pandoc. <a href="https://xieby1.github.io/markdown_revealjs/README.html">Demo</a></p>
+  <p class="date">Convert markdown file to reveal.js slides by pandoc.
+<a
+href="https://xieby1.github.io/markdown_revealjs/README.html">Demo</a></p>
 </section>
 <section id="TOC">
 <nav role="doc-toc"> 
 <ul>
-<li><a href="#/intro"><span class="toc-section-number">1</span> Intro</a>
+<li><a href="#/intro"><span class="toc-section-number">1</span>
+Intro</a>
 <ul>
-<li><a href="#/demo"><span class="toc-section-number">1.1</span> Demo</a></li>
-<li><a href="#/prerequisite"><span class="toc-section-number">1.2</span> Prerequisite</a></li>
-<li><a href="#/install"><span class="toc-section-number">1.3</span> Install</a></li>
+<li><a href="#/demo"><span class="toc-section-number">1.1</span>
+Demo</a></li>
+<li><a href="#/prerequisite"><span class="toc-section-number">1.2</span>
+Prerequisite</a></li>
+<li><a href="#/install"><span class="toc-section-number">1.3</span>
+Install</a></li>
 </ul></li>
-<li><a href="#/usage"><span class="toc-section-number">2</span> Usage</a>
+<li><a href="#/usage"><span class="toc-section-number">2</span>
+Usage</a>
 <ul>
-<li><a href="#/basic"><span class="toc-section-number">2.1</span> Basic</a></li>
-<li><a href="#/special-syntax"><span class="toc-section-number">2.2</span> Special syntax</a></li>
-<li><a href="#/multiple-columns"><span class="toc-section-number">2.3</span> Multiple columns</a></li>
-<li><a href="#/print"><span class="toc-section-number">2.4</span> Print</a></li>
-<li><a href="#/local-revealjs"><span class="toc-section-number">2.5</span> Local revealjs</a></li>
+<li><a href="#/basic"><span class="toc-section-number">2.1</span>
+Basic</a></li>
+<li><a href="#/special-syntax"><span
+class="toc-section-number">2.2</span> Special syntax</a></li>
+<li><a href="#/multiple-columns"><span
+class="toc-section-number">2.3</span> Multiple columns</a></li>
+<li><a href="#/bracketed_spans"><span
+class="toc-section-number">2.4</span> bracketed_spans</a></li>
+<li><a href="#/print"><span class="toc-section-number">2.5</span>
+Print</a></li>
+<li><a href="#/local-revealjs"><span
+class="toc-section-number">2.6</span> Local revealjs</a></li>
 </ul></li>
-<li><a href="#/thanks"><span class="toc-section-number">3</span> Thanks</a></li>
+<li><a href="#/thanks"><span class="toc-section-number">3</span>
+Thanks</a></li>
 </ul>
 </nav>
 </section>
 
 <section>
 <section id="intro" class="title-slide slide level1" data-number="1">
-<h1 data-number="1"><span class="header-section-number">1</span> Intro</h1>
+<h1 data-number="1"><span class="header-section-number">1</span>
+Intro</h1>
 
 </section>
 <section id="demo" class="slide level2" data-number="1.1">
-<h2 data-number="1.1"><span class="header-section-number">1.1</span> Demo</h2>
+<h2 data-number="1.1"><span class="header-section-number">1.1</span>
+Demo</h2>
 <pre><code> ____  _____ __  __  ___
 |  _ \| ____|  \/  |/ _ \
 | | | |  _| | |\/| | | | |
 | |_| | |___| |  | | |_| |
 |____/|_____|_|  |_|\___/</code></pre>
-<p>Click: <a href="https://xieby1.github.io/markdown_revealjs/README.html">Demo</a> to see demo hosted on Github pages.</p>
+<p>Click: <a
+href="https://xieby1.github.io/markdown_revealjs/README.html">Demo</a>
+to see demo hosted on Github pages.</p>
 </section>
 <section id="prerequisite" class="slide level2" data-number="1.2">
-<h2 data-number="1.2"><span class="header-section-number">1.2</span> Prerequisite</h2>
+<h2 data-number="1.2"><span class="header-section-number">1.2</span>
+Prerequisite</h2>
 <ul>
 <li>shell<img src="https://www.emojiall.com/img/platform/wechat/wx035.png" style="height: 1em;" /></li>
 <li>pandoc</li>
 </ul>
 </section>
 <section id="install" class="slide level2" data-number="1.3">
-<h2 data-number="1.3"><span class="header-section-number">1.3</span> Install</h2>
-<div class="sourceCode" id="cb2"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> clone https://github.com/xieby1/markdown_revealjs</span>
+<h2 data-number="1.3"><span class="header-section-number">1.3</span>
+Install</h2>
+<div class="sourceCode" id="cb2"><pre
+class="sourceCode bash"><code class="sourceCode bash"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> clone https://github.com/xieby1/markdown_revealjs</span>
 <span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a><span class="fu">ln</span> <span class="at">-s</span> <span class="op">&lt;</span>path/to<span class="op">&gt;</span>/revealjs.sh /usr/bin/</span>
 <span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a><span class="co"># or /usr/local/bin/, or ~/.local/bin/</span></span></code></pre></div>
 </section></section>
 <section>
 <section id="usage" class="title-slide slide level1" data-number="2">
-<h1 data-number="2"><span class="header-section-number">2</span> Usage</h1>
+<h1 data-number="2"><span class="header-section-number">2</span>
+Usage</h1>
 
 </section>
 <section id="basic" class="slide level2" data-number="2.1">
-<h2 data-number="2.1"><span class="header-section-number">2.1</span> Basic</h2>
-<p><code>cheatsheet.sh</code> convert &lt;.md&gt; to &lt;revealjs.html&gt;.</p>
-<div class="sourceCode" id="cb3"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="ex">revealjs.sh</span> <span class="op">&lt;</span>input.md<span class="op">&gt;</span></span>
+<h2 data-number="2.1"><span class="header-section-number">2.1</span>
+Basic</h2>
+<p><code>cheatsheet.sh</code> convert &lt;.md&gt; to
+&lt;revealjs.html&gt;.</p>
+<div class="sourceCode" id="cb3"><pre
+class="sourceCode bash"><code class="sourceCode bash"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="ex">revealjs.sh</span> <span class="op">&lt;</span>input.md<span class="op">&gt;</span></span>
 <span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a><span class="co"># output: xxx.html</span></span></code></pre></div>
 </section>
 <section id="special-syntax" class="slide level2" data-number="2.2">
-<h2 data-number="2.2"><span class="header-section-number">2.2</span> Special syntax</h2>
+<h2 data-number="2.2"><span class="header-section-number">2.2</span>
+Special syntax</h2>
 <p>Following markdown syntax are special:</p>
 <table>
 <thead>
@@ -255,7 +287,8 @@
 </table>
 </section>
 <section id="multiple-columns" class="slide level2" data-number="2.3">
-<h2 data-number="2.3"><span class="header-section-number">2.3</span> Multiple columns</h2>
+<h2 data-number="2.3"><span class="header-section-number">2.3</span>
+Multiple columns</h2>
 <div class="container">
 <div class="col">
 <p>By leveraging pandoc’s</p>
@@ -277,18 +310,29 @@ Column 2
 </div>
 </div>
 </section>
-<section id="print" class="slide level2" data-number="2.4">
-<h2 data-number="2.4"><span class="header-section-number">2.4</span> Print</h2>
-<p>Refers to <a href="https://revealjs.com/pdf-export/">revealjs: PDF Export</a></p>
+<section id="bracketed_spans" class="slide level2" data-number="2.4">
+<h2 data-number="2.4"><span class="header-section-number">2.4</span>
+bracketed_spans</h2>
+<p><span class="class" data-key="val">This is <em>some
+text</em></span></p>
+</section>
+<section id="print" class="slide level2" data-number="2.5">
+<h2 data-number="2.5"><span class="header-section-number">2.5</span>
+Print</h2>
+<p>Refers to <a href="https://revealjs.com/pdf-export/">revealjs: PDF
+Export</a></p>
 <p>Append <code>?print-pdf</code> to your URL.</p>
 </section>
-<section id="local-revealjs" class="slide level2" data-number="2.5">
-<h2 data-number="2.5"><span class="header-section-number">2.5</span> Local revealjs</h2>
+<section id="local-revealjs" class="slide level2" data-number="2.6">
+<h2 data-number="2.6"><span class="header-section-number">2.6</span>
+Local revealjs</h2>
 <p>Default revealjs version is 3.9.2 from cloudflare.</p>
-<p>If want to use local revealjs, use <code>-l &lt;path/to/revealjs&gt;</code></p>
+<p>If want to use local revealjs, use
+<code>-l &lt;path/to/revealjs&gt;</code></p>
 </section></section>
 <section id="thanks" class="title-slide slide level1" data-number="3">
-<h1 data-number="3"><span class="header-section-number">3</span> Thanks</h1>
+<h1 data-number="3"><span class="header-section-number">3</span>
+Thanks</h1>
 <p>QnA</p>
 <p>🙋🙋🙋</p>
 </section>
@@ -461,14 +505,19 @@ Column 2
         },
         customcontrols: {
           controls: [
-            { icon: '<i class="fa fa-pen-square"></i>',
-              title: 'Toggle chalkboard (B)',
-              action: 'RevealChalkboard.toggleChalkboard();'
+            {
+              icon: '<i class="fa fa-th"></i>',
+              title: 'Toggle overview (O,Esc)',
+              action: 'Reveal.toggleOverview();'
             },
+            // { icon: '<i class="fa fa-pen-square"></i>',
+            //   title: 'Toggle chalkboard (B)',
+            //   action: 'RevealChalkboard.toggleChalkboard();'
+            // },
             { icon: '<i class="fa fa-pen"></i>',
               title: 'Toggle notes canvas (C)',
               action: 'RevealChalkboard.toggleNotesCanvas();'
-            }
+            },
           ]
         },
         // reveal.js plugins
