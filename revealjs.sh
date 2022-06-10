@@ -3,49 +3,14 @@
 TEMPLATE="$(dirname $(realpath $0))/template.html"
 HEADER=$(dirname $(realpath $0))/head.html
 MD=$1
-REVEALJS_REMOTE="https://cdn.bootcdn.net/ajax/libs/reveal.js/4.3.1"
+REVEALJS="https://cdn.bootcdn.net/ajax/libs/reveal.js/4.3.1"
 
-usage()
-{
+if [[ $# -eq 0 || "$1" == "-h" || -z ${MD} ]]
+then
     echo "Usage: ${0##*/}" convert markdown file to reveal.js slides.
-    echo "${0##*/} [-h] [-l <path/to/revealjs>] <input.md>"
+    echo "${0##*/} [-h] <input.md>"
     echo "  Use pandoc convert <input.md> to input.html."
     exit 0
-}
-
-while [[ ${OPTIND} -le $# ]]
-do
-    getopts "hl:" opt
-    case "${opt}" in
-        h)
-            usage
-            ;;
-        l)
-            REVEALJS_LOCAL=${OPTARG}
-            ;;
-        ?)
-            MD=${!OPTIND}
-            shift
-            ;;
-        *)
-            echo "unknown arg${OPTIND} ${OPTARG}"
-            exit 1
-            ;;
-    esac
-done
-
-if [[ -z ${MD} ]]
-then
-    echo "No inpurt markdown"
-    usage
-fi
-
-if [[ -n ${REVEALJS_LOCAL} ]]
-then
-    #echo "${MD%/*} ${REVEALJS_LOCAL}"
-    REVEALJS=$(realpath --relative-to="$(dirname ${MD%/*})" "${REVEALJS_LOCAL}")
-else
-    REVEALJS=${REVEALJS_REMOTE}
 fi
 
 CMD=(
@@ -68,6 +33,7 @@ CMD=(
     "-N"
     "${MD}"
     "-o ${MD%.*}.html"
+    "${@:2}"
 )
 
 eval "${CMD[@]}"
