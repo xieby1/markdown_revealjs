@@ -1,7 +1,6 @@
 #!/usr/bin/env bash
 
 TEMPLATE="$(dirname $(realpath $0))/template.html"
-HEADER=$(dirname $(realpath $0))/head.html
 MD=$1
 REVEALJS="https://cdn.bootcdn.net/ajax/libs/reveal.js/4.3.1"
 
@@ -26,7 +25,6 @@ CMD=(
     "-V hash"
     "-V chalkboard"
     "-V touch=false"
-    "-H  ${HEADER}"
     "--slide-level=2"
     # table of content
     "--toc"

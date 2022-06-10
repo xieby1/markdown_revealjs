@@ -72,6 +72,84 @@ $if(chalkboard)$
   <link rel="stylesheet" href="https://cdn.bootcdn.net/ajax/libs/font-awesome/5.15.4/css/all.min.css">
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/reveal.js-plugins@4.1.5/customcontrols/style.css">
 $endif$
+<!-- revealjs.sh customized styles -->
+<style>
+.reveal section img {
+    margin: 0 0;
+    /* override default border color */
+    border: transparent;
+}
+
+.reveal p {
+    margin: 0 0;
+}
+
+/* no margin in styled code div, the same to unstyled code */
+div.sourceCode {
+    margin: 0;
+}
+.reveal pre {
+    display: flex;
+    justify-content: center;
+}
+
+.reveal pre code {
+    max-height: none;
+}
+
+a.sourceLine {
+    /* styled code line is higher than unstyled, make them the same */
+    line-height: 0;
+}
+
+[role="doc-toc"] > ul {
+    /* multiple column in first level TOC */
+    column-width: 290px;
+    width: 100%;
+    column-rule-style: solid;
+    /* no margin in first level TOC */
+    margin: 0 0 0 0;
+}
+
+#TOC ul {
+    /* no bullet */
+    list-style-type: none;
+    /* no margin, no padding in TOC ul */
+    margin-block-start: 0;
+    margin-block-end: 0;
+    padding-inline-start: 0;
+}
+
+/* change first level toc background */
+nav > ul > li > a {
+    background: lightgrey;
+}
+
+table {
+    /* 42px / sprt 2 */
+    font-size: 30px;
+}
+
+/* enable multiple columns */
+/* https://stackoverflow.com/questions/30861845 */
+.container {
+  display: flex;
+  align-items: center;
+}
+.col {
+  flex: auto;
+}
+
+/* not to capitalise my titles */
+/* https://stackoverflow.com/questions/47057398 */
+.reveal h1,
+.reveal h2,
+.reveal h3,
+.reveal h4,
+.reveal h5 {
+    text-transform: none;
+}
+</style>
 </head>
 <body>
 $for(include-before)$
