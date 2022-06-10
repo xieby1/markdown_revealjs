@@ -1,27 +1,27 @@
 % Markdown RevealJS
 % 🤓xieby1
-% Convert markdown file to reveal.js slides by pandoc. [Demo](https://xieby1.github.io/markdown_revealjs/README.html)
+% 🎉2022.06.10
 
 # Intro
 
+A Simple Esay Converter
+
+Markdown ➡ Reveal.js
+
+based on Pandoc
+
 ## Demo
 
-```
- ____  _____ __  __  ___
-|  _ \| ____|  \/  |/ _ \
-| | | |  _| | |\/| | | | |
-| |_| | |___| |  | | |_| |
-|____/|_____|_|  |_|\___/
-```
+This README.md is converted to revealjs,
+see it [here](https://xieby1.github.io/markdown_revealjs/README.html).
 
-Click: [Demo](https://xieby1.github.io/markdown_revealjs/README.html) to see demo hosted on Github pages.
 
-## Prerequisite
+# Usage
 
-* shell<img src="https://www.emojiall.com/img/platform/wechat/wx035.png" style="height: 1em;" />
-* pandoc
+It's simple and esay!
 
 ## Install
+
 
 ```bash
 git clone https://github.com/xieby1/markdown_revealjs
@@ -29,22 +29,26 @@ ln -s <path/to>/revealjs.sh /usr/bin/
 # or /usr/local/bin/, or ~/.local/bin/
 ```
 
-# Usage
+Besides, you need to install pandoc.
 
-## Basic
-
-`cheatsheet.sh` convert <.md> to <revealjs.html>.
+## Convert
 
 ```bash
-revealjs.sh <input.md>
-# output: xxx.html
+$ revealjs.sh <input.md>
+# will generate input.html
 ```
 
-For more usage info, see `revealjs.sh -h`.
+For more usage info, see
 
-## Special syntax
+```bash
+revealjs.sh -h
+```
 
-Following markdown syntax are special:
+# Special syntax
+
+Here are special syntax for markdown_revealjs.
+
+## Headings
 
 | syntax           | meaning              |
 | ---------------- | -------------------- |
@@ -82,23 +86,11 @@ Column 2
 
 Bracketed_spans is able to add attr to spans.
 
-For exampe, [this is *some text* in a span.]{.class key="val" .fragment}
+For exampe, [this is a span with fragment.]{.class key="val" .fragment}
 
 [🐱]{.fragment}
 [🐶]{.fragment}
 [🐹]{.fragment}
-
-## Print
-
-Refers to [revealjs: PDF Export](https://revealjs.com/pdf-export/)
-
-Append `?print-pdf` to your URL.
-
-## Local revealjs
-
-Default revealjs version is 3.9.2 from cloudflare.
-
-If want to use local revealjs, use `-l <path/to/revealjs>`
 
 ## more tips
 
@@ -107,9 +99,3 @@ For more tips,
 see my revealjs cheatsheet
 
 [xieby1.github.io/cheatsheet.html#revealjs](https://xieby1.github.io/cheatsheet.html#revealjs)
-
-# Thanks
-
-QnA
-
-🙋🙋🙋

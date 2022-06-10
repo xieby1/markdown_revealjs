@@ -87,86 +87,87 @@
     .display.math{display: block; text-align: center; margin: 0.5rem auto;}
   </style>
   <link rel="stylesheet" href="https://cdn.bootcdn.net/ajax/libs/reveal.js/4.3.1/theme/white.css" id="theme">
-  <style>
-  .reveal section img {
-      margin: 0 0;
-      /* override default border color */
-      border: transparent;
-  }
-
-  .reveal p {
-      margin: 0 0;
-  }
-
-  /* no margin in styled code div, the same to unstyled code */
-  div.sourceCode {
-      margin: 0;
-  }
-  .reveal pre {
-      display: flex;
-      justify-content: center;
-  }
-
-  .reveal pre code {
-      max-height: none;
-  }
-
-  a.sourceLine {
-      /* styled code line is higher than unstyled, make them the same */
-      line-height: 0;
-  }
-
-  [role="doc-toc"] > ul {
-      /* multiple column in first level TOC */
-      column-width: 290px;
-      width: 100%;
-      column-rule-style: solid;
-      /* no margin in first level TOC */
-      margin: 0 0 0 0;
-  }
-
-  #TOC ul {
-      /* no bullet */
-      list-style-type: none;
-      /* no margin, no padding in TOC ul */
-      margin-block-start: 0;
-      margin-block-end: 0;
-      padding-inline-start: 0;
-  }
-
-  /* change first level toc background */
-  nav > ul > li > a {
-      background: lightgrey;
-  }
-
-  table {
-      /* 42px / sprt 2 */
-      font-size: 30px;
-  }
-
-  /* enable multiple columns */
-  /* https://stackoverflow.com/questions/30861845 */
-  .container {
-    display: flex;
-    align-items: center;
-  }
-  .col {
-    flex: auto;
-  }
-
-  /* not to capitalise my titles */
-  /* https://stackoverflow.com/questions/47057398 */
-  .reveal h1,
-  .reveal h2,
-  .reveal h3,
-  .reveal h4,
-  .reveal h5 {
-      text-transform: none;
-  }
-  </style>
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/reveal.js-plugins@4.1.5/chalkboard/style.css">
   <link rel="stylesheet" href="https://cdn.bootcdn.net/ajax/libs/font-awesome/5.15.4/css/all.min.css">
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/reveal.js-plugins@4.1.5/customcontrols/style.css">
+<!-- revealjs.sh customized styles -->
+<style>
+.reveal section img {
+    margin: 0 0;
+    /* override default border color */
+    border: transparent;
+}
+
+.reveal p {
+    margin: 0 0;
+}
+
+/* no margin in styled code div, the same to unstyled code */
+div.sourceCode {
+    margin: 0;
+}
+.reveal pre {
+    display: flex;
+    justify-content: center;
+}
+
+.reveal pre code {
+    max-height: none;
+}
+
+a.sourceLine {
+    /* styled code line is higher than unstyled, make them the same */
+    line-height: 0;
+}
+
+[role="doc-toc"] > ul {
+    /* multiple column in first level TOC */
+    column-width: 290px;
+    width: 100%;
+    column-rule-style: solid;
+    /* no margin in first level TOC */
+    margin: 0 0 0 0;
+}
+
+#TOC ul {
+    /* no bullet */
+    list-style-type: none;
+    /* no margin, no padding in TOC ul */
+    margin-block-start: 0;
+    margin-block-end: 0;
+    padding-inline-start: 0;
+}
+
+/* change first level toc background */
+nav > ul > li > a {
+    background: lightgrey;
+}
+
+table {
+    /* 42px / sprt 2 */
+    font-size: 30px;
+}
+
+/* enable multiple columns */
+/* https://stackoverflow.com/questions/30861845 */
+.container {
+  display: flex;
+  align-items: center;
+}
+.col {
+  flex: auto;
+}
+
+/* not to capitalise my titles */
+/* https://stackoverflow.com/questions/47057398 */
+.reveal h1,
+.reveal h2,
+.reveal h3,
+.reveal h4,
+.reveal h5 {
+    text-transform: none;
+}
+</style>
 </head>
 <body>
   <div class="reveal">
@@ -175,9 +176,7 @@
 <section id="title-slide">
   <h1 class="title">Markdown RevealJS</h1>
   <p class="author">🤓xieby1</p>
-  <p class="date">Convert markdown file to reveal.js slides by pandoc.
-<a
-href="https://xieby1.github.io/markdown_revealjs/README.html">Demo</a></p>
+  <p class="date">🎉2022.06.10</p>
 </section>
 <section id="TOC">
 <nav role="doc-toc"> 
@@ -187,31 +186,27 @@ Intro</a>
 <ul>
 <li><a href="#/demo"><span class="toc-section-number">1.1</span>
 Demo</a></li>
-<li><a href="#/prerequisite"><span class="toc-section-number">1.2</span>
-Prerequisite</a></li>
-<li><a href="#/install"><span class="toc-section-number">1.3</span>
-Install</a></li>
 </ul></li>
 <li><a href="#/usage"><span class="toc-section-number">2</span>
 Usage</a>
 <ul>
-<li><a href="#/basic"><span class="toc-section-number">2.1</span>
-Basic</a></li>
-<li><a href="#/special-syntax"><span
-class="toc-section-number">2.2</span> Special syntax</a></li>
+<li><a href="#/install"><span class="toc-section-number">2.1</span>
+Install</a></li>
+<li><a href="#/convert"><span class="toc-section-number">2.2</span>
+Convert</a></li>
+</ul></li>
+<li><a href="#/special-syntax"><span class="toc-section-number">3</span>
+Special syntax</a>
+<ul>
+<li><a href="#/headings"><span class="toc-section-number">3.1</span>
+Headings</a></li>
 <li><a href="#/multiple-columns"><span
-class="toc-section-number">2.3</span> Multiple columns</a></li>
+class="toc-section-number">3.2</span> Multiple columns</a></li>
 <li><a href="#/bracketed_spans"><span
-class="toc-section-number">2.4</span> bracketed_spans</a></li>
-<li><a href="#/print"><span class="toc-section-number">2.5</span>
-Print</a></li>
-<li><a href="#/local-revealjs"><span
-class="toc-section-number">2.6</span> Local revealjs</a></li>
-<li><a href="#/more-tips"><span class="toc-section-number">2.7</span>
+class="toc-section-number">3.3</span> bracketed_spans</a></li>
+<li><a href="#/more-tips"><span class="toc-section-number">3.4</span>
 more tips</a></li>
 </ul></li>
-<li><a href="#/thanks"><span class="toc-section-number">3</span>
-Thanks</a></li>
 </ul>
 </nav>
 </section>
@@ -220,55 +215,51 @@ Thanks</a></li>
 <section id="intro" class="title-slide slide level1" data-number="1">
 <h1 data-number="1"><span class="header-section-number">1</span>
 Intro</h1>
-
+<p>A Simple Esay Converter</p>
+<p>Markdown ➡ Reveal.js</p>
+<p>based on Pandoc</p>
 </section>
 <section id="demo" class="slide level2" data-number="1.1">
 <h2 data-number="1.1"><span class="header-section-number">1.1</span>
 Demo</h2>
-<pre><code> ____  _____ __  __  ___
-|  _ \| ____|  \/  |/ _ \
-| | | |  _| | |\/| | | | |
-| |_| | |___| |  | | |_| |
-|____/|_____|_|  |_|\___/</code></pre>
-<p>Click: <a
-href="https://xieby1.github.io/markdown_revealjs/README.html">Demo</a>
-to see demo hosted on Github pages.</p>
-</section>
-<section id="prerequisite" class="slide level2" data-number="1.2">
-<h2 data-number="1.2"><span class="header-section-number">1.2</span>
-Prerequisite</h2>
-<ul>
-<li>shell<img src="https://www.emojiall.com/img/platform/wechat/wx035.png" style="height: 1em;" /></li>
-<li>pandoc</li>
-</ul>
-</section>
-<section id="install" class="slide level2" data-number="1.3">
-<h2 data-number="1.3"><span class="header-section-number">1.3</span>
-Install</h2>
-<div class="sourceCode" id="cb2"><pre
-class="sourceCode bash"><code class="sourceCode bash"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> clone https://github.com/xieby1/markdown_revealjs</span>
-<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a><span class="fu">ln</span> <span class="at">-s</span> <span class="op">&lt;</span>path/to<span class="op">&gt;</span>/revealjs.sh /usr/bin/</span>
-<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a><span class="co"># or /usr/local/bin/, or ~/.local/bin/</span></span></code></pre></div>
+<p>This README.md is converted to revealjs, see it <a
+href="https://xieby1.github.io/markdown_revealjs/README.html">here</a>.</p>
 </section></section>
 <section>
 <section id="usage" class="title-slide slide level1" data-number="2">
 <h1 data-number="2"><span class="header-section-number">2</span>
 Usage</h1>
-
+<p>It’s simple and esay!</p>
 </section>
-<section id="basic" class="slide level2" data-number="2.1">
+<section id="install" class="slide level2" data-number="2.1">
 <h2 data-number="2.1"><span class="header-section-number">2.1</span>
-Basic</h2>
-<p><code>cheatsheet.sh</code> convert &lt;.md&gt; to
-&lt;revealjs.html&gt;.</p>
-<div class="sourceCode" id="cb3"><pre
-class="sourceCode bash"><code class="sourceCode bash"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="ex">revealjs.sh</span> <span class="op">&lt;</span>input.md<span class="op">&gt;</span></span>
-<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a><span class="co"># output: xxx.html</span></span></code></pre></div>
+Install</h2>
+<div class="sourceCode" id="cb1"><pre
+class="sourceCode bash"><code class="sourceCode bash"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> clone https://github.com/xieby1/markdown_revealjs</span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="fu">ln</span> <span class="at">-s</span> <span class="op">&lt;</span>path/to<span class="op">&gt;</span>/revealjs.sh /usr/bin/</span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="co"># or /usr/local/bin/, or ~/.local/bin/</span></span></code></pre></div>
+<p>Besides, you need to install pandoc.</p>
 </section>
-<section id="special-syntax" class="slide level2" data-number="2.2">
+<section id="convert" class="slide level2" data-number="2.2">
 <h2 data-number="2.2"><span class="header-section-number">2.2</span>
-Special syntax</h2>
-<p>Following markdown syntax are special:</p>
+Convert</h2>
+<div class="sourceCode" id="cb2"><pre
+class="sourceCode bash"><code class="sourceCode bash"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="ex">$</span> revealjs.sh <span class="op">&lt;</span>input.md<span class="op">&gt;</span></span>
+<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a><span class="co"># will generate input.html</span></span></code></pre></div>
+<p>For more usage info, see</p>
+<div class="sourceCode" id="cb3"><pre
+class="sourceCode bash"><code class="sourceCode bash"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="ex">revealjs.sh</span> <span class="at">-h</span></span></code></pre></div>
+</section></section>
+<section>
+<section id="special-syntax" class="title-slide slide level1"
+data-number="3">
+<h1 data-number="3"><span class="header-section-number">3</span> Special
+syntax</h1>
+<p>Here are special syntax for markdown_revealjs.</p>
+</section>
+<section id="headings" class="slide level2" data-number="3.1">
+<h2 data-number="3.1"><span class="header-section-number">3.1</span>
+Headings</h2>
 <table>
 <thead>
 <tr class="header">
@@ -288,8 +279,8 @@ Special syntax</h2>
 </tbody>
 </table>
 </section>
-<section id="multiple-columns" class="slide level2" data-number="2.3">
-<h2 data-number="2.3"><span class="header-section-number">2.3</span>
+<section id="multiple-columns" class="slide level2" data-number="3.2">
+<h2 data-number="3.2"><span class="header-section-number">3.2</span>
 Multiple columns</h2>
 <div class="container">
 <div class="col">
@@ -312,43 +303,23 @@ Column 2
 </div>
 </div>
 </section>
-<section id="bracketed_spans" class="slide level2" data-number="2.4">
-<h2 data-number="2.4"><span class="header-section-number">2.4</span>
+<section id="bracketed_spans" class="slide level2" data-number="3.3">
+<h2 data-number="3.3"><span class="header-section-number">3.3</span>
 bracketed_spans</h2>
 <p>Bracketed_spans is able to add attr to spans.</p>
-<p>For exampe, <span class="class fragment" data-key="val">this is
-<em>some text</em> in a span.</span></p>
+<p>For exampe, <span class="class fragment" data-key="val">this is a
+span with fragment.</span></p>
 <p><span class="fragment">🐱</span> <span class="fragment">🐶</span>
 <span class="fragment">🐹</span></p>
 </section>
-<section id="print" class="slide level2" data-number="2.5">
-<h2 data-number="2.5"><span class="header-section-number">2.5</span>
-Print</h2>
-<p>Refers to <a href="https://revealjs.com/pdf-export/">revealjs: PDF
-Export</a></p>
-<p>Append <code>?print-pdf</code> to your URL.</p>
-</section>
-<section id="local-revealjs" class="slide level2" data-number="2.6">
-<h2 data-number="2.6"><span class="header-section-number">2.6</span>
-Local revealjs</h2>
-<p>Default revealjs version is 3.9.2 from cloudflare.</p>
-<p>If want to use local revealjs, use
-<code>-l &lt;path/to/revealjs&gt;</code></p>
-</section>
-<section id="more-tips" class="slide level2" data-number="2.7">
-<h2 data-number="2.7"><span class="header-section-number">2.7</span>
+<section id="more-tips" class="slide level2" data-number="3.4">
+<h2 data-number="3.4"><span class="header-section-number">3.4</span>
 more tips</h2>
 <p>For more tips,</p>
 <p>see my revealjs cheatsheet</p>
 <p><a
 href="https://xieby1.github.io/cheatsheet.html#revealjs">xieby1.github.io/cheatsheet.html#revealjs</a></p>
 </section></section>
-<section id="thanks" class="title-slide slide level1" data-number="3">
-<h1 data-number="3"><span class="header-section-number">3</span>
-Thanks</h1>
-<p>QnA</p>
-<p>🙋🙋🙋</p>
-</section>
     </div>
   </div>
 
