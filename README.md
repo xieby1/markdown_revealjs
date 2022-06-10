@@ -40,6 +40,8 @@ revealjs.sh <input.md>
 # output: xxx.html
 ```
 
+For more usage info, see `revealjs.sh -h`.
+
 ## Special syntax
 
 Following markdown syntax are special:

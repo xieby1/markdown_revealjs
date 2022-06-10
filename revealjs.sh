@@ -10,6 +10,8 @@ then
     echo "Usage: ${0##*/}" convert markdown file to reveal.js slides.
     echo "${0##*/} [-h] <input.md> [pandoc args]"
     echo "  Use pandoc convert <input.md> to input.html."
+    echo "  Customized pandoc args:"
+    echo "  -V lxgw     enable LXGW Wenkai font"
     exit 0
 fi
 
