@@ -78,7 +78,13 @@ Column 2
 
 ## bracketed_spans
 
-[This is *some text*]{.class key="val"}
+Bracketed_spans is able to add attr to spans.
+
+For exampe, [this is *some text* in a span.]{.class key="val" .fragment}
+
+[🐱]{.fragment}
+[🐶]{.fragment}
+[🐹]{.fragment}
 
 ## Print
 
@@ -91,6 +97,14 @@ Append `?print-pdf` to your URL.
 Default revealjs version is 3.9.2 from cloudflare.
 
 If want to use local revealjs, use `-l <path/to/revealjs>`
+
+## more tips
+
+For more tips,
+
+see my revealjs cheatsheet
+
+[xieby1.github.io/cheatsheet.html#revealjs](https://xieby1.github.io/cheatsheet.html#revealjs)
 
 # Thanks
 
