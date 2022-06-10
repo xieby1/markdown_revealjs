@@ -8,7 +8,7 @@ REVEALJS="https://cdn.bootcdn.net/ajax/libs/reveal.js/4.3.1"
 if [[ $# -eq 0 || "$1" == "-h" || -z ${MD} ]]
 then
     echo "Usage: ${0##*/}" convert markdown file to reveal.js slides.
-    echo "${0##*/} [-h] <input.md>"
+    echo "${0##*/} [-h] <input.md> [pandoc args]"
     echo "  Use pandoc convert <input.md> to input.html."
     exit 0
 fi
