@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 
-TEMPLATE="$(dirname $(realpath $0))/template.html"
+TEMPLATE="$(dirname $(realpath --relative-to=. $0))/template.html"
 MD=$1
 REVEALJS="https://cdn.bootcdn.net/ajax/libs/reveal.js/4.3.1"
 
@@ -37,3 +37,4 @@ CMD=(
 )
 
 eval "${CMD[@]}"
+# echo "${CMD[@]}"
