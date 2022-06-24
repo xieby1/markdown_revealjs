@@ -27,7 +27,7 @@ let
         --url "https://github.com/xieby1/markdown_revealjs"
         --maintainer "xieby1 <xieby1@outlook.com>"
         ${NAME}/revealjs.sh=/usr/bin/revealjs.sh
-        ${NAME}/template.html=/usr/bin/template.html
+        ${NAME}/revealjs_template.html=/usr/bin/revealjs_template.html
         prebuilt_pandoc/bin/pandoc=/usr/bin/revealjs/pandoc
       '')
     ];
