@@ -3,6 +3,13 @@
 TEMPLATE="$(dirname $(realpath --relative-to=. $0))/template.html"
 MD=$1
 REVEALJS="https://cdn.bootcdn.net/ajax/libs/reveal.js/4.3.1"
+# use which pandoc
+PANDOC_="$(dirname $(realpath --relative-to=. $0))/revealjs/pandoc"
+if [[ -f ${PANDOC_} ]]
+then PANDOC=${PANDOC_}
+else PANDOC="pandoc"
+fi
+
 
 if [[ $# -eq 0 || "$1" == "-h" || -z ${MD} ]]
 then
@@ -15,7 +22,7 @@ then
 fi
 
 CMD=(
-    "pandoc"
+    "${PANDOC}"
     "-t revealjs"
     "--template=${TEMPLATE}"
     "-V theme=white"

@@ -28,8 +28,7 @@ let
         --maintainer "xieby1 <xieby1@outlook.com>"
         ${NAME}/revealjs.sh=/usr/bin/revealjs.sh
         ${NAME}/template.html=/usr/bin/template.html
-        prebuilt_pandoc/bin/pandoc=/usr/bin/pandoc
-        prebuilt_pandoc/share/man/man1/pandoc.1.gz=/usr/share/man/man1/pandoc.1.gz
+        prebuilt_pandoc/bin/pandoc=/usr/bin/revealjs/pandoc
       '')
     ];
     sourceRoot = ".";
