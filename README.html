@@ -186,27 +186,48 @@ Intro</a>
 <ul>
 <li><a href="#/demo"><span class="toc-section-number">1.1</span>
 Demo</a></li>
+<li><a href="#/how-it-works"><span class="toc-section-number">1.2</span>
+How it works</a></li>
 </ul></li>
-<li><a href="#/intro-1"><span class="toc-section-number">2</span>
-Intro</a>
+<li><a href="#/installation"><span class="toc-section-number">2</span>
+Installation</a>
 <ul>
-<li><a href="#/install"><span class="toc-section-number">2.1</span>
-Install</a></li>
-<li><a href="#/usage"><span class="toc-section-number">2.2</span>
-Usage</a></li>
+<li><a href="#/prebuilt-package"><span
+class="toc-section-number">2.1</span> Prebuilt Package</a></li>
+<li><a href="#/manual-installation"><span
+class="toc-section-number">2.2</span> Manual Installation</a></li>
 </ul></li>
-<li><a href="#/special-syntax"><span class="toc-section-number">3</span>
-Special syntax</a>
+<li><a href="#/quick-start"><span class="toc-section-number">3</span>
+Quick Start</a>
 <ul>
-<li><a href="#/headings"><span class="toc-section-number">3.1</span>
-Headings</a></li>
+<li><a href="#/first-page"><span class="toc-section-number">3.1</span>
+First Page</a></li>
+<li><a href="#/basic-syntax"><span class="toc-section-number">3.2</span>
+Basic Syntax</a></li>
+<li><a href="#/convert"><span class="toc-section-number">3.3</span>
+Convert!</a></li>
+</ul></li>
+<li><a href="#/advanced-syntax-and-examples"><span
+class="toc-section-number">4</span> Advanced Syntax and
+Examples</a></li>
+<li><a href="#/backgrounds"><span class="toc-section-number">5</span>
+Backgrounds</a></li>
+<li><a href="#/fragments"><span class="toc-section-number">6</span>
+Fragments</a>
+<ul>
+<li><a href="#/multi-lines"><span class="toc-section-number">6.1</span>
+Multi Lines</a></li>
+<li><a href="#/one-line"><span class="toc-section-number">6.2</span> One
+Line</a></li>
+</ul></li>
 <li><a href="#/multiple-columns"><span
-class="toc-section-number">3.2</span> Multiple columns</a></li>
-<li><a href="#/bracketed_spans"><span
-class="toc-section-number">3.3</span> bracketed_spans</a></li>
+class="toc-section-number">7</span> Multiple columns</a>
+<ul>
+<li><a href="#/two-column-example"><span
+class="toc-section-number">7.1</span> Two-column Example</a></li>
 </ul></li>
-<li><a href="#/more-tips"><span class="toc-section-number">4</span> More
-tips</a></li>
+<li><a href="#/qna"><span class="toc-section-number">8</span>
+QnA</a></li>
 </ul>
 </nav>
 </section>
@@ -216,27 +237,37 @@ tips</a></li>
 <h1 data-number="1"><span class="header-section-number">1</span>
 Intro</h1>
 <p>A Simple Esay Converter</p>
-<p>Markdown ➡ Reveal.js</p>
-<p>based on Pandoc</p>
+<h2>
+Markdown ➡ Reveal.js
+</h2>
+<ul>
+<li>Based on Pandoc</li>
+<li>Auto-generated TOC</li>
+<li>Touch-device friendly</li>
+</ul>
 </section>
 <section id="demo" class="slide level2" data-number="1.1">
 <h2 data-number="1.1"><span class="header-section-number">1.1</span>
 Demo</h2>
 <p>This README.md is converted to revealjs, see it <a
 href="https://xieby1.github.io/markdown_revealjs/README.html">here</a>.</p>
+</section>
+<section id="how-it-works" class="slide level2" data-number="1.2">
+<h2 data-number="1.2"><span class="header-section-number">1.2</span> How
+it works</h2>
+<p>Bash script + Template file + Pandoc</p>
+<p>It’s simple and esay!</p>
 </section></section>
 <section>
-<section id="intro-1" class="title-slide slide level1" data-number="2">
+<section id="installation" class="title-slide slide level1"
+data-number="2">
 <h1 data-number="2"><span class="header-section-number">2</span>
-Intro</h1>
-<p>It’s simple and esay!</p>
-<p>It’s just a bash script + pandoc templete.</p>
+Installation</h1>
+
 </section>
-<section id="install" class="slide level2" data-number="2.1">
+<section id="prebuilt-package" class="slide level2" data-number="2.1">
 <h2 data-number="2.1"><span class="header-section-number">2.1</span>
-Install</h2>
-<h3 data-number="2.1.1" id="prebuilt-package"><span
-class="header-section-number">2.1.1</span> Prebuilt Package</h3>
+Prebuilt Package</h2>
 <p>See <a
 href="https://github.com/xieby1/markdown_revealjs/releases">Releases</a>.</p>
 <p>The prebuilt package includes the official static-linked pandoc,
@@ -244,8 +275,11 @@ revealjs.sh and template. They are packaged by nix script
 <code>./build_packages.nix</code>.</p>
 <p>If you want to use your own pandoc executable, see Manual
 Installation.</p>
-<h3 data-number="2.1.2" id="manual-installation"><span
-class="header-section-number">2.1.2</span> Manual Installation</h3>
+</section>
+<section id="manual-installation" class="slide level2"
+data-number="2.2">
+<h2 data-number="2.2"><span class="header-section-number">2.2</span>
+Manual Installation</h2>
 <p><a href="https://github.com/jgm/pandoc">Install latest
 pandoc</a>.</p>
 <p>Note: Ubuntu 22 pandoc is too old.</p>
@@ -253,27 +287,28 @@ pandoc</a>.</p>
 class="sourceCode bash"><code class="sourceCode bash"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> clone https://github.com/xieby1/markdown_revealjs</span>
 <span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="fu">ln</span> <span class="at">-s</span> <span class="op">&lt;</span>path/to<span class="op">&gt;</span>/revealjs.sh /usr/bin/</span>
 <span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="co"># or /usr/local/bin/, or ~/.local/bin/</span></span></code></pre></div>
-</section>
-<section id="usage" class="slide level2" data-number="2.2">
-<h2 data-number="2.2"><span class="header-section-number">2.2</span>
-Usage</h2>
-<div class="sourceCode" id="cb2"><pre
-class="sourceCode bash"><code class="sourceCode bash"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="ex">$</span> revealjs.sh <span class="op">&lt;</span>input.md<span class="op">&gt;</span></span>
-<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a><span class="co"># will generate input.html</span></span></code></pre></div>
-<p>For more usage info, see</p>
-<div class="sourceCode" id="cb3"><pre
-class="sourceCode bash"><code class="sourceCode bash"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="ex">revealjs.sh</span> <span class="at">-h</span></span></code></pre></div>
 </section></section>
 <section>
-<section id="special-syntax" class="title-slide slide level1"
+<section id="quick-start" class="title-slide slide level1"
 data-number="3">
-<h1 data-number="3"><span class="header-section-number">3</span> Special
-syntax</h1>
-<p>Here are special syntax for markdown_revealjs.</p>
+<h1 data-number="3"><span class="header-section-number">3</span> Quick
+Start</h1>
+
 </section>
-<section id="headings" class="slide level2" data-number="3.1">
+<section id="first-page" class="slide level2" data-number="3.1">
 <h2 data-number="3.1"><span class="header-section-number">3.1</span>
-Headings</h2>
+First Page</h2>
+<p>Add the metadata (title, author, date) to top of your markdown
+file.</p>
+<p>These info will become the first page of your slide.</p>
+<div class="sourceCode" id="cb2"><pre
+class="sourceCode markdown"><code class="sourceCode markdown"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a>% markdown_revealjs !</span>
+<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a>% xieby1</span>
+<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a>% 2022.06.24</span></code></pre></div>
+</section>
+<section id="basic-syntax" class="slide level2" data-number="3.2">
+<h2 data-number="3.2"><span class="header-section-number">3.2</span>
+Basic Syntax</h2>
 <table>
 <thead>
 <tr class="header">
@@ -293,16 +328,100 @@ Headings</h2>
 </tbody>
 </table>
 </section>
-<section id="multiple-columns" class="slide level2" data-number="3.2">
-<h2 data-number="3.2"><span class="header-section-number">3.2</span>
-Multiple columns</h2>
+<section id="convert" class="slide level2" data-number="3.3">
+<h2 data-number="3.3"><span class="header-section-number">3.3</span>
+Convert!</h2>
+<div class="sourceCode" id="cb3"><pre
+class="sourceCode bash"><code class="sourceCode bash"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="ex">$</span> revealjs.sh <span class="op">&lt;</span>input.md<span class="op">&gt;</span></span>
+<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a><span class="co"># will generate input.html</span></span></code></pre></div>
+<p>🐱</p>
+<p>It’s simple and esay, right?</p>
+</section></section>
+<section id="advanced-syntax-and-examples"
+class="title-slide slide level1" data-number="4">
+<h1 data-number="4"><span class="header-section-number">4</span>
+Advanced Syntax and Examples</h1>
+<p>Sorted in alphabet.</p>
+</section>
+
+<section id="backgrounds" class="title-slide slide level1"
+data-number="5" data-background-color="LightPink">
+<h1 data-number="5" data-background-color="LightPink"><span
+class="header-section-number">5</span> Backgrounds</h1>
+<ul>
+<li>RevealJS: <a
+href="https://revealjs.com/backgrounds/">backgrounds</a></li>
+<li>Pandoc Extension: <a
+href="https://pandoc.org/MANUAL.html#extension-header_attributes">header_attributes</a></li>
+</ul>
+<div class="sourceCode" id="cb4"><pre
+class="sourceCode markdown"><code class="sourceCode markdown"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="fu"># Backgrounds {data-background-color=&quot;LightPink&quot;}</span></span></code></pre></div>
+</section>
+
+<section>
+<section id="fragments" class="title-slide slide level1"
+data-number="6">
+<h1 data-number="6"><span class="header-section-number">6</span>
+Fragments</h1>
+<ul>
+<li>RevealJS: <a
+href="https://revealjs.com/fragments/">fragments</a></li>
+</ul>
+</section>
+<section id="multi-lines" class="slide level2" data-number="6.1">
+<h2 data-number="6.1"><span class="header-section-number">6.1</span>
+Multi Lines</h2>
+<div class="fragment">
+<ul>
+<li>Pandoc Extension: <a
+href="https://pandoc.org/MANUAL.html#extension-fenced_divs">fenced_divs</a></li>
+</ul>
+</div>
+<div class="fragment">
+<div class="sourceCode" id="cb5"><pre
+class="sourceCode markdown"><code class="sourceCode markdown"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a>::: {.fragment}</span>
+<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a>Your content here</span>
+<span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a>:::</span></code></pre></div>
+</div>
+</section>
+<section id="one-line" class="slide level2" data-number="6.2">
+<h2 data-number="6.2"><span class="header-section-number">6.2</span> One
+Line</h2>
+<ul>
+<li>Pandoc Extension: <a
+href="https://pandoc.org/MANUAL.html#extension-bracketed_spans">bracketed_spans</a></li>
+</ul>
+<p><span class="fragment">It’s in one line!</span> <span
+class="fragment">🐱</span> <span class="fragment">🐶</span> <span
+class="fragment">🐹</span></p>
+<div class="fragment">
+<pre><code>[It&#39;s in one line!]{.fragment}
+[🐱]{.fragment}
+[🐶]{.fragment}
+[🐹]{.fragment}</code></pre>
+</div>
+</section></section>
+<section>
+<section id="multiple-columns" class="title-slide slide level1"
+data-number="7">
+<h1 data-number="7"><span class="header-section-number">7</span>
+Multiple columns</h1>
+<ul>
+<li>Pandoc Extension: <a
+href="https://pandoc.org/MANUAL.html#extension-fenced_divs">fenced_divs</a></li>
+<li>Builtin CSS class: container and col</li>
+</ul>
+</section>
+<section id="two-column-example" class="slide level2" data-number="7.1">
+<h2 data-number="7.1"><span class="header-section-number">7.1</span>
+Two-column Example</h2>
 <div class="container">
 <div class="col">
-<p>By leveraging pandoc’s</p>
-<p><code>fenced_divs</code> extension</p>
-<p>See example on the right</p>
+<p>It is two columns!</p>
+<p>This is column 1</p>
 </div>
 <div class="col">
+<p>This is column 2</p>
 <pre><code>::: {.container}
 :::: {.col}
 Column 1
@@ -310,30 +429,20 @@ Column 1
 :::: {.col}
 Column 2
 ::::
-:::: {.col}
-...
-::::
 :::</code></pre>
 </div>
 </div>
-</section>
-<section id="bracketed_spans" class="slide level2" data-number="3.3">
-<h2 data-number="3.3"><span class="header-section-number">3.3</span>
-bracketed_spans</h2>
-<p>Bracketed_spans is able to add attr to spans.</p>
-<p>For exampe, <span class="class fragment" data-key="val">this is a
-span with fragment.</span></p>
-<p><span class="fragment">🐱</span> <span class="fragment">🐶</span>
-<span class="fragment">🐹</span></p>
+<p>You can add as many columns as possible.</p>
 </section></section>
-<section id="more-tips" class="title-slide slide level1"
-data-number="4">
-<h1 data-number="4"><span class="header-section-number">4</span> More
-tips</h1>
-<p>For more tips,</p>
-<p>see my revealjs cheatsheet</p>
-<p><a
-href="https://xieby1.github.io/cheatsheet.html#revealjs">xieby1.github.io/cheatsheet.html#revealjs</a></p>
+<section id="qna" class="title-slide slide level1" data-number="8">
+<h1 data-number="8"><span class="header-section-number">8</span>
+QnA</h1>
+<ul>
+<li>Problems?</li>
+<li>tips?</li>
+<li>Advice?</li>
+</ul>
+<p>New issue and pull request is welcome!</p>
 </section>
     </div>
   </div>
