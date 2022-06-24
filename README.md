@@ -16,12 +16,24 @@ This README.md is converted to revealjs,
 see it [here](https://xieby1.github.io/markdown_revealjs/README.html).
 
 
-# Usage
+# Intro
 
 It's simple and esay!
 
+It's just a bash script + pandoc templete.
+
 ## Install
 
+### Prebuilt Package
+
+See [Releases](https://github.com/xieby1/markdown_revealjs/releases).
+
+The prebuilt package includes the official static-linked pandoc, revealjs.sh and template.
+They are packaged by nix script `./build_packages.nix`.
+
+If you want to use your own pandoc executable, see Manual Installation.
+
+### Manual Installation
 
 [Install latest pandoc](https://github.com/jgm/pandoc).
 
@@ -33,7 +45,7 @@ ln -s <path/to>/revealjs.sh /usr/bin/
 # or /usr/local/bin/, or ~/.local/bin/
 ```
 
-## Convert
+## Usage
 
 ```bash
 $ revealjs.sh <input.md>

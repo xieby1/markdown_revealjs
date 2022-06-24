@@ -11,7 +11,7 @@
   <title>Markdown RevealJS</title>
   <meta name="apple-mobile-web-app-capable" content="yes">
   <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes, minimal-ui">
   <link rel="stylesheet" href="https://cdn.bootcdn.net/ajax/libs/reveal.js/4.3.1/reset.css">
   <link rel="stylesheet" href="https://cdn.bootcdn.net/ajax/libs/reveal.js/4.3.1/reveal.css">
   <style>
@@ -187,13 +187,13 @@ Intro</a>
 <li><a href="#/demo"><span class="toc-section-number">1.1</span>
 Demo</a></li>
 </ul></li>
-<li><a href="#/usage"><span class="toc-section-number">2</span>
-Usage</a>
+<li><a href="#/intro-1"><span class="toc-section-number">2</span>
+Intro</a>
 <ul>
 <li><a href="#/install"><span class="toc-section-number">2.1</span>
 Install</a></li>
-<li><a href="#/convert"><span class="toc-section-number">2.2</span>
-Convert</a></li>
+<li><a href="#/usage"><span class="toc-section-number">2.2</span>
+Usage</a></li>
 </ul></li>
 <li><a href="#/special-syntax"><span class="toc-section-number">3</span>
 Special syntax</a>
@@ -226,23 +226,37 @@ Demo</h2>
 href="https://xieby1.github.io/markdown_revealjs/README.html">here</a>.</p>
 </section></section>
 <section>
-<section id="usage" class="title-slide slide level1" data-number="2">
+<section id="intro-1" class="title-slide slide level1" data-number="2">
 <h1 data-number="2"><span class="header-section-number">2</span>
-Usage</h1>
+Intro</h1>
 <p>It’s simple and esay!</p>
+<p>It’s just a bash script + pandoc templete.</p>
 </section>
 <section id="install" class="slide level2" data-number="2.1">
 <h2 data-number="2.1"><span class="header-section-number">2.1</span>
 Install</h2>
+<h3 data-number="2.1.1" id="prebuilt-package"><span
+class="header-section-number">2.1.1</span> Prebuilt Package</h3>
+<p>See <a
+href="https://github.com/xieby1/markdown_revealjs/releases">Releases</a>.</p>
+<p>The prebuilt package includes the official static-linked pandoc,
+revealjs.sh and template. They are packaged by nix script
+<code>./build_packages.nix</code>.</p>
+<p>If you want to use your own pandoc executable, see Manual
+Installation.</p>
+<h3 data-number="2.1.2" id="manual-installation"><span
+class="header-section-number">2.1.2</span> Manual Installation</h3>
+<p><a href="https://github.com/jgm/pandoc">Install latest
+pandoc</a>.</p>
+<p>Note: Ubuntu 22 pandoc is too old.</p>
 <div class="sourceCode" id="cb1"><pre
 class="sourceCode bash"><code class="sourceCode bash"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="fu">git</span> clone https://github.com/xieby1/markdown_revealjs</span>
 <span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="fu">ln</span> <span class="at">-s</span> <span class="op">&lt;</span>path/to<span class="op">&gt;</span>/revealjs.sh /usr/bin/</span>
 <span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="co"># or /usr/local/bin/, or ~/.local/bin/</span></span></code></pre></div>
-<p>Besides, you need to install pandoc.</p>
 </section>
-<section id="convert" class="slide level2" data-number="2.2">
+<section id="usage" class="slide level2" data-number="2.2">
 <h2 data-number="2.2"><span class="header-section-number">2.2</span>
-Convert</h2>
+Usage</h2>
 <div class="sourceCode" id="cb2"><pre
 class="sourceCode bash"><code class="sourceCode bash"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="ex">$</span> revealjs.sh <span class="op">&lt;</span>input.md<span class="op">&gt;</span></span>
 <span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a><span class="co"># will generate input.html</span></span></code></pre></div>
@@ -490,6 +504,11 @@ href="https://xieby1.github.io/cheatsheet.html#revealjs">xieby1.github.io/cheats
         },
         customcontrols: {
           controls: [
+            {
+              icon: '<i class="fas fa-expand"></i>',
+              title: 'Toggle fullscreen',
+              action: 'document.documentElement.requestFullscreen()'
+            },
             {
               icon: '<i class="fa fa-th"></i>',
               title: 'Toggle overview (O,Esc)',
