@@ -23,13 +23,15 @@ It's simple and esay!
 ## Install
 
 
+[Install latest pandoc](https://github.com/jgm/pandoc).
+
+Note: Ubuntu 22 pandoc is too old.
+
 ```bash
 git clone https://github.com/xieby1/markdown_revealjs
 ln -s <path/to>/revealjs.sh /usr/bin/
 # or /usr/local/bin/, or ~/.local/bin/
 ```
-
-Besides, you need to install pandoc.
 
 ## Convert
 
