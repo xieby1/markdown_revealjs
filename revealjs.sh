@@ -32,6 +32,7 @@ CMD=(
     "-V hash"
     "-V chalkboard"
     "-V touch=false"
+    "-V menu"
     "--slide-level=2"
     # table of content
     "--toc"

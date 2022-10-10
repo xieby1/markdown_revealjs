@@ -203,6 +203,9 @@ $if(chalkboard)$
   <script src="https://cdn.jsdelivr.net/npm/reveal.js-plugins@4.1.5/chalkboard/plugin.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/reveal.js-plugins@4.1.5/customcontrols/plugin.js"></script>
 $endif$
+$if(menu)$
+  <script src="https://cdn.jsdelivr.net/npm/reveal.js-menu@2.1.0/menu.js"></script>
+$endif$
 
   <script>
 
@@ -424,6 +427,11 @@ $if(chalkboard)$
           theme: "whiteboard",
         },
 $endif$
+$if(menu)$
+        menu: {
+          sticky: true,
+        },
+$endif$
         customcontrols: {
           controls: [
             {
@@ -459,8 +467,11 @@ $if(chalkboard)$
 $endif$
           RevealNotes,
           RevealSearch,
-          RevealZoom
-        ]
+          RevealZoom,
+$if(menu)$
+          RevealMenu,
+$endif$
+        ],
       });
     </script>
   $for(include-after)$
