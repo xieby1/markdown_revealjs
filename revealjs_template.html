@@ -504,6 +504,11 @@ $endif$
       Reveal.on("ready", event => {
         var div = document.querySelector("div#customcontrols");
         div.classList.add('collapsed');
+        document.addEventListener("resize", event => {
+          // make sure customcontrols are collapsed
+          var div = document.querySelector("div#customcontrols");
+          div.classList.add('collapsed');
+        });
       });
     </script>
   $for(include-after)$
