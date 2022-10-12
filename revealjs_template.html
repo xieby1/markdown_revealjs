@@ -150,10 +150,30 @@ table {
     text-transform: none;
 }
 
+/* make customcontrols hiden when print-pdf */
 @media print {
   .slide-menu-button,
   #customcontrols {
     visibility: hidden;
+  }
+}
+
+/* make customcontrols always collapse */
+@media only screen and (min-width: 500px) {
+  #customcontrols > button {
+      display: block;
+  }
+  #customcontrols > ul {
+    position: fixed;
+    left: 54px;
+    bottom: 64px;
+    list-style-type: none;
+    overflow: hidden;
+    margin: 0;
+    border: 1px solid var(--r-link-color);
+    border-radius: 5px;
+    padding: 10px;
+    background-color: var(--r-background-color)
   }
 }
 </style>
@@ -479,6 +499,11 @@ $if(menu)$
           RevealMenu,
 $endif$
         ],
+      });
+      // make customcontrols collapsed by default
+      Reveal.on("ready", event => {
+        var div = document.querySelector("div#customcontrols");
+        div.classList.add('collapsed');
       });
     </script>
   $for(include-after)$
