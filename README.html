@@ -167,6 +167,33 @@ table {
 .reveal h5 {
     text-transform: none;
 }
+
+/* make customcontrols hiden when print-pdf */
+@media print {
+  .slide-menu-button,
+  #customcontrols {
+    visibility: hidden;
+  }
+}
+
+/* make customcontrols always collapse */
+@media only screen and (min-width: 500px) {
+  #customcontrols > button {
+      display: block;
+  }
+  #customcontrols > ul {
+    position: fixed;
+    left: 54px;
+    bottom: 64px;
+    list-style-type: none;
+    overflow: hidden;
+    margin: 0;
+    border: 1px solid var(--r-link-color);
+    border-radius: 5px;
+    padding: 10px;
+    background-color: var(--r-background-color)
+  }
+}
 </style>
 </head>
 <body>
@@ -181,54 +208,54 @@ table {
 <section id="TOC">
 <nav role="doc-toc"> 
 <ul>
-<li><a href="#/intro"><span class="toc-section-number">1</span>
-Intro</a>
+<li><a href="#/intro" id="/toc-intro"><span
+class="toc-section-number">1</span> Intro</a>
 <ul>
-<li><a href="#/demo"><span class="toc-section-number">1.1</span>
-Demo</a></li>
-<li><a href="#/how-it-works"><span class="toc-section-number">1.2</span>
-How it works</a></li>
+<li><a href="#/demo" id="/toc-demo"><span
+class="toc-section-number">1.1</span> Demo</a></li>
+<li><a href="#/how-it-works" id="/toc-how-it-works"><span
+class="toc-section-number">1.2</span> How it works</a></li>
 </ul></li>
-<li><a href="#/installation"><span class="toc-section-number">2</span>
-Installation</a>
+<li><a href="#/installation" id="/toc-installation"><span
+class="toc-section-number">2</span> Installation</a>
 <ul>
-<li><a href="#/prebuilt-package"><span
+<li><a href="#/prebuilt-package" id="/toc-prebuilt-package"><span
 class="toc-section-number">2.1</span> Prebuilt Package</a></li>
-<li><a href="#/manual-installation"><span
+<li><a href="#/manual-installation" id="/toc-manual-installation"><span
 class="toc-section-number">2.2</span> Manual Installation</a></li>
-<li><a href="#/build-packages"><span
+<li><a href="#/build-packages" id="/toc-build-packages"><span
 class="toc-section-number">2.3</span> Build Packages</a></li>
 </ul></li>
-<li><a href="#/quick-start"><span class="toc-section-number">3</span>
-Quick Start</a>
+<li><a href="#/quick-start" id="/toc-quick-start"><span
+class="toc-section-number">3</span> Quick Start</a>
 <ul>
-<li><a href="#/first-page"><span class="toc-section-number">3.1</span>
-First Page</a></li>
-<li><a href="#/basic-syntax"><span class="toc-section-number">3.2</span>
-Basic Syntax</a></li>
-<li><a href="#/convert"><span class="toc-section-number">3.3</span>
-Convert!</a></li>
+<li><a href="#/first-page" id="/toc-first-page"><span
+class="toc-section-number">3.1</span> First Page</a></li>
+<li><a href="#/basic-syntax" id="/toc-basic-syntax"><span
+class="toc-section-number">3.2</span> Basic Syntax</a></li>
+<li><a href="#/convert" id="/toc-convert"><span
+class="toc-section-number">3.3</span> Convert!</a></li>
 </ul></li>
-<li><a href="#/advanced-syntax"><span
+<li><a href="#/advanced-syntax" id="/toc-advanced-syntax"><span
 class="toc-section-number">4</span> Advanced Syntax</a></li>
-<li><a href="#/backgrounds"><span class="toc-section-number">5</span>
-Backgrounds</a></li>
-<li><a href="#/fragments"><span class="toc-section-number">6</span>
-Fragments</a>
+<li><a href="#/backgrounds" id="/toc-backgrounds"><span
+class="toc-section-number">5</span> Backgrounds</a></li>
+<li><a href="#/fragments" id="/toc-fragments"><span
+class="toc-section-number">6</span> Fragments</a>
 <ul>
-<li><a href="#/multi-lines"><span class="toc-section-number">6.1</span>
-Multi Lines</a></li>
-<li><a href="#/one-line"><span class="toc-section-number">6.2</span> One
-Line</a></li>
+<li><a href="#/multi-lines" id="/toc-multi-lines"><span
+class="toc-section-number">6.1</span> Multi Lines</a></li>
+<li><a href="#/one-line" id="/toc-one-line"><span
+class="toc-section-number">6.2</span> One Line</a></li>
 </ul></li>
-<li><a href="#/multiple-columns"><span
+<li><a href="#/multiple-columns" id="/toc-multiple-columns"><span
 class="toc-section-number">7</span> Multiple columns</a>
 <ul>
-<li><a href="#/two-column-example"><span
+<li><a href="#/two-column-example" id="/toc-two-column-example"><span
 class="toc-section-number">7.1</span> Two-column Example</a></li>
 </ul></li>
-<li><a href="#/qna"><span class="toc-section-number">8</span>
-QnA</a></li>
+<li><a href="#/qna" id="/toc-qna"><span
+class="toc-section-number">8</span> QnA</a></li>
 </ul>
 </nav>
 </section>
@@ -468,6 +495,7 @@ QnA</h1>
   <script src="https://cdn.bootcdn.net/ajax/libs/reveal.js/4.3.1/plugin/zoom/zoom.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/reveal.js-plugins@4.1.5/chalkboard/plugin.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/reveal.js-plugins@4.1.5/customcontrols/plugin.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/reveal.js-menu@2.1.0/menu.js"></script>
 
   <script>
 
@@ -624,6 +652,9 @@ QnA</h1>
         chalkboard: {
           theme: "whiteboard",
         },
+        menu: {
+          sticky: true,
+        },
         customcontrols: {
           controls: [
             {
@@ -636,13 +667,18 @@ QnA</h1>
               title: 'Toggle overview (O,Esc)',
               action: 'Reveal.toggleOverview();'
             },
-            // { icon: '<i class="fa fa-pen-square"></i>',
-            //   title: 'Toggle chalkboard (B)',
-            //   action: 'RevealChalkboard.toggleChalkboard();'
-            // },
+            { icon: '<i class="fa fa-pen-square"></i>',
+              title: 'Toggle chalkboard (B)',
+              action: 'RevealChalkboard.toggleChalkboard();'
+            },
             { icon: '<i class="fa fa-pen"></i>',
               title: 'Toggle notes canvas (C)',
               action: 'RevealChalkboard.toggleNotesCanvas();'
+            },
+            {
+              icon: '<i class="fa fa-print"></i>',
+              title: 'Print PDF Mode',
+              action: "window.location.search = 'print-pdf';"
             },
           ]
         },
@@ -652,8 +688,19 @@ QnA</h1>
           RevealCustomControls,
           RevealNotes,
           RevealSearch,
-          RevealZoom
-        ]
+          RevealZoom,
+          RevealMenu,
+        ],
+      });
+      // make customcontrols collapsed by default
+      Reveal.on("ready", event => {
+        var div = document.querySelector("div#customcontrols");
+        div.classList.add('collapsed');
+        document.addEventListener("resize", event => {
+          // make sure customcontrols are collapsed
+          var div = document.querySelector("div#customcontrols");
+          div.classList.add('collapsed');
+        });
       });
     </script>
     </body>
