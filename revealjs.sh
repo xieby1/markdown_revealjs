@@ -36,7 +36,7 @@ CMD=(
     "--slide-level=2"
     # table of content
     "--toc"
-    "--toc-depth=2"
+    "--toc-depth=${TOC_DEPTH:=2}"
     # number sections
     "-N"
     "${MD}"
