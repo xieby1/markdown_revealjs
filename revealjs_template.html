@@ -240,7 +240,44 @@ $endif$
 $if(verticator)$
   <script src="https://cdn.jsdelivr.net/npm/reveal.js-verticator@1.2.3/plugin/verticator/verticator.js"></script>
 $endif$
-
+$if(title-slide-background-image)$
+  <script>
+  var title_slide = document.getElementById("title-slide")
+  title_slide.setAttribute("data-background-image", "$title-slide-background-image$")
+  </script>
+$endif$
+$if(toc-slide-background-image)$
+  <script>
+  var toc_slide = document.getElementById("TOC")
+  if (toc_slide)
+    toc_slide.setAttribute("data-background-image", "$toc-slide-background-image$")
+  </script>
+$endif$
+$if(level1-slide-background-image)$
+  <script>
+  // inspired by https://github.com/hakimel/reveal.js/issues/1227
+  for (var slide of document.getElementsByClassName('slide level1')){
+    if (!(slide.getAttribute('data-background') ||
+          slide.getAttribute('data-background-image') ||
+          slide.getAttribute('data-background-video') ||
+          slide.getAttribute('data-background-iframe'))){
+      slide.setAttribute('data-background-image', '$level1-slide-background-image$')
+    }
+  }
+  </script>
+$endif$
+$if(level2-slide-background-image)$
+  <script>
+  for (var slide of document.getElementsByClassName('slide level2')){
+    if (!(slide.getAttribute('data-background') ||
+          slide.getAttribute('data-background-image') ||
+          slide.getAttribute('data-background-video') ||
+          slide.getAttribute('data-background-iframe'))){
+      slide.setAttribute('data-background-image', '$level2-slide-background-image$')
+    }
+  }
+  </script>
+$endif$
   <script>
 
       // Full list of configuration options available at:
