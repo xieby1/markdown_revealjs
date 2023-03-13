@@ -33,6 +33,7 @@ CMD=(
     "-V chalkboard"
     "-V touch=false"
     "-V menu"
+    "-V verticator"
     "--slide-level=2"
     # table of content
     "--toc"

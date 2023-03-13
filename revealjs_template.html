@@ -233,6 +233,9 @@ $endif$
 $if(menu)$
   <script src="https://cdn.jsdelivr.net/npm/reveal.js-menu@2.1.0/menu.js"></script>
 $endif$
+$if(verticator)$
+  <script src="https://cdn.jsdelivr.net/npm/reveal.js-verticator@1.2.3/plugin/verticator/verticator.js"></script>
+$endif$
 
   <script>
 
@@ -502,6 +505,9 @@ $endif$
           RevealZoom,
 $if(menu)$
           RevealMenu,
+$endif$
+$if(verticator)$
+          Verticator,
 $endif$
         ],
       });
