@@ -17,6 +17,7 @@ A Simple Esay Converter
 * Based on Pandoc
 * Auto-generated TOC
 * Touch-device friendly
+* Header footer supported
 
 ## Demo
 
