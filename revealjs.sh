@@ -1,6 +1,7 @@
 #!/usr/bin/env bash
 
 TEMPLATE="$(dirname $(realpath --relative-to=. $0))/revealjs_template.html"
+INCLUDE_FILES="$(dirname $(realpath --relative-to=. $0))/include-files.lua"
 MD=$1
 REVEALJS="https://cdn.bootcdn.net/ajax/libs/reveal.js/4.3.1"
 # use which pandoc
@@ -40,6 +41,8 @@ CMD=(
     "--toc-depth=${TOC_DEPTH:=2}"
     # number sections
     "-N"
+    # include files
+    "-L" "${INCLUDE_FILES}"
     "${MD}"
     "-o ${MD%.*}.html"
     "${@:2}"

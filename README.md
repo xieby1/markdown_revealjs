@@ -10,7 +10,7 @@ footerr: by xieby1
 
 # Intro
 
-A Simple Esay Converter
+A Simple Easy Converter
 
 <h2>Markdown ➡ Reveal.js</h2>
 
@@ -38,7 +38,7 @@ See [Releases](https://github.com/xieby1/markdown_revealjs/releases).
 
 ## Manual Installation
 
-* Fisrt, [Install latest pandoc](https://github.com/jgm/pandoc).
+* First, [Install latest pandoc](https://github.com/jgm/pandoc).
 
   Note: Ubuntu 22's apt-installed pandoc is too old.
 
@@ -98,11 +98,17 @@ $ revealjs.sh <input.md>
 
 🐱
 
-It's simple and esay, right?
+It's simple and easy, right?
 
 # Advanced Syntax
 
 Sorted in alphabet.
+
+# Backgrounds
+
+TODO:
+
+Did you notice that every page has a default background?
 
 # Backgrounds {data-background-color="LightPink"}
 
@@ -178,6 +184,12 @@ Column 2
 :::
 
 You can add as many columns as possible.
+
+# include files
+
+``` {.include}
+./included.md
+```
 
 # QnA
 

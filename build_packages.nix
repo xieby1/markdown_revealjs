@@ -28,6 +28,7 @@ let
         --maintainer "xieby1 <xieby1@outlook.com>"
         ${NAME}/revealjs.sh=/usr/bin/revealjs.sh
         ${NAME}/revealjs_template.html=/usr/bin/revealjs_template.html
+        ${NAME}/include-files.lua=/usr/bin/include-files.lua
         prebuilt_pandoc/bin/pandoc=/usr/bin/revealjs/pandoc
       '')
     ];
