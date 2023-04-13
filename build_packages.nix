@@ -29,6 +29,7 @@ let
         ${NAME}/revealjs.sh=/usr/bin/revealjs.sh
         ${NAME}/revealjs_template.html=/usr/bin/revealjs_template.html
         ${NAME}/include-files.lua=/usr/bin/include-files.lua
+        ${NAME}/include-code-files.lua=/usr/bin/include-code-files.lua
         prebuilt_pandoc/bin/pandoc=/usr/bin/revealjs/pandoc
       '')
     ];

@@ -2,6 +2,7 @@
 
 TEMPLATE="$(dirname $(realpath --relative-to=. $0))/revealjs_template.html"
 INCLUDE_FILES="$(dirname $(realpath --relative-to=. $0))/include-files.lua"
+INCLUDE_CODE_FILES="$(dirname $(realpath --relative-to=. $0))/include-code-files.lua"
 MD=$1
 REVEALJS="https://cdn.bootcdn.net/ajax/libs/reveal.js/4.3.1"
 # use which pandoc
@@ -43,6 +44,8 @@ CMD=(
     "-N"
     # include files
     "-L" "${INCLUDE_FILES}"
+    # include cide files
+    "-L" "${INCLUDE_CODE_FILES}"
     "${MD}"
     "-o ${MD%.*}.html"
     "${@:2}"

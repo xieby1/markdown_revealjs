@@ -129,7 +129,7 @@ a.sourceLine {
     margin: 0 0 0 0;
 }
 
-#TOC ul {
+[role="doc-toc"] ul {
     /* no bullet */
     list-style-type: none;
     /* no margin, no padding in TOC ul */
@@ -257,7 +257,14 @@ class="toc-section-number">8</span> Multiple columns</a>
 class="toc-section-number">8.1</span> Two-column Example</a></li>
 </ul></li>
 <li><a href="#/include-files"><span class="toc-section-number">9</span>
-include files</a></li>
+include files</a>
+<ul>
+<li><a href="#/include-files-normally"><span
+class="toc-section-number">9.1</span> include files normally</a></li>
+<li><a href="#/include-files-in-code-block"><span
+class="toc-section-number">9.2</span> include files in code
+block</a></li>
+</ul></li>
 <li><a href="#/qna"><span class="toc-section-number">10</span>
 QnA</a></li>
 </ul>
@@ -487,16 +494,38 @@ Column 2
 </div>
 <p>You can add as many columns as possible.</p>
 </section></section>
+<section>
 <section id="include-files" class="title-slide slide level1"
 data-number="9">
 <h1 data-number="9"><span class="header-section-number">9</span> include
 files</h1>
+
+</section>
+<section id="include-files-normally" class="slide level2"
+data-number="9.1">
+<h2 data-number="9.1"><span class="header-section-number">9.1</span>
+include files normally</h2>
 <p>This file is include by</p>
 <pre><code>```{.include}
 ./included.md
 ```</code></pre>
 </section>
-
+<section id="include-files-in-code-block" class="slide level2"
+data-number="9.2">
+<h2 data-number="9.2"><span class="header-section-number">9.2</span>
+include files in code block</h2>
+<pre><code>``` {include=&quot;./helloworld.c&quot;}
+```</code></pre>
+<div class="sourceCode" id="cb10"><pre class="sourceCode c"><code class="sourceCode c"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a><span class="pp">#include </span><span class="im">&lt;stdio.h&gt;</span></span>
+<span id="cb10-2"><a href="#cb10-2" aria-hidden="true" tabindex="-1"></a><span class="dt">int</span> main<span class="op">(</span><span class="dt">void</span><span class="op">);</span></span>
+<span id="cb10-3"><a href="#cb10-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb10-4"><a href="#cb10-4" aria-hidden="true" tabindex="-1"></a><span class="dt">int</span> main<span class="op">(</span><span class="dt">void</span><span class="op">)</span></span>
+<span id="cb10-5"><a href="#cb10-5" aria-hidden="true" tabindex="-1"></a><span class="op">{</span></span>
+<span id="cb10-6"><a href="#cb10-6" aria-hidden="true" tabindex="-1"></a>    printf<span class="op">(</span><span class="st">&quot;Hello, world! </span><span class="sc">\n</span><span class="st">&quot;</span><span class="op">);</span></span>
+<span id="cb10-7"><a href="#cb10-7" aria-hidden="true" tabindex="-1"></a>    </span>
+<span id="cb10-8"><a href="#cb10-8" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> <span class="dv">0</span><span class="op">;</span></span>
+<span id="cb10-9"><a href="#cb10-9" aria-hidden="true" tabindex="-1"></a><span class="op">}</span></span></code></pre></div>
+</section></section>
 <section id="qna" class="title-slide slide level1" data-number="10">
 <h1 data-number="10"><span class="header-section-number">10</span>
 QnA</h1>

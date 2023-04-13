@@ -187,9 +187,25 @@ You can add as many columns as possible.
 
 # include files
 
+## include files normally
+
 ``` {.include}
 ./included.md
 ```
+
+More details: https://github.com/pandoc/lua-filters/blob/master/include-files/include-files.lua
+
+## include files in code block
+
+~~~
+``` {include="./helloworld.c"}
+```
+~~~
+
+``` {.c include="./helloworld.c"}
+```
+
+More details: https://github.com/pandoc/lua-filters/blob/master/include-code-files/include-code-files.lua
 
 # QnA
 
