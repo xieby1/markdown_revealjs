@@ -36,6 +36,8 @@ CMD=(
     "-V touch=false"
     "-V menu"
     "-V verticator"
+    "-V showSlideNumber=all"
+    "-V slideNumber='c/t'"
     "--slide-level=2"
     # table of content
     "--toc"

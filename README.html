@@ -543,9 +543,8 @@ header left</div>
   <div id=headerr style="position:absolute; top:0;    right:0; padding:0.5em; font-size:16pt;"><a href="https://github.com/xieby1/markdown_revealjs"><img src="https://github.com/fluidicon.png" style="width:16pt;">Github
 Repo</a></div>
   <div id=footerl style="position:absolute; bottom:0; left:0;  padding:0.5em; font-size:16pt;">↙️
-footer left</div>
-  <div id=footerr style="position:absolute; bottom:0; right:0; padding:0.5em; font-size:16pt;">by
-xieby1</div>
+by xieby1</div>
+  <div id=footerr style="position:absolute; bottom:0; right:0; padding:0.5em; font-size:16pt;"></div>
 
   <script src="https://cdn.bootcdn.net/ajax/libs/reveal.js/4.3.1/reveal.js"></script>
 
@@ -580,7 +579,11 @@ xieby1</div>
         progress: true,
 
         // Display the page number of the current slide
-        slideNumber: false,
+        // * h.v Horizontal . Vertical slide number (default)
+        // * h/v Horizontal / Vertical slide number
+        // * c Flattened slide number, including both horizontal and vertical slides
+        // * c/t Flattened slide number / total slides
+        slideNumber: 'c/t',
 
         // 'all', 'print', or 'speaker'
         showSlideNumber: 'all',

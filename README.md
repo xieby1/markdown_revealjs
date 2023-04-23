@@ -4,8 +4,7 @@ author: 🤓xieby1
 date: 🎉2022.06.10
 headerl: ↖️ header left
 headerr: <a href="https://github.com/xieby1/markdown_revealjs"><img src="https://github.com/fluidicon.png" style="width:16pt;">Github Repo</a>
-footerl: ↙️ footer left
-footerr: by xieby1
+footerl: ↙️ by xieby1
 ---
 
 # Intro

@@ -301,7 +301,11 @@ $endif$
         progress: $progress$,
 
         // Display the page number of the current slide
-        slideNumber: $slideNumber$,
+        // * h.v Horizontal . Vertical slide number (default)
+        // * h/v Horizontal / Vertical slide number
+        // * c Flattened slide number, including both horizontal and vertical slides
+        // * c/t Flattened slide number / total slides
+        slideNumber: '$slideNumber$',
 
         // 'all', 'print', or 'speaker'
         showSlideNumber: '$showSlideNumber$',
