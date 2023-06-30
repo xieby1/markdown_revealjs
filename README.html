@@ -209,67 +209,24 @@ table {
 <nav role="doc-toc"> 
 <ul>
 <li><a href="#/intro"><span class="toc-section-number">1</span>
-Intro</a>
-<ul>
-<li><a href="#/demo"><span class="toc-section-number">1.1</span>
-Demo</a></li>
-<li><a href="#/how-it-works"><span class="toc-section-number">1.2</span>
-How it works</a></li>
-</ul></li>
+Intro</a></li>
 <li><a href="#/installation"><span class="toc-section-number">2</span>
-Installation</a>
-<ul>
-<li><a href="#/prebuilt-package"><span
-class="toc-section-number">2.1</span> Prebuilt Package</a></li>
-<li><a href="#/manual-installation"><span
-class="toc-section-number">2.2</span> Manual Installation</a></li>
-<li><a href="#/build-packages"><span
-class="toc-section-number">2.3</span> Build Packages</a></li>
-</ul></li>
+Installation</a></li>
 <li><a href="#/quick-start"><span class="toc-section-number">3</span>
-Quick Start</a>
-<ul>
-<li><a href="#/first-page"><span class="toc-section-number">3.1</span>
-First Page</a></li>
-<li><a href="#/basic-syntax"><span class="toc-section-number">3.2</span>
-Basic Syntax</a></li>
-<li><a href="#/convert"><span class="toc-section-number">3.3</span>
-Convert!</a></li>
-</ul></li>
+Quick Start</a></li>
 <li><a href="#/advanced-syntax"><span
 class="toc-section-number">4</span> Advanced Syntax</a></li>
 <li><a href="#/backgrounds"><span class="toc-section-number">5</span>
-Backgrounds</a>
-<ul>
-<li><a href="#/default-backgrounds"><span
-class="toc-section-number">5.1</span> Default Backgrounds</a></li>
-<li><a href="#/per-slide-backgrounds"><span
-class="toc-section-number">5.2</span> Per-Slide Backgrounds</a></li>
-</ul></li>
+Backgrounds</a></li>
 <li><a href="#/fragments"><span class="toc-section-number">6</span>
-Fragments</a>
-<ul>
-<li><a href="#/multi-lines"><span class="toc-section-number">6.1</span>
-Multi Lines</a></li>
-<li><a href="#/one-line"><span class="toc-section-number">6.2</span> One
-Line</a></li>
-</ul></li>
+Fragments</a></li>
+<li><a href="#/include-files"><span class="toc-section-number">7</span>
+Include Files</a></li>
 <li><a href="#/multiple-columns"><span
-class="toc-section-number">7</span> Multiple columns</a>
-<ul>
-<li><a href="#/two-column-example"><span
-class="toc-section-number">7.1</span> Two-column Example</a></li>
-</ul></li>
-<li><a href="#/include-files"><span class="toc-section-number">8</span>
-include files</a>
-<ul>
-<li><a href="#/include-files-normally"><span
-class="toc-section-number">8.1</span> include files normally</a></li>
-<li><a href="#/include-files-in-code-block"><span
-class="toc-section-number">8.2</span> include files in code
-block</a></li>
-</ul></li>
-<li><a href="#/qna"><span class="toc-section-number">9</span>
+class="toc-section-number">8</span> Multiple columns</a></li>
+<li><a href="#/third-level"><span class="toc-section-number">9</span>
+Third Level</a></li>
+<li><a href="#/qna"><span class="toc-section-number">10</span>
 QnA</a></li>
 </ul>
 </nav>
@@ -477,9 +434,45 @@ class="fragment">🐹</span></p>
 </div>
 </section></section>
 <section>
-<section id="multiple-columns" class="title-slide slide level1"
+<section id="include-files" class="title-slide slide level1"
 data-number="7">
-<h1 data-number="7"><span class="header-section-number">7</span>
+<h1 data-number="7"><span class="header-section-number">7</span> Include
+Files</h1>
+
+</section>
+<section id="include-files-normally" class="slide level2"
+data-number="7.1">
+<h2 data-number="7.1"><span class="header-section-number">7.1</span>
+include files normally</h2>
+<p>This file is include by</p>
+<pre><code>```{.include}
+./included.md
+```</code></pre>
+<p>More details:
+https://github.com/pandoc/lua-filters/blob/master/include-files/include-files.lua</p>
+</section>
+<section id="include-files-in-code-block" class="slide level2"
+data-number="7.2">
+<h2 data-number="7.2"><span class="header-section-number">7.2</span>
+include files in code block</h2>
+<pre><code>``` {include=&quot;./helloworld.c&quot;}
+```</code></pre>
+<div class="sourceCode" id="cb10"><pre class="sourceCode c"><code class="sourceCode c"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a><span class="pp">#include </span><span class="im">&lt;stdio.h&gt;</span></span>
+<span id="cb10-2"><a href="#cb10-2" aria-hidden="true" tabindex="-1"></a><span class="dt">int</span> main<span class="op">(</span><span class="dt">void</span><span class="op">);</span></span>
+<span id="cb10-3"><a href="#cb10-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb10-4"><a href="#cb10-4" aria-hidden="true" tabindex="-1"></a><span class="dt">int</span> main<span class="op">(</span><span class="dt">void</span><span class="op">)</span></span>
+<span id="cb10-5"><a href="#cb10-5" aria-hidden="true" tabindex="-1"></a><span class="op">{</span></span>
+<span id="cb10-6"><a href="#cb10-6" aria-hidden="true" tabindex="-1"></a>    printf<span class="op">(</span><span class="st">&quot;Hello, world! </span><span class="sc">\n</span><span class="st">&quot;</span><span class="op">);</span></span>
+<span id="cb10-7"><a href="#cb10-7" aria-hidden="true" tabindex="-1"></a>    </span>
+<span id="cb10-8"><a href="#cb10-8" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> <span class="dv">0</span><span class="op">;</span></span>
+<span id="cb10-9"><a href="#cb10-9" aria-hidden="true" tabindex="-1"></a><span class="op">}</span></span></code></pre></div>
+<p>More details:
+https://github.com/pandoc/lua-filters/blob/master/include-code-files/include-code-files.lua</p>
+</section></section>
+<section>
+<section id="multiple-columns" class="title-slide slide level1"
+data-number="8">
+<h1 data-number="8"><span class="header-section-number">8</span>
 Multiple columns</h1>
 <ul>
 <li>Pandoc Extension: <a
@@ -487,8 +480,8 @@ href="https://pandoc.org/MANUAL.html#extension-fenced_divs">fenced_divs</a></li>
 <li>Builtin CSS class: container and col</li>
 </ul>
 </section>
-<section id="two-column-example" class="slide level2" data-number="7.1">
-<h2 data-number="7.1"><span class="header-section-number">7.1</span>
+<section id="two-column-example" class="slide level2" data-number="8.1">
+<h2 data-number="8.1"><span class="header-section-number">8.1</span>
 Two-column Example</h2>
 <div class="container">
 <div class="col">
@@ -510,43 +503,35 @@ Column 2
 <p>You can add as many columns as possible.</p>
 </section></section>
 <section>
-<section id="include-files" class="title-slide slide level1"
-data-number="8">
-<h1 data-number="8"><span class="header-section-number">8</span> include
-files</h1>
+<section id="third-level" class="title-slide slide level1"
+data-number="9">
+<h1 data-number="9"><span class="header-section-number">9</span> Third
+Level</h1>
 
 </section>
-<section id="include-files-normally" class="slide level2"
-data-number="8.1">
-<h2 data-number="8.1"><span class="header-section-number">8.1</span>
-include files normally</h2>
-<p>This file is include by</p>
-<pre><code>```{.include}
-./included.md
-```</code></pre>
-<p>More details:
-https://github.com/pandoc/lua-filters/blob/master/include-files/include-files.lua</p>
+<section id="this-is-a-second-level-title" class="slide level2"
+data-number="9.1">
+<h2 data-number="9.1"><span class="header-section-number">9.1</span>
+This is a second-level title</h2>
+<p>This second-level slide contains two third-level slides</p>
+<p>which is achieved by <code>---</code></p>
 </section>
-<section id="include-files-in-code-block" class="slide level2"
-data-number="8.2">
-<h2 data-number="8.2"><span class="header-section-number">8.2</span>
-include files in code block</h2>
-<pre><code>``` {include=&quot;./helloworld.c&quot;}
-```</code></pre>
-<div class="sourceCode" id="cb11"><pre class="sourceCode c"><code class="sourceCode c"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a><span class="pp">#include </span><span class="im">&lt;stdio.h&gt;</span></span>
-<span id="cb11-2"><a href="#cb11-2" aria-hidden="true" tabindex="-1"></a><span class="dt">int</span> main<span class="op">(</span><span class="dt">void</span><span class="op">);</span></span>
-<span id="cb11-3"><a href="#cb11-3" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb11-4"><a href="#cb11-4" aria-hidden="true" tabindex="-1"></a><span class="dt">int</span> main<span class="op">(</span><span class="dt">void</span><span class="op">)</span></span>
-<span id="cb11-5"><a href="#cb11-5" aria-hidden="true" tabindex="-1"></a><span class="op">{</span></span>
-<span id="cb11-6"><a href="#cb11-6" aria-hidden="true" tabindex="-1"></a>    printf<span class="op">(</span><span class="st">&quot;Hello, world! </span><span class="sc">\n</span><span class="st">&quot;</span><span class="op">);</span></span>
-<span id="cb11-7"><a href="#cb11-7" aria-hidden="true" tabindex="-1"></a>    </span>
-<span id="cb11-8"><a href="#cb11-8" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> <span class="dv">0</span><span class="op">;</span></span>
-<span id="cb11-9"><a href="#cb11-9" aria-hidden="true" tabindex="-1"></a><span class="op">}</span></span></code></pre></div>
-<p>More details:
-https://github.com/pandoc/lua-filters/blob/master/include-code-files/include-code-files.lua</p>
+<section class="slide level2" data-number="9.2">
+
+<h3>
+Third-Level Slide1
+</h3>
+<p>Miao~</p>
+</section>
+<section class="slide level2" data-number="9.3">
+
+<h3>
+Third-Level Slide2
+</h3>
+<p>Wang!</p>
 </section></section>
-<section id="qna" class="title-slide slide level1" data-number="9">
-<h1 data-number="9"><span class="header-section-number">9</span>
+<section id="qna" class="title-slide slide level1" data-number="10">
+<h1 data-number="10"><span class="header-section-number">10</span>
 QnA</h1>
 <ul>
 <li>Problems?</li>

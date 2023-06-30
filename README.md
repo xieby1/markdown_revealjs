@@ -173,6 +173,29 @@ Your content here
 ```
 :::
 
+# Include Files
+
+## include files normally
+
+``` {.include}
+./included.md
+```
+
+More details: https://github.com/pandoc/lua-filters/blob/master/include-files/include-files.lua
+
+## include files in code block
+
+~~~
+``` {include="./helloworld.c"}
+```
+~~~
+
+``` {.c include="./helloworld.c"}
+```
+
+More details: https://github.com/pandoc/lua-filters/blob/master/include-code-files/include-code-files.lua
+
+
 # Multiple columns
 
 * Pandoc Extension: [fenced_divs](https://pandoc.org/MANUAL.html#extension-fenced_divs)
@@ -204,27 +227,25 @@ Column 2
 
 You can add as many columns as possible.
 
-# include files
+# Third Level
 
-## include files normally
+## This is a second-level title
 
-``` {.include}
-./included.md
-```
+This second-level slide contains two third-level slides
 
-More details: https://github.com/pandoc/lua-filters/blob/master/include-files/include-files.lua
+which is achieved by `---`
 
-## include files in code block
+---
 
-~~~
-``` {include="./helloworld.c"}
-```
-~~~
+<h3>Third-Level Slide1</h3>
 
-``` {.c include="./helloworld.c"}
-```
+Miao~
 
-More details: https://github.com/pandoc/lua-filters/blob/master/include-code-files/include-code-files.lua
+---
+
+<h3>Third-Level Slide2</h3>
+
+Wang!
 
 # QnA
 
