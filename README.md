@@ -5,7 +5,6 @@ date: 🎉2022.06.10
 headerl: <img src="./images/me.png" style="height:1.5em;">
 headerr: <a href="https://github.com/xieby1/markdown_revealjs"><img src="https://github.com/fluidicon.png" style="width:16pt;">Github Repo</a>
 footerl: ↙️ by xieby1
-date: 2023.05
 
 title-slide-background-image: ./images/liquid-cheese.svg
 toc-slide-background-image: ./images/liquid-cheese.svg
