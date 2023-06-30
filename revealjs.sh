@@ -23,6 +23,30 @@ then
     exit 0
 fi
 
+# get options from front matter in MD
+tripleDash=0
+while read -r line; do
+    if [[ ${line} =~ ^--- ]]; then
+        tripleDash+=1
+        continue
+    fi
+
+    if [[ ${tripleDash} -gt 1 ]]; then
+        break
+    elif [[ ${tripleDash} -eq 1 ]]; then
+        opt=${line%%:*}
+        val=${line##*:}
+        # remove leading spaces
+        val=$(echo ${val})
+
+        case ${opt} in
+        toc-depth)
+            TOC_DEPTH=${val}
+        ;;
+        esac
+    fi
+done < ${MD}
+
 CMD=(
     "${PANDOC}"
     "-t revealjs"

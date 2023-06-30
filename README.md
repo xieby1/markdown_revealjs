@@ -11,6 +11,7 @@ toc-slide-background-image: ./images/liquid-cheese.svg
 level1-slide-background-image: ./images/liquid-cheese.svg
 level2-slide-background-image: ./images/liquid-cheese_shallow.svg
 
+toc-depth: 1
 ---
 
 # Intro
