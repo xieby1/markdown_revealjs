@@ -1,10 +1,17 @@
 ---
 title: Markdown RevealJS
-author: 🤓xieby1
+author: <img src="./images/me.png" style="height:1.5em;">xieby1
 date: 🎉2022.06.10
-headerl: ↖️ header left
+headerl: <img src="./images/me.png" style="height:1.5em;">
 headerr: <a href="https://github.com/xieby1/markdown_revealjs"><img src="https://github.com/fluidicon.png" style="width:16pt;">Github Repo</a>
 footerl: ↙️ by xieby1
+date: 2023.05
+
+title-slide-background-image: ./images/liquid-cheese.svg
+toc-slide-background-image: ./images/liquid-cheese.svg
+level1-slide-background-image: ./images/liquid-cheese.svg
+level2-slide-background-image: ./images/liquid-cheese_shallow.svg
+
 ---
 
 # Intro
@@ -105,18 +112,32 @@ Sorted in alphabet.
 
 # Backgrounds
 
-TODO:
-
 Did you notice that every page has a default background?
 
-# Backgrounds {data-background-color="LightPink"}
+## Default Backgrounds
+
+Set default backgrounds in yml front matter, like
+
+```yml
+title-slide-background-image: <URL>
+toc-slide-background-image: <URL>
+level1-slide-background-image: <URL>
+level2-slide-background-image: <URL>
+```
+
+## Per-Slide Backgrounds {data-background-color="LightPink"}
+
+Set per-slide background, like
+
+```markdown
+# Per-Slide Backgrounds {data-background-color="LightPink"}
+```
+
+More info about background see:
 
 * RevealJS: [backgrounds](https://revealjs.com/backgrounds/)
 * Pandoc Extension: [header_attributes](https://pandoc.org/MANUAL.html#extension-header_attributes)
 
-```markdown
-# Backgrounds {data-background-color="LightPink"}
-```
 
 # Fragments
 

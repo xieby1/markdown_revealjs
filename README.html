@@ -7,7 +7,7 @@
 <head>
   <meta charset="utf-8">
   <meta name="generator" content="pandoc">
-  <meta name="author" content="🤓xieby1">
+  <meta name="author" content="xieby1">
   <title>Markdown RevealJS</title>
   <meta name="apple-mobile-web-app-capable" content="yes">
   <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
@@ -202,8 +202,8 @@ table {
 
 <section id="title-slide">
   <h1 class="title">Markdown RevealJS</h1>
-  <p class="author">🤓xieby1</p>
-  <p class="date">🎉2022.06.10</p>
+  <p class="author"><img src="./images/me.png" style="height:1.5em;">xieby1</p>
+  <p class="date">2023.05</p>
 </section>
 <section id="TOC">
 <nav role="doc-toc"> 
@@ -239,33 +239,37 @@ Convert!</a></li>
 <li><a href="#/advanced-syntax"><span
 class="toc-section-number">4</span> Advanced Syntax</a></li>
 <li><a href="#/backgrounds"><span class="toc-section-number">5</span>
-Backgrounds</a></li>
-<li><a href="#/backgrounds-1"><span class="toc-section-number">6</span>
-Backgrounds</a></li>
-<li><a href="#/fragments"><span class="toc-section-number">7</span>
+Backgrounds</a>
+<ul>
+<li><a href="#/default-backgrounds"><span
+class="toc-section-number">5.1</span> Default Backgrounds</a></li>
+<li><a href="#/per-slide-backgrounds"><span
+class="toc-section-number">5.2</span> Per-Slide Backgrounds</a></li>
+</ul></li>
+<li><a href="#/fragments"><span class="toc-section-number">6</span>
 Fragments</a>
 <ul>
-<li><a href="#/multi-lines"><span class="toc-section-number">7.1</span>
+<li><a href="#/multi-lines"><span class="toc-section-number">6.1</span>
 Multi Lines</a></li>
-<li><a href="#/one-line"><span class="toc-section-number">7.2</span> One
+<li><a href="#/one-line"><span class="toc-section-number">6.2</span> One
 Line</a></li>
 </ul></li>
 <li><a href="#/multiple-columns"><span
-class="toc-section-number">8</span> Multiple columns</a>
+class="toc-section-number">7</span> Multiple columns</a>
 <ul>
 <li><a href="#/two-column-example"><span
-class="toc-section-number">8.1</span> Two-column Example</a></li>
+class="toc-section-number">7.1</span> Two-column Example</a></li>
 </ul></li>
-<li><a href="#/include-files"><span class="toc-section-number">9</span>
+<li><a href="#/include-files"><span class="toc-section-number">8</span>
 include files</a>
 <ul>
 <li><a href="#/include-files-normally"><span
-class="toc-section-number">9.1</span> include files normally</a></li>
+class="toc-section-number">8.1</span> include files normally</a></li>
 <li><a href="#/include-files-in-code-block"><span
-class="toc-section-number">9.2</span> include files in code
+class="toc-section-number">8.2</span> include files in code
 block</a></li>
 </ul></li>
-<li><a href="#/qna"><span class="toc-section-number">10</span>
+<li><a href="#/qna"><span class="toc-section-number">9</span>
 QnA</a></li>
 </ul>
 </nav>
@@ -396,40 +400,51 @@ Advanced Syntax</h1>
 <p>Sorted in alphabet.</p>
 </section>
 
+<section>
 <section id="backgrounds" class="title-slide slide level1"
 data-number="5">
 <h1 data-number="5"><span class="header-section-number">5</span>
 Backgrounds</h1>
-<p>TODO:</p>
 <p>Did you notice that every page has a default background?</p>
 </section>
-
-<section id="backgrounds-1" class="title-slide slide level1"
-data-number="6" data-background-color="LightPink">
-<h1 data-number="6" data-background-color="LightPink"><span
-class="header-section-number">6</span> Backgrounds</h1>
+<section id="default-backgrounds" class="slide level2"
+data-number="5.1">
+<h2 data-number="5.1"><span class="header-section-number">5.1</span>
+Default Backgrounds</h2>
+<p>Set default backgrounds in yml front matter, like</p>
+<div class="sourceCode" id="cb4"><pre
+class="sourceCode yml"><code class="sourceCode yaml"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="fu">title-slide-background-image</span><span class="kw">:</span><span class="at"> &lt;URL&gt;</span></span>
+<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a><span class="fu">toc-slide-background-image</span><span class="kw">:</span><span class="at"> &lt;URL&gt;</span></span>
+<span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a><span class="fu">level1-slide-background-image</span><span class="kw">:</span><span class="at"> &lt;URL&gt;</span></span>
+<span id="cb4-4"><a href="#cb4-4" aria-hidden="true" tabindex="-1"></a><span class="fu">level2-slide-background-image</span><span class="kw">:</span><span class="at"> &lt;URL&gt;</span></span></code></pre></div>
+</section>
+<section id="per-slide-backgrounds" class="slide level2"
+data-number="5.2" data-background-color="LightPink">
+<h2 data-number="5.2" data-background-color="LightPink"><span
+class="header-section-number">5.2</span> Per-Slide Backgrounds</h2>
+<p>Set per-slide background, like</p>
+<div class="sourceCode" id="cb5"><pre
+class="sourceCode markdown"><code class="sourceCode markdown"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="fu"># Per-Slide Backgrounds {data-background-color=&quot;LightPink&quot;}</span></span></code></pre></div>
+<p>More info about background see:</p>
 <ul>
 <li>RevealJS: <a
 href="https://revealjs.com/backgrounds/">backgrounds</a></li>
 <li>Pandoc Extension: <a
 href="https://pandoc.org/MANUAL.html#extension-header_attributes">header_attributes</a></li>
 </ul>
-<div class="sourceCode" id="cb4"><pre
-class="sourceCode markdown"><code class="sourceCode markdown"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="fu"># Backgrounds {data-background-color=&quot;LightPink&quot;}</span></span></code></pre></div>
-</section>
-
+</section></section>
 <section>
 <section id="fragments" class="title-slide slide level1"
-data-number="7">
-<h1 data-number="7"><span class="header-section-number">7</span>
+data-number="6">
+<h1 data-number="6"><span class="header-section-number">6</span>
 Fragments</h1>
 <ul>
 <li>RevealJS: <a
 href="https://revealjs.com/fragments/">fragments</a></li>
 </ul>
 </section>
-<section id="multi-lines" class="slide level2" data-number="7.1">
-<h2 data-number="7.1"><span class="header-section-number">7.1</span>
+<section id="multi-lines" class="slide level2" data-number="6.1">
+<h2 data-number="6.1"><span class="header-section-number">6.1</span>
 Multi Lines</h2>
 <div class="fragment">
 <ul>
@@ -438,14 +453,14 @@ href="https://pandoc.org/MANUAL.html#extension-fenced_divs">fenced_divs</a></li>
 </ul>
 </div>
 <div class="fragment">
-<div class="sourceCode" id="cb5"><pre
-class="sourceCode markdown"><code class="sourceCode markdown"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a>::: {.fragment}</span>
-<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a>Your content here</span>
-<span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a>:::</span></code></pre></div>
+<div class="sourceCode" id="cb6"><pre
+class="sourceCode markdown"><code class="sourceCode markdown"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a>::: {.fragment}</span>
+<span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a>Your content here</span>
+<span id="cb6-3"><a href="#cb6-3" aria-hidden="true" tabindex="-1"></a>:::</span></code></pre></div>
 </div>
 </section>
-<section id="one-line" class="slide level2" data-number="7.2">
-<h2 data-number="7.2"><span class="header-section-number">7.2</span> One
+<section id="one-line" class="slide level2" data-number="6.2">
+<h2 data-number="6.2"><span class="header-section-number">6.2</span> One
 Line</h2>
 <ul>
 <li>Pandoc Extension: <a
@@ -463,8 +478,8 @@ class="fragment">🐹</span></p>
 </section></section>
 <section>
 <section id="multiple-columns" class="title-slide slide level1"
-data-number="8">
-<h1 data-number="8"><span class="header-section-number">8</span>
+data-number="7">
+<h1 data-number="7"><span class="header-section-number">7</span>
 Multiple columns</h1>
 <ul>
 <li>Pandoc Extension: <a
@@ -472,8 +487,8 @@ href="https://pandoc.org/MANUAL.html#extension-fenced_divs">fenced_divs</a></li>
 <li>Builtin CSS class: container and col</li>
 </ul>
 </section>
-<section id="two-column-example" class="slide level2" data-number="8.1">
-<h2 data-number="8.1"><span class="header-section-number">8.1</span>
+<section id="two-column-example" class="slide level2" data-number="7.1">
+<h2 data-number="7.1"><span class="header-section-number">7.1</span>
 Two-column Example</h2>
 <div class="container">
 <div class="col">
@@ -496,38 +511,42 @@ Column 2
 </section></section>
 <section>
 <section id="include-files" class="title-slide slide level1"
-data-number="9">
-<h1 data-number="9"><span class="header-section-number">9</span> include
+data-number="8">
+<h1 data-number="8"><span class="header-section-number">8</span> include
 files</h1>
 
 </section>
 <section id="include-files-normally" class="slide level2"
-data-number="9.1">
-<h2 data-number="9.1"><span class="header-section-number">9.1</span>
+data-number="8.1">
+<h2 data-number="8.1"><span class="header-section-number">8.1</span>
 include files normally</h2>
 <p>This file is include by</p>
 <pre><code>```{.include}
 ./included.md
 ```</code></pre>
+<p>More details:
+https://github.com/pandoc/lua-filters/blob/master/include-files/include-files.lua</p>
 </section>
 <section id="include-files-in-code-block" class="slide level2"
-data-number="9.2">
-<h2 data-number="9.2"><span class="header-section-number">9.2</span>
+data-number="8.2">
+<h2 data-number="8.2"><span class="header-section-number">8.2</span>
 include files in code block</h2>
 <pre><code>``` {include=&quot;./helloworld.c&quot;}
 ```</code></pre>
-<div class="sourceCode" id="cb10"><pre class="sourceCode c"><code class="sourceCode c"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a><span class="pp">#include </span><span class="im">&lt;stdio.h&gt;</span></span>
-<span id="cb10-2"><a href="#cb10-2" aria-hidden="true" tabindex="-1"></a><span class="dt">int</span> main<span class="op">(</span><span class="dt">void</span><span class="op">);</span></span>
-<span id="cb10-3"><a href="#cb10-3" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb10-4"><a href="#cb10-4" aria-hidden="true" tabindex="-1"></a><span class="dt">int</span> main<span class="op">(</span><span class="dt">void</span><span class="op">)</span></span>
-<span id="cb10-5"><a href="#cb10-5" aria-hidden="true" tabindex="-1"></a><span class="op">{</span></span>
-<span id="cb10-6"><a href="#cb10-6" aria-hidden="true" tabindex="-1"></a>    printf<span class="op">(</span><span class="st">&quot;Hello, world! </span><span class="sc">\n</span><span class="st">&quot;</span><span class="op">);</span></span>
-<span id="cb10-7"><a href="#cb10-7" aria-hidden="true" tabindex="-1"></a>    </span>
-<span id="cb10-8"><a href="#cb10-8" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> <span class="dv">0</span><span class="op">;</span></span>
-<span id="cb10-9"><a href="#cb10-9" aria-hidden="true" tabindex="-1"></a><span class="op">}</span></span></code></pre></div>
+<div class="sourceCode" id="cb11"><pre class="sourceCode c"><code class="sourceCode c"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a><span class="pp">#include </span><span class="im">&lt;stdio.h&gt;</span></span>
+<span id="cb11-2"><a href="#cb11-2" aria-hidden="true" tabindex="-1"></a><span class="dt">int</span> main<span class="op">(</span><span class="dt">void</span><span class="op">);</span></span>
+<span id="cb11-3"><a href="#cb11-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb11-4"><a href="#cb11-4" aria-hidden="true" tabindex="-1"></a><span class="dt">int</span> main<span class="op">(</span><span class="dt">void</span><span class="op">)</span></span>
+<span id="cb11-5"><a href="#cb11-5" aria-hidden="true" tabindex="-1"></a><span class="op">{</span></span>
+<span id="cb11-6"><a href="#cb11-6" aria-hidden="true" tabindex="-1"></a>    printf<span class="op">(</span><span class="st">&quot;Hello, world! </span><span class="sc">\n</span><span class="st">&quot;</span><span class="op">);</span></span>
+<span id="cb11-7"><a href="#cb11-7" aria-hidden="true" tabindex="-1"></a>    </span>
+<span id="cb11-8"><a href="#cb11-8" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> <span class="dv">0</span><span class="op">;</span></span>
+<span id="cb11-9"><a href="#cb11-9" aria-hidden="true" tabindex="-1"></a><span class="op">}</span></span></code></pre></div>
+<p>More details:
+https://github.com/pandoc/lua-filters/blob/master/include-code-files/include-code-files.lua</p>
 </section></section>
-<section id="qna" class="title-slide slide level1" data-number="10">
-<h1 data-number="10"><span class="header-section-number">10</span>
+<section id="qna" class="title-slide slide level1" data-number="9">
+<h1 data-number="9"><span class="header-section-number">9</span>
 QnA</h1>
 <ul>
 <li>Problems?</li>
@@ -538,8 +557,7 @@ QnA</h1>
 </section>
     </div>
   </div>
-  <div id=headerl style="position:absolute; top:0;    left:0;  padding:0.5em; font-size:16pt;">↖️
-header left</div>
+  <div id=headerl style="position:absolute; top:0;    left:0;  padding:0.5em; font-size:16pt;"><img src="./images/me.png" style="height:1.5em;"></div>
   <div id=headerr style="position:absolute; top:0;    right:0; padding:0.5em; font-size:16pt;"><a href="https://github.com/xieby1/markdown_revealjs"><img src="https://github.com/fluidicon.png" style="width:16pt;">Github
 Repo</a></div>
   <div id=footerl style="position:absolute; bottom:0; left:0;  padding:0.5em; font-size:16pt;">↙️
@@ -556,6 +574,38 @@ by xieby1</div>
   <script src="https://cdn.jsdelivr.net/npm/reveal.js-plugins@4.1.5/customcontrols/plugin.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/reveal.js-menu@2.1.0/menu.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/reveal.js-verticator@1.2.3/plugin/verticator/verticator.js"></script>
+  <script>
+  var title_slide = document.getElementById("title-slide")
+  title_slide.setAttribute("data-background-image", "./images/liquid-cheese.svg")
+  </script>
+  <script>
+  var toc_slide = document.getElementById("TOC")
+  if (toc_slide)
+    toc_slide.setAttribute("data-background-image", "./images/liquid-cheese.svg")
+  </script>
+  <script>
+  // inspired by https://github.com/hakimel/reveal.js/issues/1227
+  for (var slide of document.getElementsByClassName('slide level1')){
+    if (!(slide.getAttribute('data-background') ||
+          slide.getAttribute('data-background-color') ||
+          slide.getAttribute('data-background-image') ||
+          slide.getAttribute('data-background-video') ||
+          slide.getAttribute('data-background-iframe'))){
+      slide.setAttribute('data-background-image', './images/liquid-cheese.svg')
+    }
+  }
+  </script>
+  <script>
+  for (var slide of document.getElementsByClassName('slide level2')){
+    if (!(slide.getAttribute('data-background') ||
+          slide.getAttribute('data-background-color') ||
+          slide.getAttribute('data-background-image') ||
+          slide.getAttribute('data-background-video') ||
+          slide.getAttribute('data-background-iframe'))){
+      slide.setAttribute('data-background-image', './images/liquid-cheese_shallow.svg')
+    }
+  }
+  </script>
   <script>
 
       // Full list of configuration options available at:

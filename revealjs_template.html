@@ -258,6 +258,7 @@ $if(level1-slide-background-image)$
   // inspired by https://github.com/hakimel/reveal.js/issues/1227
   for (var slide of document.getElementsByClassName('slide level1')){
     if (!(slide.getAttribute('data-background') ||
+          slide.getAttribute('data-background-color') ||
           slide.getAttribute('data-background-image') ||
           slide.getAttribute('data-background-video') ||
           slide.getAttribute('data-background-iframe'))){
@@ -270,6 +271,7 @@ $if(level2-slide-background-image)$
   <script>
   for (var slide of document.getElementsByClassName('slide level2')){
     if (!(slide.getAttribute('data-background') ||
+          slide.getAttribute('data-background-color') ||
           slide.getAttribute('data-background-image') ||
           slide.getAttribute('data-background-video') ||
           slide.getAttribute('data-background-iframe'))){
