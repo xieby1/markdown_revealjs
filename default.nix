@@ -5,21 +5,18 @@ in
 builtins.derivation {
   name = "revealjs.sh";
   system = builtins.currentSystem;
-  src = ./revealjs.sh;
-  template = ./revealjs_template.html;
-  include_files = ./include-files.lua;
-  include_code_files = ./include-code-files.lua;
+  bin = ./bin;
+  share = ./share;
   builder = pkgs.writeShellScript "revealjs_sh_builder" ''
     source ${pkgs.stdenv}/setup
-    mkdir -p $out/bin
-    dst=$out/bin/revealjs.sh
-    cp $src $dst
-    cp $template $out/bin/revealjs_template.html
-    cp $include_files $out/bin/include-files.lua
-    cp $include_code_files $out/bin/include-code-files.lua
-    chmod +w $dst
-    sed -i 's,"pandoc",${pkgs.pandoc}/bin/pandoc,g' $dst
-    chmod -w $dst
-    chmod a+x $dst
+    mkdir -p $out
+    cp -r $bin $out/bin
+    cp -r $share $out/share
+
+    chmod -R +w $out/bin
+    echo sed -i 's,=pandoc,=${pkgs.pandoc}/bin/pandoc,g' $out/bin/revealjs.sh
+    sed -i 's,=pandoc,=${pkgs.pandoc}/bin/pandoc,g' $out/bin/revealjs.sh
+    chmod -R -w $out/bin
+    chmod a+x $out/bin/revealjs.sh
   '';
 }

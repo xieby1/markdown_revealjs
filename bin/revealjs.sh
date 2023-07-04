@@ -1,15 +1,15 @@
 #!/usr/bin/env bash
 
-TEMPLATE="$(dirname $(realpath --relative-to=. $0))/revealjs_template.html"
-INCLUDE_FILES="$(dirname $(realpath --relative-to=. $0))/include-files.lua"
-INCLUDE_CODE_FILES="$(dirname $(realpath --relative-to=. $0))/include-code-files.lua"
+TEMPLATE="$(dirname $(realpath --relative-to=. $0))/../share/markdown_revealjs/template.html"
+INCLUDE_FILES="$(dirname $(realpath --relative-to=. $0))/../share/markdown_revealjs/include-files.lua"
+INCLUDE_CODE_FILES="$(dirname $(realpath --relative-to=. $0))/../share/markdown_revealjs/include-code-files.lua"
 MD=$1
 REVEALJS="https://cdn.bootcdn.net/ajax/libs/reveal.js/4.3.1"
 # use which pandoc
-PANDOC_="$(dirname $(realpath --relative-to=. $0))/revealjs/pandoc"
+PANDOC_="$(dirname $(realpath --relative-to=. $0))/../share/markdown_revealjs/pandoc"
 if [[ -f ${PANDOC_} ]]
 then PANDOC=${PANDOC_}
-else PANDOC="pandoc"
+else PANDOC=pandoc
 fi
 
 

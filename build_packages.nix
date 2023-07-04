@@ -26,11 +26,11 @@ let
         --description "Markdown to Reveal.js Slides Converter"
         --url "https://github.com/xieby1/markdown_revealjs"
         --maintainer "xieby1 <xieby1@outlook.com>"
-        ${NAME}/revealjs.sh=/usr/bin/revealjs.sh
-        ${NAME}/revealjs_template.html=/usr/bin/revealjs_template.html
-        ${NAME}/include-files.lua=/usr/bin/include-files.lua
-        ${NAME}/include-code-files.lua=/usr/bin/include-code-files.lua
-        prebuilt_pandoc/bin/pandoc=/usr/bin/revealjs/pandoc
+        ${NAME}/bin/revealjs.sh=/usr/bin/revealjs.sh
+        ${NAME}/share/markdown_revealjs/template.html=/usr/share/markdown_revealjs/template.html
+        ${NAME}/share/markdown_revealjs/include-files.lua=/usr/share/markdown_revealjs/include-files.lua
+        ${NAME}/share/markdown_revealjs/include-code-files.lua=/usr/share/markdown_revealjs/include-code-files.lua
+        prebuilt_pandoc/bin/pandoc=/usr/share/markdown_revealjs/pandoc
       '')
     ];
     sourceRoot = ".";
