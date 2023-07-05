@@ -17,10 +17,15 @@
   <style>
     code{white-space: pre-wrap;}
     span.smallcaps{font-variant: small-caps;}
-    span.underline{text-decoration: underline;}
-    div.column{display: inline-block; vertical-align: top; width: 50%;}
+    div.columns{display: flex; gap: min(4vw, 1.5em);}
+    div.column{flex: auto; overflow-x: auto;}
     div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
     ul.task-list{list-style: none;}
+    ul.task-list li input[type="checkbox"] {
+      width: 0.8em;
+      margin: 0 0.8em 0.2em -1.6em;
+      vertical-align: middle;
+    }
     pre > code.sourceCode { white-space: pre; position: relative; }
     pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
     pre > code.sourceCode > span:empty { height: 1.2em; }
@@ -84,7 +89,6 @@
     code span.va { color: #19177c; } /* Variable */
     code span.vs { color: #4070a0; } /* VerbatimString */
     code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
-    .display.math{display: block; text-align: center; margin: 0.5rem auto;}
   </style>
   <link rel="stylesheet" href="https://cdn.bootcdn.net/ajax/libs/reveal.js/4.3.1/theme/white.css" id="theme">
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/reveal.js-plugins@4.1.5/chalkboard/style.css">
@@ -208,26 +212,28 @@ table {
 <section id="TOC">
 <nav role="doc-toc"> 
 <ul>
-<li><a href="#/intro"><span class="toc-section-number">1</span>
-Intro</a></li>
-<li><a href="#/installation"><span class="toc-section-number">2</span>
-Installation</a></li>
-<li><a href="#/quick-start"><span class="toc-section-number">3</span>
-Quick Start</a></li>
-<li><a href="#/advanced-syntax"><span
+<li><a href="#/intro" id="/toc-intro"><span
+class="toc-section-number">1</span> Intro</a></li>
+<li><a href="#/installation" id="/toc-installation"><span
+class="toc-section-number">2</span> Installation</a></li>
+<li><a href="#/quick-start" id="/toc-quick-start"><span
+class="toc-section-number">3</span> Quick Start</a></li>
+<li><a href="#/advanced-syntax" id="/toc-advanced-syntax"><span
 class="toc-section-number">4</span> Advanced Syntax</a></li>
-<li><a href="#/backgrounds"><span class="toc-section-number">5</span>
-Backgrounds</a></li>
-<li><a href="#/fragments"><span class="toc-section-number">6</span>
-Fragments</a></li>
-<li><a href="#/include-files"><span class="toc-section-number">7</span>
-Include Files</a></li>
-<li><a href="#/multiple-columns"><span
-class="toc-section-number">8</span> Multiple columns</a></li>
-<li><a href="#/third-level"><span class="toc-section-number">9</span>
-Third Level</a></li>
-<li><a href="#/qna"><span class="toc-section-number">10</span>
-QnA</a></li>
+<li><a href="#/backgrounds" id="/toc-backgrounds"><span
+class="toc-section-number">5</span> Backgrounds</a></li>
+<li><a href="#/fragments" id="/toc-fragments"><span
+class="toc-section-number">6</span> Fragments</a></li>
+<li><a href="#/include-files" id="/toc-include-files"><span
+class="toc-section-number">7</span> Include Files</a></li>
+<li><a href="#/math" id="/toc-math"><span
+class="toc-section-number">8</span> Math</a></li>
+<li><a href="#/multiple-columns" id="/toc-multiple-columns"><span
+class="toc-section-number">9</span> Multiple columns</a></li>
+<li><a href="#/third-level" id="/toc-third-level"><span
+class="toc-section-number">10</span> Third Level</a></li>
+<li><a href="#/qna" id="/toc-qna"><span
+class="toc-section-number">11</span> QnA</a></li>
 </ul>
 </nav>
 </section>
@@ -469,10 +475,23 @@ include files in code block</h2>
 <p>More details:
 https://github.com/pandoc/lua-filters/blob/master/include-code-files/include-code-files.lua</p>
 </section></section>
+<section id="math" class="title-slide slide level1" data-number="8">
+<h1 data-number="8"><span class="header-section-number">8</span>
+Math</h1>
+<p>Write latex math equation like this</p>
+<div class="sourceCode" id="cb11"><pre
+class="sourceCode latex"><code class="sourceCode latex"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a><span class="ss">$$</span></span>
+<span id="cb11-2"><a href="#cb11-2" aria-hidden="true" tabindex="-1"></a><span class="ss">F = G </span><span class="sc">\frac</span><span class="ss">{m_1 </span><span class="sc">\times</span><span class="ss"> m_2}{R^2}</span></span>
+<span id="cb11-3"><a href="#cb11-3" aria-hidden="true" tabindex="-1"></a><span class="ss">$$</span></span></code></pre></div>
+<p><span class="math display">\[
+F = G \frac{m_1 \times m_2}{R^2}
+\]</span></p>
+</section>
+
 <section>
 <section id="multiple-columns" class="title-slide slide level1"
-data-number="8">
-<h1 data-number="8"><span class="header-section-number">8</span>
+data-number="9">
+<h1 data-number="9"><span class="header-section-number">9</span>
 Multiple columns</h1>
 <ul>
 <li>Pandoc Extension: <a
@@ -480,8 +499,8 @@ href="https://pandoc.org/MANUAL.html#extension-fenced_divs">fenced_divs</a></li>
 <li>Builtin CSS class: container and col</li>
 </ul>
 </section>
-<section id="two-column-example" class="slide level2" data-number="8.1">
-<h2 data-number="8.1"><span class="header-section-number">8.1</span>
+<section id="two-column-example" class="slide level2" data-number="9.1">
+<h2 data-number="9.1"><span class="header-section-number">9.1</span>
 Two-column Example</h2>
 <div class="container">
 <div class="col">
@@ -504,34 +523,34 @@ Column 2
 </section></section>
 <section>
 <section id="third-level" class="title-slide slide level1"
-data-number="9">
-<h1 data-number="9"><span class="header-section-number">9</span> Third
+data-number="10">
+<h1 data-number="10"><span class="header-section-number">10</span> Third
 Level</h1>
 
 </section>
 <section id="this-is-a-second-level-title" class="slide level2"
-data-number="9.1">
-<h2 data-number="9.1"><span class="header-section-number">9.1</span>
+data-number="10.1">
+<h2 data-number="10.1"><span class="header-section-number">10.1</span>
 This is a second-level title</h2>
 <p>This second-level slide contains two third-level slides</p>
 <p>which is achieved by <code>---</code></p>
 </section>
-<section class="slide level2" data-number="9.2">
+<section class="slide level2" data-number="10.2">
 
 <h3>
 Third-Level Slide1
 </h3>
 <p>Miao~</p>
 </section>
-<section class="slide level2" data-number="9.3">
+<section class="slide level2" data-number="10.3">
 
 <h3>
 Third-Level Slide2
 </h3>
 <p>Wang!</p>
 </section></section>
-<section id="qna" class="title-slide slide level1" data-number="10">
-<h1 data-number="10"><span class="header-section-number">10</span>
+<section id="qna" class="title-slide slide level1" data-number="11">
+<h1 data-number="11"><span class="header-section-number">11</span>
 QnA</h1>
 <ul>
 <li>Problems?</li>
@@ -555,6 +574,7 @@ by xieby1</div>
   <script src="https://cdn.bootcdn.net/ajax/libs/reveal.js/4.3.1/plugin/notes/notes.js"></script>
   <script src="https://cdn.bootcdn.net/ajax/libs/reveal.js/4.3.1/plugin/search/search.js"></script>
   <script src="https://cdn.bootcdn.net/ajax/libs/reveal.js/4.3.1/plugin/zoom/zoom.js"></script>
+  <script src="https://cdn.bootcdn.net/ajax/libs/reveal.js/4.3.1/plugin/math/math.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/reveal.js-plugins@4.1.5/chalkboard/plugin.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/reveal.js-plugins@4.1.5/customcontrols/plugin.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/reveal.js-menu@2.1.0/menu.js"></script>
@@ -747,6 +767,23 @@ by xieby1</div>
 
         height: 700,
 
+        math: {
+          mathjax: 'https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js',
+          config: 'TeX-AMS_HTML-full',
+          tex2jax: {
+            inlineMath: [['\\(','\\)']],
+            displayMath: [['\\[','\\]']],
+            balanceBraces: true,
+            processEscapes: false,
+            processRefs: true,
+            processEnvironments: true,
+            preview: 'TeX',
+            skipTags: ['script','noscript','style','textarea','pre','code'],
+            ignoreClass: 'tex2jax_ignore',
+            processClass: 'tex2jax_process'
+          },
+        },
+
         chalkboard: {
           theme: "whiteboard",
         },
@@ -782,6 +819,7 @@ by xieby1</div>
         },
         // reveal.js plugins
         plugins: [
+          RevealMath,
           RevealChalkboard,
           RevealCustomControls,
           RevealNotes,

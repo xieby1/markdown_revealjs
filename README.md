@@ -197,6 +197,20 @@ More details: https://github.com/pandoc/lua-filters/blob/master/include-files/in
 More details: https://github.com/pandoc/lua-filters/blob/master/include-code-files/include-code-files.lua
 
 
+# Math
+
+Write latex math equation like this
+
+```latex
+$$
+F = G \frac{m_1 \times m_2}{R^2}
+$$
+```
+
+$$
+F = G \frac{m_1 \times m_2}{R^2}
+$$
+
 # Multiple columns
 
 * Pandoc Extension: [fenced_divs](https://pandoc.org/MANUAL.html#extension-fenced_divs)

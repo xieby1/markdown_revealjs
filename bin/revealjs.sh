@@ -72,6 +72,7 @@ CMD=(
     "-L" "${INCLUDE_FILES}"
     # include cide files
     "-L" "${INCLUDE_CODE_FILES}"
+    "--mathjax"
     "${MD}"
     "-o ${MD%.*}.html"
     "${@:2}"
