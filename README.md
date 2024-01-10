@@ -110,6 +110,42 @@ It's simple and easy, right?
 
 Sorted in alphabet.
 
+# Alignment
+
+All elements
+
+in Reveal.JS
+
+are centered
+
+by default.
+
+😺
+
+## Left Alignment
+
+:::{style="display:inline-block; text-align:left;"}
+If you prefer to left align
+
+all children elements.
+
+Add these styles
+
+to the parent element.
+
+😽
+
+```md
+:::{style="display:inline-block; text-align:left;"}
+things here are all
+
+left aligned
+
+!
+:::
+```
+:::
+
 # Backgrounds
 
 Did you notice that every page has a default background?

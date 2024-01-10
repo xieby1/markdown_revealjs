@@ -20,14 +20,18 @@
     div.columns{display: flex; gap: min(4vw, 1.5em);}
     div.column{flex: auto; overflow-x: auto;}
     div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
-    ul.task-list{list-style: none;}
+    /* The extra [class] is a hack that increases specificity enough to
+       override a similar rule in reveal.js */
+    ul.task-list[class]{list-style: none;}
     ul.task-list li input[type="checkbox"] {
+      font-size: inherit;
       width: 0.8em;
       margin: 0 0.8em 0.2em -1.6em;
       vertical-align: middle;
     }
+    /* CSS for syntax highlighting */
     pre > code.sourceCode { white-space: pre; position: relative; }
-    pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+    pre > code.sourceCode > span { line-height: 1.25; }
     pre > code.sourceCode > span:empty { height: 1.2em; }
     .sourceCode { overflow: visible; }
     code.sourceCode > span { color: inherit; text-decoration: inherit; }
@@ -220,20 +224,22 @@ class="toc-section-number">2</span> Installation</a></li>
 class="toc-section-number">3</span> Quick Start</a></li>
 <li><a href="#/advanced-syntax" id="/toc-advanced-syntax"><span
 class="toc-section-number">4</span> Advanced Syntax</a></li>
+<li><a href="#/alignment" id="/toc-alignment"><span
+class="toc-section-number">5</span> Alignment</a></li>
 <li><a href="#/backgrounds" id="/toc-backgrounds"><span
-class="toc-section-number">5</span> Backgrounds</a></li>
+class="toc-section-number">6</span> Backgrounds</a></li>
 <li><a href="#/fragments" id="/toc-fragments"><span
-class="toc-section-number">6</span> Fragments</a></li>
+class="toc-section-number">7</span> Fragments</a></li>
 <li><a href="#/include-files" id="/toc-include-files"><span
-class="toc-section-number">7</span> Include Files</a></li>
+class="toc-section-number">8</span> Include Files</a></li>
 <li><a href="#/math" id="/toc-math"><span
-class="toc-section-number">8</span> Math</a></li>
+class="toc-section-number">9</span> Math</a></li>
 <li><a href="#/multiple-columns" id="/toc-multiple-columns"><span
-class="toc-section-number">9</span> Multiple columns</a></li>
+class="toc-section-number">10</span> Multiple columns</a></li>
 <li><a href="#/third-level" id="/toc-third-level"><span
-class="toc-section-number">10</span> Third Level</a></li>
+class="toc-section-number">11</span> Third Level</a></li>
 <li><a href="#/qna" id="/toc-qna"><span
-class="toc-section-number">11</span> QnA</a></li>
+class="toc-section-number">12</span> QnA</a></li>
 </ul>
 </nav>
 </section>
@@ -364,30 +370,59 @@ Advanced Syntax</h1>
 </section>
 
 <section>
-<section id="backgrounds" class="title-slide slide level1"
+<section id="alignment" class="title-slide slide level1"
 data-number="5">
 <h1 data-number="5"><span class="header-section-number">5</span>
+Alignment</h1>
+<p>All elements</p>
+<p>in Reveal.JS</p>
+<p>are centered</p>
+<p>by default.</p>
+<p>😺</p>
+</section>
+<section id="left-alignment" class="slide level2" data-number="5.1">
+<h2 data-number="5.1"><span class="header-section-number">5.1</span>
+Left Alignment</h2>
+<div style="display:inline-block; text-align:left;">
+<p>If you prefer to left align</p>
+<p>all children elements.</p>
+<p>Add these styles</p>
+<p>to the parent element.</p>
+<p>😽</p>
+<div class="sourceCode" id="cb4"><pre class="sourceCode md"><code class="sourceCode markdown"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a>:::{style=&quot;display:inline-block; text-align:left;&quot;}</span>
+<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a>things here are all</span>
+<span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-4"><a href="#cb4-4" aria-hidden="true" tabindex="-1"></a>left aligned</span>
+<span id="cb4-5"><a href="#cb4-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-6"><a href="#cb4-6" aria-hidden="true" tabindex="-1"></a>!</span>
+<span id="cb4-7"><a href="#cb4-7" aria-hidden="true" tabindex="-1"></a>:::</span></code></pre></div>
+</div>
+</section></section>
+<section>
+<section id="backgrounds" class="title-slide slide level1"
+data-number="6">
+<h1 data-number="6"><span class="header-section-number">6</span>
 Backgrounds</h1>
 <p>Did you notice that every page has a default background?</p>
 </section>
 <section id="default-backgrounds" class="slide level2"
-data-number="5.1">
-<h2 data-number="5.1"><span class="header-section-number">5.1</span>
+data-number="6.1">
+<h2 data-number="6.1"><span class="header-section-number">6.1</span>
 Default Backgrounds</h2>
 <p>Set default backgrounds in yml front matter, like</p>
-<div class="sourceCode" id="cb4"><pre
-class="sourceCode yml"><code class="sourceCode yaml"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="fu">title-slide-background-image</span><span class="kw">:</span><span class="at"> &lt;URL&gt;</span></span>
-<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a><span class="fu">toc-slide-background-image</span><span class="kw">:</span><span class="at"> &lt;URL&gt;</span></span>
-<span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a><span class="fu">level1-slide-background-image</span><span class="kw">:</span><span class="at"> &lt;URL&gt;</span></span>
-<span id="cb4-4"><a href="#cb4-4" aria-hidden="true" tabindex="-1"></a><span class="fu">level2-slide-background-image</span><span class="kw">:</span><span class="at"> &lt;URL&gt;</span></span></code></pre></div>
+<div class="sourceCode" id="cb5"><pre
+class="sourceCode yml"><code class="sourceCode yaml"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="fu">title-slide-background-image</span><span class="kw">:</span><span class="at"> &lt;URL&gt;</span></span>
+<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a><span class="fu">toc-slide-background-image</span><span class="kw">:</span><span class="at"> &lt;URL&gt;</span></span>
+<span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a><span class="fu">level1-slide-background-image</span><span class="kw">:</span><span class="at"> &lt;URL&gt;</span></span>
+<span id="cb5-4"><a href="#cb5-4" aria-hidden="true" tabindex="-1"></a><span class="fu">level2-slide-background-image</span><span class="kw">:</span><span class="at"> &lt;URL&gt;</span></span></code></pre></div>
 </section>
 <section id="per-slide-backgrounds" class="slide level2"
-data-number="5.2" data-background-color="LightPink">
-<h2 data-number="5.2" data-background-color="LightPink"><span
-class="header-section-number">5.2</span> Per-Slide Backgrounds</h2>
+data-number="6.2" data-background-color="LightPink">
+<h2 data-number="6.2" data-background-color="LightPink"><span
+class="header-section-number">6.2</span> Per-Slide Backgrounds</h2>
 <p>Set per-slide background, like</p>
-<div class="sourceCode" id="cb5"><pre
-class="sourceCode markdown"><code class="sourceCode markdown"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="fu"># Per-Slide Backgrounds {data-background-color=&quot;LightPink&quot;}</span></span></code></pre></div>
+<div class="sourceCode" id="cb6"><pre
+class="sourceCode markdown"><code class="sourceCode markdown"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="fu"># Per-Slide Backgrounds {data-background-color=&quot;LightPink&quot;}</span></span></code></pre></div>
 <p>More info about background see:</p>
 <ul>
 <li>RevealJS: <a
@@ -398,16 +433,16 @@ href="https://pandoc.org/MANUAL.html#extension-header_attributes">header_attribu
 </section></section>
 <section>
 <section id="fragments" class="title-slide slide level1"
-data-number="6">
-<h1 data-number="6"><span class="header-section-number">6</span>
+data-number="7">
+<h1 data-number="7"><span class="header-section-number">7</span>
 Fragments</h1>
 <ul>
 <li>RevealJS: <a
 href="https://revealjs.com/fragments/">fragments</a></li>
 </ul>
 </section>
-<section id="multi-lines" class="slide level2" data-number="6.1">
-<h2 data-number="6.1"><span class="header-section-number">6.1</span>
+<section id="multi-lines" class="slide level2" data-number="7.1">
+<h2 data-number="7.1"><span class="header-section-number">7.1</span>
 Multi Lines</h2>
 <div class="fragment">
 <ul>
@@ -416,14 +451,14 @@ href="https://pandoc.org/MANUAL.html#extension-fenced_divs">fenced_divs</a></li>
 </ul>
 </div>
 <div class="fragment">
-<div class="sourceCode" id="cb6"><pre
-class="sourceCode markdown"><code class="sourceCode markdown"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a>::: {.fragment}</span>
-<span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a>Your content here</span>
-<span id="cb6-3"><a href="#cb6-3" aria-hidden="true" tabindex="-1"></a>:::</span></code></pre></div>
+<div class="sourceCode" id="cb7"><pre
+class="sourceCode markdown"><code class="sourceCode markdown"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a>::: {.fragment}</span>
+<span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a>Your content here</span>
+<span id="cb7-3"><a href="#cb7-3" aria-hidden="true" tabindex="-1"></a>:::</span></code></pre></div>
 </div>
 </section>
-<section id="one-line" class="slide level2" data-number="6.2">
-<h2 data-number="6.2"><span class="header-section-number">6.2</span> One
+<section id="one-line" class="slide level2" data-number="7.2">
+<h2 data-number="7.2"><span class="header-section-number">7.2</span> One
 Line</h2>
 <ul>
 <li>Pandoc Extension: <a
@@ -441,14 +476,14 @@ class="fragment">🐹</span></p>
 </section></section>
 <section>
 <section id="include-files" class="title-slide slide level1"
-data-number="7">
-<h1 data-number="7"><span class="header-section-number">7</span> Include
+data-number="8">
+<h1 data-number="8"><span class="header-section-number">8</span> Include
 Files</h1>
 
 </section>
 <section id="include-files-normally" class="slide level2"
-data-number="7.1">
-<h2 data-number="7.1"><span class="header-section-number">7.1</span>
+data-number="8.1">
+<h2 data-number="8.1"><span class="header-section-number">8.1</span>
 include files normally</h2>
 <p>This file is include by</p>
 <pre><code>```{.include}
@@ -458,31 +493,31 @@ include files normally</h2>
 https://github.com/pandoc/lua-filters/blob/master/include-files/include-files.lua</p>
 </section>
 <section id="include-files-in-code-block" class="slide level2"
-data-number="7.2">
-<h2 data-number="7.2"><span class="header-section-number">7.2</span>
+data-number="8.2">
+<h2 data-number="8.2"><span class="header-section-number">8.2</span>
 include files in code block</h2>
 <pre><code>``` {include=&quot;./helloworld.c&quot;}
 ```</code></pre>
-<div class="sourceCode" id="cb10"><pre class="sourceCode c"><code class="sourceCode c"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a><span class="pp">#include </span><span class="im">&lt;stdio.h&gt;</span></span>
-<span id="cb10-2"><a href="#cb10-2" aria-hidden="true" tabindex="-1"></a><span class="dt">int</span> main<span class="op">(</span><span class="dt">void</span><span class="op">);</span></span>
-<span id="cb10-3"><a href="#cb10-3" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb10-4"><a href="#cb10-4" aria-hidden="true" tabindex="-1"></a><span class="dt">int</span> main<span class="op">(</span><span class="dt">void</span><span class="op">)</span></span>
-<span id="cb10-5"><a href="#cb10-5" aria-hidden="true" tabindex="-1"></a><span class="op">{</span></span>
-<span id="cb10-6"><a href="#cb10-6" aria-hidden="true" tabindex="-1"></a>    printf<span class="op">(</span><span class="st">&quot;Hello, world! </span><span class="sc">\n</span><span class="st">&quot;</span><span class="op">);</span></span>
-<span id="cb10-7"><a href="#cb10-7" aria-hidden="true" tabindex="-1"></a>    </span>
-<span id="cb10-8"><a href="#cb10-8" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> <span class="dv">0</span><span class="op">;</span></span>
-<span id="cb10-9"><a href="#cb10-9" aria-hidden="true" tabindex="-1"></a><span class="op">}</span></span></code></pre></div>
+<div class="sourceCode" id="cb11"><pre class="sourceCode c"><code class="sourceCode c"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a><span class="pp">#include </span><span class="im">&lt;stdio.h&gt;</span></span>
+<span id="cb11-2"><a href="#cb11-2" aria-hidden="true" tabindex="-1"></a><span class="dt">int</span> main<span class="op">(</span><span class="dt">void</span><span class="op">);</span></span>
+<span id="cb11-3"><a href="#cb11-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb11-4"><a href="#cb11-4" aria-hidden="true" tabindex="-1"></a><span class="dt">int</span> main<span class="op">(</span><span class="dt">void</span><span class="op">)</span></span>
+<span id="cb11-5"><a href="#cb11-5" aria-hidden="true" tabindex="-1"></a><span class="op">{</span></span>
+<span id="cb11-6"><a href="#cb11-6" aria-hidden="true" tabindex="-1"></a>    printf<span class="op">(</span><span class="st">&quot;Hello, world! </span><span class="sc">\n</span><span class="st">&quot;</span><span class="op">);</span></span>
+<span id="cb11-7"><a href="#cb11-7" aria-hidden="true" tabindex="-1"></a>    </span>
+<span id="cb11-8"><a href="#cb11-8" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> <span class="dv">0</span><span class="op">;</span></span>
+<span id="cb11-9"><a href="#cb11-9" aria-hidden="true" tabindex="-1"></a><span class="op">}</span></span></code></pre></div>
 <p>More details:
 https://github.com/pandoc/lua-filters/blob/master/include-code-files/include-code-files.lua</p>
 </section></section>
-<section id="math" class="title-slide slide level1" data-number="8">
-<h1 data-number="8"><span class="header-section-number">8</span>
+<section id="math" class="title-slide slide level1" data-number="9">
+<h1 data-number="9"><span class="header-section-number">9</span>
 Math</h1>
 <p>Write latex math equation like this</p>
-<div class="sourceCode" id="cb11"><pre
-class="sourceCode latex"><code class="sourceCode latex"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a><span class="ss">$$</span></span>
-<span id="cb11-2"><a href="#cb11-2" aria-hidden="true" tabindex="-1"></a><span class="ss">F = G </span><span class="sc">\frac</span><span class="ss">{m_1 </span><span class="sc">\times</span><span class="ss"> m_2}{R^2}</span></span>
-<span id="cb11-3"><a href="#cb11-3" aria-hidden="true" tabindex="-1"></a><span class="ss">$$</span></span></code></pre></div>
+<div class="sourceCode" id="cb12"><pre
+class="sourceCode latex"><code class="sourceCode latex"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a><span class="ss">$$</span></span>
+<span id="cb12-2"><a href="#cb12-2" aria-hidden="true" tabindex="-1"></a><span class="ss">F = G </span><span class="sc">\frac</span><span class="ss">{m_1 </span><span class="sc">\times</span><span class="ss"> m_2}{R^2}</span></span>
+<span id="cb12-3"><a href="#cb12-3" aria-hidden="true" tabindex="-1"></a><span class="ss">$$</span></span></code></pre></div>
 <p><span class="math display">\[
 F = G \frac{m_1 \times m_2}{R^2}
 \]</span></p>
@@ -490,8 +525,8 @@ F = G \frac{m_1 \times m_2}{R^2}
 
 <section>
 <section id="multiple-columns" class="title-slide slide level1"
-data-number="9">
-<h1 data-number="9"><span class="header-section-number">9</span>
+data-number="10">
+<h1 data-number="10"><span class="header-section-number">10</span>
 Multiple columns</h1>
 <ul>
 <li>Pandoc Extension: <a
@@ -499,8 +534,9 @@ href="https://pandoc.org/MANUAL.html#extension-fenced_divs">fenced_divs</a></li>
 <li>Builtin CSS class: container and col</li>
 </ul>
 </section>
-<section id="two-column-example" class="slide level2" data-number="9.1">
-<h2 data-number="9.1"><span class="header-section-number">9.1</span>
+<section id="two-column-example" class="slide level2"
+data-number="10.1">
+<h2 data-number="10.1"><span class="header-section-number">10.1</span>
 Two-column Example</h2>
 <div class="container">
 <div class="col">
@@ -523,34 +559,34 @@ Column 2
 </section></section>
 <section>
 <section id="third-level" class="title-slide slide level1"
-data-number="10">
-<h1 data-number="10"><span class="header-section-number">10</span> Third
+data-number="11">
+<h1 data-number="11"><span class="header-section-number">11</span> Third
 Level</h1>
 
 </section>
 <section id="this-is-a-second-level-title" class="slide level2"
-data-number="10.1">
-<h2 data-number="10.1"><span class="header-section-number">10.1</span>
+data-number="11.1">
+<h2 data-number="11.1"><span class="header-section-number">11.1</span>
 This is a second-level title</h2>
 <p>This second-level slide contains two third-level slides</p>
 <p>which is achieved by <code>---</code></p>
 </section>
-<section class="slide level2" data-number="10.2">
+<section class="slide level2" data-number="11.2">
 
 <h3>
 Third-Level Slide1
 </h3>
 <p>Miao~</p>
 </section>
-<section class="slide level2" data-number="10.3">
+<section class="slide level2" data-number="11.3">
 
 <h3>
 Third-Level Slide2
 </h3>
 <p>Wang!</p>
 </section></section>
-<section id="qna" class="title-slide slide level1" data-number="11">
-<h1 data-number="11"><span class="header-section-number">11</span>
+<section id="qna" class="title-slide slide level1" data-number="12">
+<h1 data-number="12"><span class="header-section-number">12</span>
 QnA</h1>
 <ul>
 <li>Problems?</li>
