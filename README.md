@@ -232,6 +232,28 @@ More details: https://github.com/pandoc/lua-filters/blob/master/include-files/in
 
 More details: https://github.com/pandoc/lua-filters/blob/master/include-code-files/include-code-files.lua
 
+## example: Chart.js
+
+::: {.container}
+:::: {.col}
+
+include a chart.js plot
+
+~~~
+``` {.include}
+./plots/bar.html
+```
+~~~
+
+::::
+:::: {.col}
+
+``` {.include}
+./plots/bar.html
+```
+
+::::
+:::
 
 # Math
 

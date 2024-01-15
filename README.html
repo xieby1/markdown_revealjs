@@ -509,15 +509,59 @@ include files in code block</h2>
 <span id="cb11-9"><a href="#cb11-9" aria-hidden="true" tabindex="-1"></a><span class="op">}</span></span></code></pre></div>
 <p>More details:
 https://github.com/pandoc/lua-filters/blob/master/include-code-files/include-code-files.lua</p>
+</section>
+<section id="example-chart.js" class="slide level2" data-number="8.3">
+<h2 data-number="8.3"><span class="header-section-number">8.3</span>
+example: Chart.js</h2>
+<div class="container">
+<div class="col">
+<p>include a chart.js plot</p>
+<pre><code>``` {.include}
+./plots/bar.html
+```</code></pre>
+</div>
+<div class="col">
+<!-- https://stackoverflow.com/questions/72509195/how-to-center-a-chart-js-graph -->
+<div style="height: 300px; display: flex; justify-content: center;">
+<canvas id="myChart">
+</canvas>
+</div>
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+<script>
+
+const ctx = document.getElementById('myChart');
+
+new Chart(ctx, {
+  type: 'bar',
+  data: {
+    labels: ['Red', 'Blue', 'Yellow', 'Green', 'Purple', 'Orange'],
+    datasets: [{
+      label: '# of Votes',
+      data: [12, 19, 3, 5, 2, 3],
+      borderWidth: 1
+    }]
+  },
+  options: {
+    scales: {
+      y: {
+        beginAtZero: true
+      }
+    }
+  }
+});
+
+</script>
+</div>
+</div>
 </section></section>
 <section id="math" class="title-slide slide level1" data-number="9">
 <h1 data-number="9"><span class="header-section-number">9</span>
 Math</h1>
 <p>Write latex math equation like this</p>
-<div class="sourceCode" id="cb12"><pre
-class="sourceCode latex"><code class="sourceCode latex"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a><span class="ss">$$</span></span>
-<span id="cb12-2"><a href="#cb12-2" aria-hidden="true" tabindex="-1"></a><span class="ss">F = G </span><span class="sc">\frac</span><span class="ss">{m_1 </span><span class="sc">\times</span><span class="ss"> m_2}{R^2}</span></span>
-<span id="cb12-3"><a href="#cb12-3" aria-hidden="true" tabindex="-1"></a><span class="ss">$$</span></span></code></pre></div>
+<div class="sourceCode" id="cb13"><pre
+class="sourceCode latex"><code class="sourceCode latex"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a><span class="ss">$$</span></span>
+<span id="cb13-2"><a href="#cb13-2" aria-hidden="true" tabindex="-1"></a><span class="ss">F = G </span><span class="sc">\frac</span><span class="ss">{m_1 </span><span class="sc">\times</span><span class="ss"> m_2}{R^2}</span></span>
+<span id="cb13-3"><a href="#cb13-3" aria-hidden="true" tabindex="-1"></a><span class="ss">$$</span></span></code></pre></div>
 <p><span class="math display">\[
 F = G \frac{m_1 \times m_2}{R^2}
 \]</span></p>
