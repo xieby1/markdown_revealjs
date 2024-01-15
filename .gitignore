@@ -1,3 +1,5 @@
 result*
 README.html
 .direnv
+plots/plotlypy.html
+__pycache__/

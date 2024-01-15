@@ -241,7 +241,7 @@ include a chart.js plot
 
 ~~~
 ``` {.include}
-./plots/bar.html
+./plots/chartjs.html
 ```
 ~~~
 
@@ -249,7 +249,30 @@ include a chart.js plot
 :::: {.col}
 
 ``` {.include}
-./plots/bar.html
+./plots/chartjs.html
+```
+
+::::
+:::
+
+## example: Plotly.py
+
+::: {.container}
+:::: {.col}
+
+include a plotly.py plot
+
+~~~
+``` {.include}
+./plots/plotlypy.html
+```
+~~~
+
+::::
+:::: {.col}
+
+``` {.include}
+./plots/plotlypy.html
 ```
 
 ::::
