@@ -90,10 +90,10 @@ These info will become the first page of your slide.
 
 ## Basic Syntax
 
-| syntax           | meaning              |
-| ---------------- | -------------------- |
-| 1st-level header | New horizontal slide |
-| 2nd-level header | New vertical slide   |
+| syntax                           | meaning              |
+|----------------------------------|----------------------|
+| 1st-level header                 | New horizontal slide |
+| 2nd/3rd/4th/5th/6th-level header | New vertical slide   |
 
 ## Convert!
 
@@ -210,6 +210,32 @@ Your content here
 ```
 :::
 
+# Headings and slides
+
+Normally, each level of heading will start a new slide.
+
+## Heading not start a new slide
+
+If you want a heading that doesn a new slide, like this
+
+<h3>Level-3 Heading!</h3>
+
+Just use html heading!
+
+```html
+<h3>Level-3 Heading!</h3>
+```
+
+## Force starting a new slide
+
+If you want to start a new slide without headings.
+
+Just use the markdown horizontal break `---`, like this
+
+---
+
+Force starting a new slide!
+
 # Include Files
 
 ## include files normally
@@ -322,26 +348,6 @@ Column 2
 :::
 
 You can add as many columns as possible.
-
-# Third Level
-
-## This is a second-level title
-
-This second-level slide contains two third-level slides
-
-which is achieved by `---`
-
----
-
-<h3>Third-Level Slide1</h3>
-
-Miao~
-
----
-
-<h3>Third-Level Slide2</h3>
-
-Wang!
 
 # QnA
 

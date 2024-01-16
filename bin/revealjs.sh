@@ -62,7 +62,7 @@ CMD=(
     "-V verticator"
     "-V showSlideNumber=all"
     "-V slideNumber='c/t'"
-    "--slide-level=2"
+    "--slide-level=6"
     # table of content
     "--toc"
     "--toc-depth=${TOC_DEPTH:=2}"
