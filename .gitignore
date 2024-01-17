@@ -3,3 +3,4 @@ README.html
 .direnv
 plots/plotlypy.html
 __pycache__/
+themes/*.html
