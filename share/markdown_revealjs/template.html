@@ -280,6 +280,15 @@ $if(level2-slide-background-image)$
   }
   </script>
 $endif$
+$if(background-size)$
+  <script>
+  for (var slide of document.getElementsByTagName('section')){
+    if (!(slide.getAttribute('data-background-size'))){
+      slide.setAttribute('data-background-size', '$background-size$')
+    }
+  }
+  </script>
+$endif$
   <script>
 
       // Full list of configuration options available at:
