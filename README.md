@@ -107,6 +107,26 @@ $ revealjs.sh <input.md>
 
 It's simple and easy, right?
 
+# Themes
+
+Here are predefined themes (template),
+
+just download the source markdown,
+
+and [`revealjs.sh xxx.md`]{style="font-size: 1.5em;"}!
+
+Enjoy the themes below🎉
+
+🔽🔽🔽
+
+## 龙芯 [themes/loongson.md](https://github.com/xieby1/markdown_revealjs/blob/main/themes/loongson.md)
+
+<iframe src="./themes/loongson.html" style="width:800px; height: 450px;"></iframe>
+
+## 微处理器研究中心 [themes/ict_mtrc_proposal.md](https://github.com/xieby1/markdown_revealjs/blob/main/themes/ict_mtrc_proposal.md)
+
+<iframe src="./themes/ict_mtrc_proposal.html" style="width:800px; height: 450px;"></iframe>
+
 # Advanced Syntax
 
 Sorted in alphabet.
