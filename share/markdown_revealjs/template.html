@@ -104,11 +104,11 @@ a.sourceLine {
 
 [role="doc-toc"] > ul {
     /* multiple column in first level TOC */
-    column-width: 290px;
+    column-width: $if(toc-column-width)$ $toc-column-width$ $else$ 290px $endif$;
     width: 100%;
     column-rule-style: solid;
     /* no margin in first level TOC */
-    margin: 0 0 0 0;
+    margin: $if(toc-margin)$ $toc-margin$ $else$ 0 0 0 0 $endif$;
 }
 
 [role="doc-toc"] ul {

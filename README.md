@@ -351,6 +351,45 @@ Column 2
 
 You can add as many columns as possible.
 
+# TOC (Table Of Content)
+
+## TOC Depth
+
+Default TOC depth is 2.
+
+You can override it in yml front matter, like
+
+```yml
+toc-depth: 1
+```
+
+## TOC Columns
+
+The number of TOC columns is controlled by yml front matter:
+
+* `toc-column-width` for TOC's column width
+* `toc-margin` for TOC's margin
+
+Therefore, by adjusting these two variable,
+
+you can control how many TOC columns you have.
+
+### Default Values (3-column TOC)
+
+* Remember the default slide width is 1200px.
+* The default `toc-column-width` is `290px`
+* The default `toc-margin` is `0 0 0 0`
+* Thus a 3-column toc is presented.
+
+### 1-column TOC
+
+Here is an example of 1-column TOC
+
+```yml
+toc-column-width: unset
+toc-margin: 0 400px
+```
+
 # QnA
 
 * Problems?
