@@ -4,7 +4,7 @@ TEMPLATE="$(dirname $(realpath --relative-to=. $0))/../share/markdown_revealjs/t
 INCLUDE_FILES="$(dirname $(realpath --relative-to=. $0))/../share/markdown_revealjs/include-files.lua"
 INCLUDE_CODE_FILES="$(dirname $(realpath --relative-to=. $0))/../share/markdown_revealjs/include-code-files.lua"
 MD=$1
-REVEALJS="https://cdn.bootcdn.net/ajax/libs/reveal.js/4.3.1"
+REVEALJS="https://xieby1.github.io/markdown_revealjs/reveal.js"
 # use which pandoc
 PANDOC_="$(dirname $(realpath --relative-to=. $0))/../share/markdown_revealjs/pandoc"
 if [[ -f ${PANDOC_} ]]

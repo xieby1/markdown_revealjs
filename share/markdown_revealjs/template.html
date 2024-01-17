@@ -2,7 +2,6 @@
 <!-- Export by pandoc -D revealjs, pandoc version 2.14.03 -->
 <!-- pandoc-types 1.22.1, texmath 0.12.3.2, skylighting 0.10.5.2, -->
 <!-- citeproc 0.4.0.1, ipynb 0.1.0.2 -->
-<!-- delete /dist after revealjs-url -->
 <html$if(lang)$ lang="$lang$"$endif$$if(dir)$ dir="$dir$"$endif$>
 <head>
   <meta charset="utf-8">
@@ -20,15 +19,15 @@ $endif$
   <meta name="apple-mobile-web-app-capable" content="yes">
   <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes, minimal-ui">
-  <link rel="stylesheet" href="$revealjs-url$/reset.css">
-  <link rel="stylesheet" href="$revealjs-url$/reveal.css">
+  <link rel="stylesheet" href="$revealjs-url$/dist/reset.css">
+  <link rel="stylesheet" href="$revealjs-url$/dist/reveal.css">
   <style>
     $styles.html()$
   </style>
 $if(theme)$
-  <link rel="stylesheet" href="$revealjs-url$/theme/$theme$.css" id="theme">
+  <link rel="stylesheet" href="$revealjs-url$/dist/theme/$theme$.css" id="theme">
 $else$
-  <link rel="stylesheet" href="$revealjs-url$/theme/black.css" id="theme">
+  <link rel="stylesheet" href="$revealjs-url$/dist/theme/black.css" id="theme">
 $endif$
 $for(css)$
   <link rel="stylesheet" href="$css$"/>
@@ -221,7 +220,7 @@ $body$
   <div id=footerl style="position:absolute; bottom:0; left:0;  padding:0.5em; font-size:16pt;">$footerl$</div>
   <div id=footerr style="position:absolute; bottom:0; right:0; padding:0.5em; font-size:16pt;">$footerr$</div>
 
-  <script src="$revealjs-url$/reveal.js"></script>
+  <script src="$revealjs-url$/dist/reveal.js"></script>
 
   <!-- reveal.js plugins -->
   <script src="$revealjs-url$/plugin/notes/notes.js"></script>
