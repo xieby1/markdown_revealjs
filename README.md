@@ -371,6 +371,61 @@ Column 2
 
 You can add as many columns as possible.
 
+## Multiple-column Vertical Alignment (Top)
+
+::: {.container style="align-items: flex-start;"}
+:::: {.col}
+<h3>col1</h3>
+
+* Default is center alignment
+* This is top alignment
+::::
+:::: {.col}
+<h3>col2</h3>
+
+Top alignment code:
+
+```
+::: {.container style="align-items: flex-start;"}
+:::: {.col}
+col1
+::::
+:::: {.col}
+col2
+::::
+:::
+```
+
+::::
+:::
+
+## Multiple-column Vertical Alignment (Bottom)
+
+::: {.container style="align-items: flex-end;"}
+:::: {.col}
+* Default is center alignment
+* This is bottom alignment
+
+<h3>col1</h3>
+::::
+:::: {.col}
+Top alignment code:
+
+```
+::: {.container style="align-items: flex-end;"}
+:::: {.col}
+col1
+::::
+:::: {.col}
+col2
+::::
+:::
+```
+
+<h3>col2</h3>
+::::
+:::
+
 # TOC (Table Of Content)
 
 ## TOC Depth
