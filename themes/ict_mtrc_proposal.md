@@ -3,10 +3,10 @@ title: 论文题目
 author: 作者<br>导师
 date: 2023年12月19日
 
-title-slide-background-image:  ict_mtrc_proposal/title_4x3.png
-toc-slide-background-image:    ict_mtrc_proposal/slide_4x3.png
-level1-slide-background-image: ict_mtrc_proposal/slide_4x3.png
-level2-slide-background-image: ict_mtrc_proposal/slide_4x3.png
+title-slide-background-image:  https://xieby1.github.io/markdown_revealjs/themes/ict_mtrc_proposal/title_4x3.png
+toc-slide-background-image:    https://xieby1.github.io/markdown_revealjs/themes/ict_mtrc_proposal/slide_4x3.png
+level1-slide-background-image: https://xieby1.github.io/markdown_revealjs/themes/ict_mtrc_proposal/slide_4x3.png
+level2-slide-background-image: https://xieby1.github.io/markdown_revealjs/themes/ict_mtrc_proposal/slide_4x3.png
 background-size: 100% 100%
 
 toc-depth: 1
@@ -58,7 +58,7 @@ toc-margin: 0 400px
 # [感谢聆听 请批评指导]{style="color:red;"}
 
 <style>
-#title-slide .title  {color: white;}
-#title-slide .author {color: white;}
-#title-slide .date   {color: white;}
+#title-slide .title  {font-weight: bold; color: white;}
+#title-slide .author {font-weight: bold; color: white;}
+#title-slide .date   {font-weight: bold; color: white;}
 </style>
