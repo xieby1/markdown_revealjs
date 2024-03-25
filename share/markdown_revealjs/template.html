@@ -566,6 +566,8 @@ $if(verticator)$
 $endif$
         ],
       });
+      Reveal.addKeyBinding( { keyCode: 9,  key: "Tab",   description: "Left"  }, () => {Reveal.left()} )
+      Reveal.addKeyBinding( { keyCode: 13, key: "Enter", description: "Right" }, () => {Reveal.right()} )
       // make customcontrols collapsed by default
       Reveal.on("ready", event => {
         var div = document.querySelector("div#customcontrols");
