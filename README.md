@@ -326,6 +326,22 @@ include a plotly.py plot
 ::::
 :::
 
+# Label and Link {#label_and_link}
+
+You can label a slide by adding a name to its heading
+
+```md
+# Label and Link {#label_and_link}
+```
+
+## Link
+
+Then you can go back to the labeled slide ⬆️ [Label and Link](#label_and_link)⬆️ .
+
+```md
+[Label and Link](#label_and_link)
+```
+
 # Math
 
 Write latex math equation like this
