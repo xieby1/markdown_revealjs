@@ -342,6 +342,49 @@ Then you can go back to the labeled slide ⬆️ [Label and Link](#label_and_lin
 [Label and Link](#label_and_link)
 ```
 
+# Long Table
+
+Bother by long table?
+
+::: {.fragment}
+Then use wrap your long table
+
+with [`.longtable`]{style="font-size:1.5em;"} like below
+
+```md
+::: {.longtable style="height: 300px;"}
+<your long table here>
+:::
+```
+:::
+
+## Example
+
+::: {.longtable style="height: 500px;"}
+| This | is | a | long | vertical | table |
+|------|----|---|------|----------|-------|
+| 1    | 2  | 3 | 4    | 5        | 6     |
+| 2    | 2  | 3 | 4    | 5        | 6     |
+| 3    | 2  | 3 | 4    | 5        | 6     |
+| 4    | 2  | 3 | 4    | 5        | 6     |
+| 5    | 2  | 3 | 4    | 5        | 6     |
+| 6    | 2  | 3 | 4    | 5        | 6     |
+| 7    | 2  | 3 | 4    | 5        | 6     |
+| 8    | 2  | 3 | 4    | 5        | 6     |
+| 9    | 2  | 3 | 4    | 5        | 6     |
+| 10   | 2  | 3 | 4    | 5        | 6     |
+| 11   | 2  | 3 | 4    | 5        | 6     |
+| 12   | 2  | 3 | 4    | 5        | 6     |
+| 13   | 2  | 3 | 4    | 5        | 6     |
+| 14   | 2  | 3 | 4    | 5        | 6     |
+| 15   | 2  | 3 | 4    | 5        | 6     |
+| 16   | 2  | 3 | 4    | 5        | 6     |
+| 17   | 2  | 3 | 4    | 5        | 6     |
+| 18   | 2  | 3 | 4    | 5        | 6     |
+| 19   | 2  | 3 | 4    | 5        | 6     |
+| 20   | 2  | 3 | 4    | 5        | 6     |
+:::
+
 # Math
 
 Write latex math equation like this
