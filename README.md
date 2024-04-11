@@ -10,6 +10,7 @@ title-slide-background-image: ./images/liquid-cheese.svg
 toc-slide-background-image: ./images/liquid-cheese.svg
 level1-slide-background-image: ./images/liquid-cheese.svg
 level2-slide-background-image: ./images/liquid-cheese_shallow.svg
+level3-slide-background-image: ./images/liquid-cheese_shallow.svg
 background-size: cover
 
 toc-depth: 1
@@ -180,6 +181,7 @@ title-slide-background-image: <URL>
 toc-slide-background-image: <URL>
 level1-slide-background-image: <URL>
 level2-slide-background-image: <URL>
+level3-slide-background-image: <URL>
 background-size: <CSS background-size>
 ```
 

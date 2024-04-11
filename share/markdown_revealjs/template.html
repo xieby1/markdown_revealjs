@@ -298,6 +298,19 @@ $if(level2-slide-background-image)$
   }
   </script>
 $endif$
+$if(level3-slide-background-image)$
+  <script>
+  for (var slide of document.getElementsByClassName('slide level3')){
+    if (!(slide.getAttribute('data-background') ||
+          slide.getAttribute('data-background-color') ||
+          slide.getAttribute('data-background-image') ||
+          slide.getAttribute('data-background-video') ||
+          slide.getAttribute('data-background-iframe'))){
+      slide.setAttribute('data-background-image', '$level3-slide-background-image$')
+    }
+  }
+  </script>
+$endif$
 $if(background-size)$
   <script>
   for (var slide of document.getElementsByTagName('section')){
