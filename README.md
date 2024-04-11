@@ -128,6 +128,10 @@ Enjoy the themes below🎉
 
 <iframe src="./themes/ict_mtrc_proposal.html" style="width:800px; height: 450px;"></iframe>
 
+## 国科大计算所答辩 [themes/ucas_ict_thesis.md](https://github.com/xieby1/markdown_revealjs/blob/main/themes/ucas_ict_thesis.md)
+
+<iframe src="./themes/ucas_ict_thesis.html" style="width:800px; height: 450px;"></iframe>
+
 # Advanced Syntax
 
 Sorted in alphabet.
