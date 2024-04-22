@@ -23,3 +23,11 @@ level2-slide-background-image:          https://xieby1.github.io/markdown_reveal
 正文
 
 # 谢谢 {style="visibility: hidden;" data-background-image="https://xieby1.github.io/markdown_revealjs/themes/loongson/2020.ls_16x9.4.png"}
+
+<style>
+:root {
+  --r-link-color: #E60012;
+  --r-link-color-dark: #7F2C23;
+  --r-link-color-hover: #FF5946;
+}
+</style>
