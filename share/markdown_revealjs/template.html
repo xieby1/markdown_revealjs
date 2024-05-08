@@ -207,7 +207,8 @@ $endfor$
     <div class="slides">
 
 $if(title)$
-<section id="$idprefix$title-slide"$for(title-slide-attributes/pairs)$ $it.key$="$it.value$"$endfor$>
+<section id="$idprefix$title-slide"$for(title-slide-attributes/pairs)$ $it.key$="$it.value$"$endfor$
+         $if(simplemenu)$data-sminvisible=true$endif$>
   <h1 class="title">$title$</h1>
 $if(subtitle)$
   <p class="subtitle">$subtitle$</p>
@@ -224,7 +225,8 @@ $endif$
 </section>
 $endif$
 $if(toc)$
-<section id="$idprefix$TOC">
+<section id="$idprefix$TOC"
+         $if(simplemenu)$data-sminvisible=true$endif$>
 <nav role="doc-toc"> 
 $if(toc-title)$
 <h2 id="$idprefix$toc-title">$toc-title$</h2>

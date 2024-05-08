@@ -478,6 +478,14 @@
 	    } else {
 	      listItem.classList.remove(options.activeclass);
 	    }
+
+        vars.menubars.forEach(menubar => {
+          if ("sminvisible" in section.section.dataset) {
+            document.body.classList.add("hide-simplemenubar")
+          } else {
+            document.body.classList.remove("hide-simplemenubar")
+          }
+        });
 	  };
 
 	  const checkSlidesNormal = event => {
