@@ -71,6 +71,9 @@ $if(chalkboard)$
   <link rel="stylesheet" href="https://cdn.bootcdn.net/ajax/libs/font-awesome/5.15.4/css/all.min.css">
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/reveal.js-plugins@4.1.5/customcontrols/style.css">
 $endif$
+$if(simplemenu)$
+  <link rel="stylesheet" href="$reporoot-url$/plugins/simplemenu/simpleMenu.css">
+$endif$
 <!-- revealjs.sh customized styles -->
 <style>
 .reveal section img {
@@ -251,6 +254,9 @@ $endif$
 $if(chalkboard)$
   <script src="https://cdn.jsdelivr.net/npm/reveal.js-plugins@4.1.5/chalkboard/plugin.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/reveal.js-plugins@4.1.5/customcontrols/plugin.js"></script>
+$endif$
+$if(simplemenu)$
+  <script src="$reporoot-url$/plugins/simplemenu/simpleMenu.js"></script>
 $endif$
 $if(menu)$
   <script src="https://cdn.jsdelivr.net/npm/reveal.js-menu@2.1.0/menu.js"></script>
@@ -544,6 +550,17 @@ $if(chalkboard)$
           theme: "whiteboard",
         },
 $endif$
+$if(simplemenu)$
+        simplemenu: {
+          barhtml: {
+            header: "<div class='simplemenubar'><ul class='simplemenu'></ul></div>",
+            footer: "",
+          },
+          menubarclass: "simplemenubar",
+          menuclass: "simplemenu",
+          csspath: false,
+        },
+$endif$
 $if(menu)$
         menu: {
           sticky: true,
@@ -590,6 +607,9 @@ $endif$
           RevealNotes,
           RevealSearch,
           RevealZoom,
+$if(simplemenu)$
+          Simplemenu,
+$endif$
 $if(menu)$
           RevealMenu,
 $endif$

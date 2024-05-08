@@ -2,7 +2,7 @@
 title: Markdown RevealJS
 author: <img src="./images/me.png" style="height:1.5em;">xieby1
 date: 🎉2022.06.10
-headerl: <img src="./images/me.png" style="height:1.5em;">
+headerl: <img src="./images/me.png" style="height:1.2em;">
 headerr: <a href="https://github.com/xieby1/markdown_revealjs"><img src="https://github.com/fluidicon.png" style="width:16pt;">Github Repo</a>
 footerl: ↙️ by xieby1
 
