@@ -103,7 +103,7 @@ body.hide-simplemenubar .reveal.ready .simplemenubar a {
   list-style-type: none;
   padding: 0;
   margin: 0 auto;
-  gap: 1.5em;
+  /* gap: 1.5em; */
 }
 .simplemenubar > ul li {
   -webkit-box-sizing: border-box;
