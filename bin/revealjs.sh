@@ -4,6 +4,7 @@ TEMPLATE="$(dirname $(realpath --relative-to=. $0))/../share/markdown_revealjs/t
 INCLUDE_FILES="$(dirname $(realpath --relative-to=. $0))/../share/markdown_revealjs/include-files.lua"
 INCLUDE_CODE_FILES="$(dirname $(realpath --relative-to=. $0))/../share/markdown_revealjs/include-code-files.lua"
 MD=$1
+REPOROOT="https://xieby1.github.io/markdown_revealjs"
 REVEALJS="https://xieby1.github.io/markdown_revealjs/reveal.js"
 # use which pandoc
 PANDOC_="$(dirname $(realpath --relative-to=. $0))/../share/markdown_revealjs/pandoc"
@@ -53,11 +54,13 @@ CMD=(
     "--template=${TEMPLATE}"
     "-V theme=white"
     "-V revealjs-url=${REVEALJS}"
+    "-V reporoot-url=${REPOROOT}"
     "-V width=1200"
     "-V height=700"
     "-V hash"
     "-V chalkboard"
     "-V touch=false"
+    "-V simplemenu"
     "-V menu"
     "-V verticator"
     "-V showSlideNumber=all"

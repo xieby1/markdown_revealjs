@@ -238,6 +238,7 @@ $body$
   <div id=headerr style="position:absolute; top:0;    right:0; padding:0.5em; font-size:16pt;">$headerr$</div>
   <div id=footerl style="position:absolute; bottom:0; left:0;  padding:0.5em; font-size:16pt;">$footerl$</div>
   <div id=footerr style="position:absolute; bottom:0; right:0; padding:0.5em; font-size:16pt;">$footerr$</div>
+  <div class='menubar' style="position:absolute; top:0; left:auto; right:auto; font-size:16pt;"><ul class='menu'></ul><div class='slide-number'></div></div>
 
   <script src="$revealjs-url$/dist/reveal.js"></script>
 
@@ -251,6 +252,9 @@ $endif$
 $if(chalkboard)$
   <script src="https://cdn.jsdelivr.net/npm/reveal.js-plugins@4.1.5/chalkboard/plugin.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/reveal.js-plugins@4.1.5/customcontrols/plugin.js"></script>
+$endif$
+$if(simplemenu)$
+  <script src="$reporoot-url$/plugins/reveal.js-simplemenu/plugin/simplemenu/simplemenu.js"></script>
 $endif$
 $if(menu)$
   <script src="https://cdn.jsdelivr.net/npm/reveal.js-menu@2.1.0/menu.js"></script>
@@ -544,6 +548,14 @@ $if(chalkboard)$
           theme: "whiteboard",
         },
 $endif$
+$if(simplemenu)$
+        simplemenu: {
+          barhtml: {
+            header: "",
+            footer: ""
+          },
+        },
+$endif$
 $if(menu)$
         menu: {
           sticky: true,
@@ -590,6 +602,9 @@ $endif$
           RevealNotes,
           RevealSearch,
           RevealZoom,
+$if(simplemenu)$
+          Simplemenu,
+$endif$
 $if(menu)$
           RevealMenu,
 $endif$
