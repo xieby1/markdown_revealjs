@@ -120,15 +120,21 @@ Enjoy the themes below🎉
 
 🔽🔽🔽
 
-## 龙芯 [themes/loongson.md](https://github.com/xieby1/markdown_revealjs/blob/main/themes/loongson.md)
+## 龙芯
+
+[themes/loongson.md](https://github.com/xieby1/markdown_revealjs/blob/main/themes/loongson.md)
 
 <iframe src="./themes/loongson.html" style="width:800px; height: 450px;"></iframe>
 
-## 微处理器研究中心 [themes/ict_mtrc_proposal.md](https://github.com/xieby1/markdown_revealjs/blob/main/themes/ict_mtrc_proposal.md)
+## 微处理器研究中心
+
+[themes/ict_mtrc_proposal.md](https://github.com/xieby1/markdown_revealjs/blob/main/themes/ict_mtrc_proposal.md)
 
 <iframe src="./themes/ict_mtrc_proposal.html" style="width:800px; height: 450px;"></iframe>
 
-## 国科大计算所答辩 [themes/ucas_ict_thesis.md](https://github.com/xieby1/markdown_revealjs/blob/main/themes/ucas_ict_thesis.md)
+## 国科大计算所答辩
+
+[themes/ucas_ict_thesis.md](https://github.com/xieby1/markdown_revealjs/blob/main/themes/ucas_ict_thesis.md)
 
 <iframe src="./themes/ucas_ict_thesis.html" style="width:800px; height: 450px;"></iframe>
 
@@ -510,6 +516,12 @@ some key TOC entries are resident at the top of the slides?
 ### Two Types of Attributes: details {data-auto-animate=1}
 
 <img src="./images/resident_toc.svg" style="width: 1000px;">
+
+## More Example
+
+My [国科大计算所答辩](#国科大计算所答辩) theme use resident TOC
+
+<iframe src="./themes/ucas_ict_thesis.html" style="width:800px; height: 450px;"></iframe>
 
 ## Want to know more?
 

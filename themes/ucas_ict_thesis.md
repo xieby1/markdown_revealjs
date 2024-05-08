@@ -18,15 +18,15 @@ toc-column-width: unset
 toc-margin: 0 400px
 ---
 
-# 研究背景
+# 研究背景 {data-name="背景"}
 
 <img src="https://xieby1.github.io/markdown_revealjs/themes/ucas_ict_thesis/ucas_full.svg" style="width: 1000px;">
 
-# 相关工作
+# 相关工作 {data-name="相关工作"}
 
 <img src="https://xieby1.github.io/markdown_revealjs/themes/ucas_ict_thesis/ict_full.svg" style="width: 1000px;">
 
-# 研究内容壹
+# 研究内容壹 {data-stack-name="壹"}
 
 🐱喵喵
 
@@ -34,17 +34,17 @@ toc-margin: 0 400px
 
 ### 研究内容壹-壹-壹
 
-# 研究内容贰
+# 研究内容贰 {data-name="贰"}
 
 🐶汪汪
 
-# 研究内容叁
+# 研究内容叁 {data-name="叁"}
 
 🐭吱吱
 
-# 总结和展望
+# 总结和展望 {data-name="总"}
 
 
-# 谢谢 {data-background-image="https://xieby1.github.io/markdown_revealjs/themes/ucas_ict_thesis/liquid-cheese_sky_title.svg"}
+# 谢谢 {data-background-image="https://xieby1.github.io/markdown_revealjs/themes/ucas_ict_thesis/liquid-cheese_sky_title.svg" data-sminvisible=true}
 
 🎊
