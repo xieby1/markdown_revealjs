@@ -374,7 +374,9 @@
 	      const autoMenuLinks = sections.namedvisible.map(section => {
 	        let match = section.dataset[vars.matchString];
 	        let name = section.dataset.name || section.getAttribute(`name`) || section.id;
-	        let id = section.id || name.toLowerCase().replace(/\W/g, '');
+                                /* data-stack-name: section.id is empty,*/
+                                /* needs the section.section.id */
+	        let id = section.id || section.firstElementChild.id || name.toLowerCase().replace(/\W/g, '');
 	        idArray.push(id);
 
 	        if (vars.quarto) {
