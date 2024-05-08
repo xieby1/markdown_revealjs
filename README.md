@@ -511,11 +511,38 @@ some key TOC entries are resident at the top of the slides?
   * `data-stack-name="<TOC_Entry_Name>"` 
 * Example:
 
-<img src="./images/resident_toc.svg" style="width: 600px;">
+::: {.container}
+:::: {.col}
+```md
+...
+# H1 {data-name="h1"}
+
+# H2 {data-stack-name="h2"}
+
+## H2_1
+...
+```
+::::
+:::: {.col}
+<img src="./images/resident_toc.svg" style="width: 500px;">
+::::
+:::
 
 ### Two Types of Attributes: details {data-auto-animate=1}
 
 <img src="./images/resident_toc.svg" style="width: 1000px;">
+
+## Hide Resident TOC {data-sminvisible=true}
+
+Want to hide resident TOC in specific slides?
+
+Add `data-sminvisible=true` to the slide heading, like
+
+```md
+## Hide Resident TOC {data-sminvisible=true}
+
+...
+```
 
 ## More Example
 
