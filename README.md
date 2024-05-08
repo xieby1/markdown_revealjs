@@ -16,7 +16,7 @@ background-size: cover
 toc-depth: 1
 ---
 
-# Intro
+# Intro {data-stack-name="Intro"}
 
 A Simple Easy Converter
 
@@ -38,7 +38,7 @@ Bash script + Template file + Pandoc
 
 It's simple and esay!
 
-# Installation
+# Installation {data-stack-name="Install"}
 
 ## Prebuilt Package
 
@@ -74,7 +74,7 @@ The generated packages include
 * revealjs.sh
 * pandoc template
 
-# Quick Start
+# Quick Start {data-stack-name="Quick Start"}
 
 ## First Page
 
@@ -108,7 +108,7 @@ $ revealjs.sh <input.md>
 
 It's simple and easy, right?
 
-# Themes
+# Themes {data-stack-name="Themes"}
 
 Here are predefined themes (template),
 
@@ -132,7 +132,7 @@ Enjoy the themes below🎉
 
 <iframe src="./themes/ucas_ict_thesis.html" style="width:800px; height: 450px;"></iframe>
 
-# Advanced Syntax
+# Advanced Syntax {data-name="Advanced Syntax ..."}
 
 Sorted in alphabet.
 
@@ -491,7 +491,33 @@ col2
 ::::
 :::
 
-# TOC (Table Of Content)
+# TOC (resident)
+
+See,
+
+some key TOC entries are resident at the top of the slides?
+
+## Two Types of Attributes {data-auto-animate=1}
+
+* Top slide without subsequent vertical slides
+  * `data-name="<TOC_Entry_Name>"`
+* Top slide with subsequent vertical slides
+  * `data-stack-name="<TOC_Entry_Name>"` 
+* Example:
+
+<img src="./images/resident_toc.svg" style="width: 600px;">
+
+### Two Types of Attributes: details {data-auto-animate=1}
+
+<img src="./images/resident_toc.svg" style="width: 1000px;">
+
+## Want to know more?
+
+Resident TOC is implemented based on revealjs plugin:
+
+[martinomagnifico/reveal.js-simplemenu](https://github.com/martinomagnifico/reveal.js-simplemenu).
+
+# TOC (full)
 
 ## TOC Depth
 
