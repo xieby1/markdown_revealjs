@@ -480,14 +480,6 @@
 	    } else {
 	      listItem.classList.remove(options.activeclass);
 	    }
-
-        vars.menubars.forEach(menubar => {
-          if ("sminvisible" in section.section.dataset) {
-            document.body.classList.add("hide-simplemenubar")
-          } else {
-            document.body.classList.remove("hide-simplemenubar")
-          }
-        });
 	  };
 
 	  const checkSlidesNormal = event => {
@@ -499,6 +491,13 @@
 	    manualListItems.filter(listItem => {
 	      compare(listItem, section);
 	    });
+        vars.menubars.forEach(menubar => {
+          if ("sminvisible" in section.section.dataset) {
+            document.body.classList.add("hide-simplemenubar");
+          } else {
+            document.body.classList.remove("hide-simplemenubar");
+          }
+        });
 	  };
 
 	  const checkSlidesPDF = event => {
@@ -536,9 +535,13 @@
 	        pdfPage.getElementsByClassName("slide-number")[0].style.display = "none";
 	      }
 
+          vars.menubars.forEach(menubar => {
+            document.body.classList.remove("hide-simplemenubar");
+          });
 	      if (vars.menubars) {
 	        vars.menubars.forEach(menubar => {
 	          let bar = menubar.cloneNode(true);
+              bar.style.invisibility = "sminvisible" in datainfo.dataset;
 	          pdfPage.appendChild(bar);
 	          let listItems = selectionArray(bar, `.${options.menuclass} ${options.activeelement}`);
 	          listItems.forEach(listItem => {
