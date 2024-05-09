@@ -540,8 +540,9 @@
           });
 	      if (vars.menubars) {
 	        vars.menubars.forEach(menubar => {
+              if ("sminvisible" in datainfo.dataset)
+                return;
 	          let bar = menubar.cloneNode(true);
-              bar.style.invisibility = "sminvisible" in datainfo.dataset;
 	          pdfPage.appendChild(bar);
 	          let listItems = selectionArray(bar, `.${options.menuclass} ${options.activeelement}`);
 	          listItems.forEach(listItem => {
