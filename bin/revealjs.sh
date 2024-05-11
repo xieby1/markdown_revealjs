@@ -4,8 +4,13 @@ TEMPLATE="$(dirname $(realpath --relative-to=. $0))/../share/markdown_revealjs/t
 INCLUDE_FILES="$(dirname $(realpath --relative-to=. $0))/../share/markdown_revealjs/include-files.lua"
 INCLUDE_CODE_FILES="$(dirname $(realpath --relative-to=. $0))/../share/markdown_revealjs/include-code-files.lua"
 MD=$1
-REPOROOT="https://xieby1.github.io/markdown_revealjs"
-REVEALJS="https://xieby1.github.io/markdown_revealjs/reveal.js"
+
+if [[ -n ${REPOROOT} ]]; then
+    echo REPOROOT is set as \"${REPOROOT}\"
+else
+    REPOROOT="https://xieby1.github.io/markdown_revealjs"
+fi
+
 # use which pandoc
 PANDOC_="$(dirname $(realpath --relative-to=. $0))/../share/markdown_revealjs/pandoc"
 if [[ -f ${PANDOC_} ]]
@@ -17,8 +22,12 @@ fi
 if [[ $# -eq 0 || "$1" == "-h" || -z ${MD} ]]
 then
     echo "Usage: ${0##*/}" convert markdown file to reveal.js slides.
-    echo "${0##*/} [-h] <input.md> [pandoc args]"
+    echo "[REPOROOT=<Path>] ${0##*/} [-h] <input.md> [pandoc args]"
     echo "  Use pandoc convert <input.md> to input.html."
+    echo "  Enviroment variables:"
+    echo "  REPOROOT    override the default markdown_revealjs url"
+    echo "              E.g. if you want to play your slides offline,"
+    echo "              set the REPOROOT to the local markdown_revealjs."
     echo "  Customized pandoc args:"
     echo "  -V lxgw     enable LXGW Wenkai font"
     exit 0
@@ -53,7 +62,6 @@ CMD=(
     "-t revealjs"
     "--template=${TEMPLATE}"
     "-V theme=white"
-    "-V revealjs-url=${REVEALJS}"
     "-V reporoot-url=${REPOROOT}"
     "-V width=1200"
     "-V height=700"

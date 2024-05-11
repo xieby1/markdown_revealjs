@@ -19,15 +19,15 @@ $endif$
   <meta name="apple-mobile-web-app-capable" content="yes">
   <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes, minimal-ui">
-  <link rel="stylesheet" href="$revealjs-url$/dist/reset.css">
-  <link rel="stylesheet" href="$revealjs-url$/dist/reveal.css">
+  <link rel="stylesheet" href="$reporoot-url$/lib/reveal.js/dist/reset.css">
+  <link rel="stylesheet" href="$reporoot-url$/lib/reveal.js/dist/reveal.css">
   <style>
     $styles.html()$
   </style>
 $if(theme)$
-  <link rel="stylesheet" href="$revealjs-url$/dist/theme/$theme$.css" id="theme">
+  <link rel="stylesheet" href="$reporoot-url$/lib/reveal.js/dist/theme/$theme$.css" id="theme">
 $else$
-  <link rel="stylesheet" href="$revealjs-url$/dist/theme/black.css" id="theme">
+  <link rel="stylesheet" href="$reporoot-url$/lib/reveal.js/dist/theme/black.css" id="theme">
 $endif$
 $for(css)$
   <link rel="stylesheet" href="$css$"/>
@@ -239,14 +239,14 @@ $body$
   <div id=footerl style="position:absolute; bottom:0; left:0;  padding:0.5em; font-size:16pt;">$footerl$</div>
   <div id=footerr style="position:absolute; bottom:0; right:0; padding:0.5em; font-size:16pt;">$footerr$</div>
 
-  <script src="$revealjs-url$/dist/reveal.js"></script>
+  <script src="$reporoot-url$/lib/reveal.js/dist/reveal.js"></script>
 
   <!-- reveal.js plugins -->
-  <script src="$revealjs-url$/plugin/notes/notes.js"></script>
-  <script src="$revealjs-url$/plugin/search/search.js"></script>
-  <script src="$revealjs-url$/plugin/zoom/zoom.js"></script>
+  <script src="$reporoot-url$/lib/reveal.js/plugin/notes/notes.js"></script>
+  <script src="$reporoot-url$/lib/reveal.js/plugin/search/search.js"></script>
+  <script src="$reporoot-url$/lib/reveal.js/plugin/zoom/zoom.js"></script>
 $if(mathjax)$
-  <script src="$revealjs-url$/plugin/math/math.js"></script>
+  <script src="$reporoot-url$/lib/reveal.js/plugin/math/math.js"></script>
 $endif$
 $if(chalkboard)$
   <script src="https://cdn.jsdelivr.net/npm/reveal.js-plugins@4.1.5/chalkboard/plugin.js"></script>
