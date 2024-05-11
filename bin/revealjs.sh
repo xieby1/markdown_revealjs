@@ -58,6 +58,11 @@ while read -r line; do
 done < ${MD}
 
 CMD=(
+    # replace $reporoot-url$ with ${REPOROOT}
+    "sed 's,\\\$reporoot-url\\\$,${REPOROOT},g' ${MD}"
+
+    "|" # pipeline
+
     "${PANDOC}"
     "-t revealjs"
     "--template=${TEMPLATE}"
@@ -84,7 +89,6 @@ CMD=(
     # include cide files
     "-L" "${INCLUDE_CODE_FILES}"
     "--mathjax"
-    "${MD}"
     "-o ${MD%.*}.html"
     "${@:2}"
 )
