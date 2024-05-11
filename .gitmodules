@@ -4,3 +4,6 @@
 [submodule "lib/reveal.js-plugins"]
 	path = lib/reveal.js-plugins
 	url = https://github.com/rajgoel/reveal.js-plugins
+[submodule "lib/reveal.js-menu"]
+	path = lib/reveal.js-menu
+	url = https://github.com/denehyg/reveal.js-menu/
