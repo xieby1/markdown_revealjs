@@ -45,6 +45,12 @@ toc-margin: 0 400px
 # 总结和展望 {data-name="总"}
 
 
-# 谢谢 {data-background-image="$reporoot-url$/themes/ucas_ict_thesis/liquid-cheese_sky_title.svg" data-sminvisible=true}
+# 谢谢 {.slide-count-end data-background-image="$reporoot-url$/themes/ucas_ict_thesis/liquid-cheese_sky_title.svg" data-sminvisible=true}
 
 🎊
+
+# 备份幻灯片
+
+## 🐈
+
+## 🐱
