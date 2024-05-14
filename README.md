@@ -497,6 +497,54 @@ col2
 ::::
 :::
 
+# Pandoc Options
+
+Because `markdown_revealjs` is just
+
+[a shell wrapper of pandoc]{style="font-size:1.5em;"}.
+
+::: {.fragment}
+You can [override]{style="font-size:1.5em;"} them!
+:::
+
+::: {.fragment style="font-size: 0.5em;"}
+See pandoc available options by `pandoc -h`
+:::
+
+## Metadata in .md file (lower priority)
+
+Override in md file metadata, like
+
+```md
+pandoc-opts: "<PANDOC OPTIONS>"
+```
+
+Example:
+
+```md
+---
+title: Markdown RevealJS
+author: xieby1
+date: 2022.06.10
+...
+pandoc-opts: "--toc=false"
+---
+```
+
+## CLI Options (higher priority)
+
+Override by appending `reveal.sh` command, like
+
+```
+reveal.sh <MD File> <PANDOC OPTIONS>
+```
+
+Example:
+
+```bash
+reveal.sh README.md --toc=false
+```
+
 # TOC (resident)
 
 See,

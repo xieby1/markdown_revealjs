@@ -53,6 +53,9 @@ while read -r line; do
         toc-depth)
             TOC_DEPTH=${val}
         ;;
+        pandoc-opts)
+            PANDOC_OPTS=${val}
+        ;;
         esac
     fi
 done < ${MD}
@@ -90,6 +93,7 @@ CMD=(
     "-L" "${INCLUDE_CODE_FILES}"
     "--mathjax"
     "-o ${MD%.*}.html"
+    "${PANDOC_OPTS}"
     "${@:2}"
 )
 
