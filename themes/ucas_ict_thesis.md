@@ -13,9 +13,7 @@ level2-slide-background-image: $reporoot-url$/themes/ucas_ict_thesis/liquid-chee
 level3-slide-background-image: $reporoot-url$/themes/ucas_ict_thesis/liquid-cheese_sky_l3.svg
 background-size: cover
 
-toc-depth: 1
-toc-column-width: unset
-toc-margin: 0 400px
+pandoc-opts: "--toc=false"
 ---
 
 # 研究背景 {data-name="背景"}
