@@ -347,6 +347,30 @@ Then you can go back to the labeled slide ⬆️ [Label and Link](#label_and_lin
 [Label and Link](#label_and_link)
 ```
 
+# Localization (Offline mode)
+
+`markdown_revealjs` can be used completely offline!
+
+## Download this repo
+
+```bash
+# download by git
+git clone https://github.com/xieby1/markdown_revealjs
+# or download the source code without .git
+wget https://github.com/xieby1/markdown_revealjs/archive/master.tar.gz
+tar xzf master.tar.gz
+```
+
+## Run revealjs.sh against local repo
+
+Assuming the path to the local repo is `<REPO>`
+
+```bash
+REPOROOT=<REPO> <REPO>/bin/revealjs.sh <MD File>
+```
+
+Then you can view your slides completely offline!
+
 # Long Table
 
 Bother by long table?
