@@ -1,9 +1,8 @@
 all: README.html $(subst .md,.html,$(wildcard ./themes/*.md))
 
 README.html: README.md plots/plotlypy.html
-	revealjs.sh $<
 %.html: %.md
-	revealjs.sh $<
+	./bin/revealjs.sh $<
 
 clean:
 	rm -f README.html
