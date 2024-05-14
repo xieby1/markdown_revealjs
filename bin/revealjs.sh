@@ -79,7 +79,6 @@ CMD=(
     "-V menu"
     "-V verticator"
     "-V showSlideNumber=all"
-    "-V slideNumber='c/t'"
     "--slide-level=6"
     # table of content
     "--toc"

@@ -562,6 +562,38 @@ Example:
 reveal.sh README.md --toc=false
 ```
 
+# Slide Number End
+
+Slides after the specific slides
+
+can be excluded from the **total slide number**.
+
+---
+
+Think about a situation where,
+
+in your PhD defense,
+
+there are several **backup slides** at the end.
+
+You do not want them counted to the total slide number.
+
+## `.slide-count-end`
+
+Add `.slide-count-end` to the heading of the slide,
+
+```md
+# Heading {.slide-count-end}
+```
+
+## Example
+
+In this README, `.slide-count-end` is added to slide [QnA].
+
+Therefore, the slides after [QnA], like [Backup Slides]
+
+are not counted to total slide number
+
 # TOC (resident)
 
 See,
@@ -651,7 +683,7 @@ you can control how many TOC columns you have.
 * The default `toc-margin` is `0 0 0 0`
 * Thus a 3-column toc is presented.
 
-### 1-column TOC {.slide-count-end}
+### 1-column TOC
 
 Here is an example of 1-column TOC
 
@@ -660,10 +692,26 @@ toc-column-width: unset
 toc-margin: 0 400px
 ```
 
-# QnA
+# QnA {.slide-count-end}
 
 * Problems?
 * tips?
 * Advice?
 
 New issue and pull request is welcome!
+
+# Backup Slides
+
+Test the functionality of [Slide Number End].
+
+From this slide on,
+
+the total slide number ends counting.
+
+## Level-2 Backup Slides
+
+🐱
+
+## Another Level-2 Backup Slides
+
+🐈
