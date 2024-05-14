@@ -40,17 +40,32 @@ It's simple and esay!
 
 # Installation {data-stack-name="Install"}
 
-* First, [Install latest pandoc](https://github.com/jgm/pandoc).
+## First
 
-  Note: Ubuntu 22's apt-installed pandoc is too old.
+```bash
+git clone https://github.com/xieby1/markdown_revealjs
+```
 
-* Second, add revealjs.sh to your PATH env.
+## Second
 
-  ```bash
-  git clone https://github.com/xieby1/markdown_revealjs
-  ln -s <path/to>/revealjs.sh /usr/bin/
-  # or /usr/local/bin/, or ~/.local/bin/
-  ```
+[Install latest pandoc](https://github.com/jgm/pandoc).
+
+Note: Ubuntu 22's apt-installed pandoc is too old.
+
+::: {.fragment}
+👍That's it!
+
+🎊You've installed markdown_revealjs!
+:::
+
+## Third (Optional)
+
+Add revealjs.sh to your PATH env.
+
+```bash
+ln -s <path/to>/revealjs.sh /usr/bin/
+# or /usr/local/bin/, or ~/.local/bin/
+```
 
 # Quick Start {data-stack-name="Quick Start"}
 
