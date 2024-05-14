@@ -11,13 +11,11 @@ else
     REPOROOT="https://xieby1.github.io/markdown_revealjs"
 fi
 
-# use which pandoc
-PANDOC_="$(dirname $(realpath --relative-to=. $0))/../share/markdown_revealjs/pandoc"
-if [[ -f ${PANDOC_} ]]
-then PANDOC=${PANDOC_}
-else PANDOC=pandoc
+if [[ -n ${PANDOC} ]]; then
+    echo PANDOC is set as \"${PANDOC}\"
+else
+    PANDOC=pandoc
 fi
-
 
 if [[ $# -eq 0 || "$1" == "-h" || -z ${MD} ]]
 then
@@ -28,6 +26,7 @@ then
     echo "  REPOROOT    override the default markdown_revealjs url"
     echo "              E.g. if you want to play your slides offline,"
     echo "              set the REPOROOT to the local markdown_revealjs."
+    echo "  PANDOC      override the default pandoc executable"
     echo "  Customized pandoc args:"
     echo "  -V lxgw     enable LXGW Wenkai font"
     exit 0
