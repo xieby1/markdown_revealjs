@@ -10,3 +10,6 @@
 [submodule "lib/reveal.js-verticator"]
 	path = lib/reveal.js-verticator
 	url = https://github.com/Martinomagnifico/reveal.js-verticator
+[submodule "lib/MathJax"]
+	path = lib/MathJax
+	url = https://github.com/mathjax/MathJax
