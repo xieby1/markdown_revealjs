@@ -351,14 +351,17 @@ $endif$
         // * c Flattened slide number, including both horizontal and vertical slides
         // * c/t Flattened slide number / total slides
         slideNumber: slide => {
-            slideEndCount = document.getElementsByClassName("slide-count-end")[0]
+            let slideEndCount = document.getElementsByClassName("slide-count-end")[0]
+            let endCount = slideEndCount ?
+                Reveal.getSlidePastCount( slideEndCount ) + 1 :
+                Reveal.getTotalSlides();
             // see reveal.js/js/controllers/slidenumber.js
             // Offset the current slide number by 1 to make it 1-indexed
             let horizontalOffset = slide && slide.dataset.visibility === 'uncounted' ? 0 : 1;
             return [
                 Reveal.getSlidePastCount( slide ) + horizontalOffset,
                 '/',
-                Reveal.getSlidePastCount( slideEndCount ) + 1,
+                endCount,
             ];
         },
 
