@@ -66,6 +66,15 @@ $if(lxgw)$
   }
 </style>
 $endif$
+<!-- Split font file using cn-font-split -->
+<link href='$reporoot-url$/fonts/Noto_Color_Emoji/dist/main.css' rel='stylesheet'>
+<style>
+/* See themes/white.css */
+:root {
+    --r-main-font: Source Sans Pro, Helvetica, Noto Color Emoji, sans-serif;
+    --r-main-font: Source Sans Pro, Helvetica, Noto Color Emoji, sans-serif;
+}
+</style>
 $if(chalkboard)$
   <link rel="stylesheet" href="$reporoot-url$/lib/reveal.js-plugins/chalkboard/style.css">
   <link rel="stylesheet" href="$reporoot-url$/lib/font-awesome/5.15.4/css/all.min.css">
