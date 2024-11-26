@@ -115,21 +115,21 @@ Enjoy the themes below🎉
 
 ## 龙芯
 
-[themes/loongson.md](https://github.com/xieby1/markdown_revealjs/blob/main/themes/loongson.md)
+[themes/loongson/index.md](https://github.com/xieby1/markdown_revealjs/blob/main/themes/loongson/index.md)
 
-<iframe src="./themes/loongson.html" style="width:800px; height: 450px;"></iframe>
+<iframe src="./themes/loongson/index.html" style="width:800px; height: 450px;"></iframe>
 
 ## 微处理器研究中心
 
-[themes/ict_mtrc_proposal.md](https://github.com/xieby1/markdown_revealjs/blob/main/themes/ict_mtrc_proposal.md)
+[themes/ict_mtrc_proposal/index.md](https://github.com/xieby1/markdown_revealjs/blob/main/themes/ict_mtrc_proposal/index.md)
 
-<iframe src="./themes/ict_mtrc_proposal.html" style="width:800px; height: 450px;"></iframe>
+<iframe src="./themes/ict_mtrc_proposal/index.html" style="width:800px; height: 450px;"></iframe>
 
 ## 国科大计算所答辩
 
-[themes/ucas_ict_thesis.md](https://github.com/xieby1/markdown_revealjs/blob/main/themes/ucas_ict_thesis.md)
+[themes/ucas_ict_thesis/index.md](https://github.com/xieby1/markdown_revealjs/blob/main/themes/ucas_ict_thesis/index.md)
 
-<iframe src="./themes/ucas_ict_thesis.html" style="width:800px; height: 450px;"></iframe>
+<iframe src="./themes/ucas_ict_thesis/index.html" style="width:800px; height: 450px;"></iframe>
 
 # Advanced Syntax {data-name="Advanced Syntax ..."}
 
