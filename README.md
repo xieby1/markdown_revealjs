@@ -113,6 +113,12 @@ Enjoy the themes below🎉
 
 🔽🔽🔽
 
+## 开芯院
+
+[themes/bosc/index.md](https://github.com/xieby1/markdown_revealjs/blob/main/themes/bosc/index.md)
+
+<iframe src="./themes/bosc/index.html" style="width:800px; height: 450px;"></iframe>
+
 ## 龙芯
 
 [themes/loongson/index.md](https://github.com/xieby1/markdown_revealjs/blob/main/themes/loongson/index.md)
