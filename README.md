@@ -694,6 +694,7 @@ you can control how many TOC columns you have.
 Here is an example of 1-column TOC
 
 ```yml
+toc-width: 1200px
 toc-column-width: unset
 toc-margin: 0 400px
 ```

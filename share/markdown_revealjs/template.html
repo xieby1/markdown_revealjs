@@ -116,7 +116,7 @@ a.sourceLine {
 [role="doc-toc"] > ul {
     /* multiple column in first level TOC */
     column-width: $if(toc-column-width)$ $toc-column-width$ $else$ 290px $endif$;
-    width: 100%;
+    width: $if(toc-width)$ $toc-width$ $else$ 1200px $endif$;
     column-rule-style: solid;
     /* no margin in first level TOC */
     margin: $if(toc-margin)$ $toc-margin$ $else$ 0 0 0 0 $endif$;
