@@ -5,11 +5,13 @@ date: 2024年9月12日
 headerr: <img src="$reporoot-url$/themes/bosc/bosc-green.png" style="height:2em;">
 footerl: <span style="color:#008598; font-size:0.8em;">xieby1的开芯院模板・xieby1・2024年11月26日</span>
 
-title-slide-background-image:  $reporoot-url$/themes/bosc/2-notopblank.png
-toc-slide-background-image:    $reporoot-url$/themes/bosc/1.png
-level1-slide-background-image: $reporoot-url$/themes/bosc/2-notop.png
+title-slide-background-image:  $reporoot-url$/themes/bosc/1.png
+toc-slide-background-image:    $reporoot-url$/themes/bosc/toc.png
+level1-slide-background-image: $reporoot-url$/themes/bosc/2-notopblank.png
 level2-slide-background-image: $reporoot-url$/themes/bosc/2-notop.png
 level3-slide-background-image: $reporoot-url$/themes/bosc/2-notop.png
+toc-width: 900px
+toc-margin: 0 0 0 300px
 ---
 
 # 研究背景 {data-name="背景"}
