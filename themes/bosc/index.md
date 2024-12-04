@@ -1,15 +1,15 @@
 ---
-title: <img src="./bosc-long.png" style="height:1em;"><br>xieby1的开芯院模板
+title: <img src="$reporoot-url$/themes/bosc/bosc-long.png" style="height:1em;"><br>xieby1的开芯院模板
 author: <img src="$reporoot-url$/images/me.png" style="height:1.5em;">xieby1
 date: 2024年9月12日
-headerr: <img src="./bosc-green.png" style="height:2em;">
+headerr: <img src="$reporoot-url$/themes/bosc/bosc-green.png" style="height:2em;">
 footerl: <span style="color:#008598; font-size:0.8em;">xieby1的开芯院模板・xieby1・2024年11月26日</span>
 
-title-slide-background-image:  ./2.png
-toc-slide-background-image:    ./1.png
-level1-slide-background-image: ./2-notop.png
-level2-slide-background-image: ./2-notop.png
-level3-slide-background-image: ./2-notop.png
+title-slide-background-image:  $reporoot-url$/themes/bosc/2.png
+toc-slide-background-image:    $reporoot-url$/themes/bosc/1.png
+level1-slide-background-image: $reporoot-url$/themes/bosc/2-notop.png
+level2-slide-background-image: $reporoot-url$/themes/bosc/2-notop.png
+level3-slide-background-image: $reporoot-url$/themes/bosc/2-notop.png
 ---
 
 # 研究背景 {data-name="背景"}
@@ -57,7 +57,7 @@ level3-slide-background-image: ./2-notop.png
 # 总结和展望 {data-name="总"}
 
 
-# 谢谢 {.slide-count-end data-background-image="./3.png" data-sminvisible=true}
+# 谢谢 {.slide-count-end data-background-image="$reporoot-url$/themes/bosc/3.png" data-sminvisible=true}
 
 🎊
 
