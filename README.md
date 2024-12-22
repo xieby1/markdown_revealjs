@@ -675,6 +675,7 @@ toc-depth: 1
 
 The number of TOC columns is controlled by yml front matter:
 
+* `toc-width` for TOC width
 * `toc-column-width` for TOC's column width
 * `toc-margin` for TOC's margin
 
