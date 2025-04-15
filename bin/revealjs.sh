@@ -19,22 +19,37 @@ TEMPLATE="$(dirname $(realpath --relative-to=. $0))/../share/markdown_revealjs/t
 INCLUDE_FILES="$(dirname $(realpath --relative-to=. $0))/../share/markdown_revealjs/include-files.lua"
 INCLUDE_CODE_FILES="$(dirname $(realpath --relative-to=. $0))/../share/markdown_revealjs/include-code-files.lua"
 
-daemonize=0
-args=()
+DAEMONIZE=0
+ARGS=()
 while [[ $# -gt 0 ]]; do
   case "$1" in
     -d)
-      daemonize=1
+      DAEMONIZE=1
       shift  # 跳过-d参数
       ;;
     *)
-      args+=("$1")  # 将其他参数加入数组
+      ARGS+=("$1")  # 将其他参数加入数组
       shift
       ;;
   esac
 done
 
-MD=${args[0]}
+MD=${ARGS[0]}
+
+usage() {
+    echo "Usage: ${0##*/}" convert markdown file to reveal.js slides.
+    echo "[REPOROOT=<Path>] ${0##*/} [-h] [-d] <input.md> [pandoc args]"
+    echo "  Use pandoc convert <input.md> to input.html."
+    echo "  -d          daemonize"
+    echo "  Environment variables:"
+    echo "  REPOROOT    override the default markdown_revealjs url"
+    echo "              E.g. if you want to play your slides offline,"
+    echo "              set the REPOROOT to the local markdown_revealjs."
+    echo "  PANDOC      override the default pandoc executable"
+    echo "  Customized pandoc args:"
+    echo "  -V lxgw     enable LXGW Wenkai font"
+    exit 0
+}
 
 revealjs() {
 if [[ -n ${REPOROOT} ]]; then
@@ -49,20 +64,8 @@ else
     PANDOC=pandoc
 fi
 
-if [[ $# -eq 0 || "$1" == "-h" || -z ${MD} ]]
-then
-    echo "Usage: ${0##*/}" convert markdown file to reveal.js slides.
-    echo "[REPOROOT=<Path>] ${0##*/} [-h] [-d] <input.md> [pandoc args]"
-    echo "  Use pandoc convert <input.md> to input.html."
-    echo "  -d          daemonize"
-    echo "  Environment variables:"
-    echo "  REPOROOT    override the default markdown_revealjs url"
-    echo "              E.g. if you want to play your slides offline,"
-    echo "              set the REPOROOT to the local markdown_revealjs."
-    echo "  PANDOC      override the default pandoc executable"
-    echo "  Customized pandoc args:"
-    echo "  -V lxgw     enable LXGW Wenkai font"
-    exit 0
+if [[ $# -eq 0 || "$1" == "-h" || -z ${MD} ]]; then
+  usage
 fi
 
 # get options from front matter in MD
@@ -127,7 +130,7 @@ CMD=(
     "${PANDOC_OPTS}"
     "${@:2}"
 )
-if [[ $daemonize == 1 ]]; then
+if [[ $DAEMONIZE == 1 ]]; then
   CMD+=("-V daemonize")
 fi
 
@@ -135,12 +138,12 @@ eval "${CMD[@]}"
 # echo "${CMD[@]}"
 }
 
-if [[ $daemonize == 1 ]]; then
+if [[ $DAEMONIZE == 1 ]]; then
   browser-sync start -s $(dirname "$MD") -f $(dirname "$MD") --index "${MD%.*}.html" &
   while true; do
-    revealjs "${args[@]}"
+    revealjs "${ARGS[@]}"
     inotifywait -e modify "$MD" || true
   done
 else
-    revealjs "${args[@]}"
+    revealjs "${ARGS[@]}"
 fi
