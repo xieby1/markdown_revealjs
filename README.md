@@ -101,6 +101,13 @@ $ revealjs.sh <input.md>
 
 It's simple and easy, right?
 
+## daemonize
+
+```bash
+$ revealjs.sh -d <input.md>
+# will auto refresh browser when input.md is changed
+```
+
 # Themes {data-stack-name="Themes"}
 
 Here are predefined themes (template),

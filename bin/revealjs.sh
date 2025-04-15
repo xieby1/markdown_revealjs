@@ -1,10 +1,42 @@
 #!/usr/bin/env bash
 
+set -e # exit on error
+
+# kill children processes when exit
+# https://aweirdimagination.net/2020/06/28/kill-child-jobs-on-script-exit/
+cleanup() {
+    pkill -P $$ # kill all processes whose parent is this process
+}
+for sig in INT QUIT HUP TERM; do
+  trap "
+    cleanup
+    trap - $sig EXIT
+    kill -s $sig "'"$$"' "$sig"
+done
+trap cleanup EXIT
+
 TEMPLATE="$(dirname $(realpath --relative-to=. $0))/../share/markdown_revealjs/template.html"
 INCLUDE_FILES="$(dirname $(realpath --relative-to=. $0))/../share/markdown_revealjs/include-files.lua"
 INCLUDE_CODE_FILES="$(dirname $(realpath --relative-to=. $0))/../share/markdown_revealjs/include-code-files.lua"
-MD=$1
 
+daemonize=0
+args=()
+while [[ $# -gt 0 ]]; do
+  case "$1" in
+    -d)
+      daemonize=1
+      shift  # 跳过-d参数
+      ;;
+    *)
+      args+=("$1")  # 将其他参数加入数组
+      shift
+      ;;
+  esac
+done
+
+MD=${args[0]}
+
+revealjs() {
 if [[ -n ${REPOROOT} ]]; then
     echo REPOROOT is set as \"${REPOROOT}\"
 else
@@ -20,9 +52,10 @@ fi
 if [[ $# -eq 0 || "$1" == "-h" || -z ${MD} ]]
 then
     echo "Usage: ${0##*/}" convert markdown file to reveal.js slides.
-    echo "[REPOROOT=<Path>] ${0##*/} [-h] <input.md> [pandoc args]"
+    echo "[REPOROOT=<Path>] ${0##*/} [-h] [-d] <input.md> [pandoc args]"
     echo "  Use pandoc convert <input.md> to input.html."
-    echo "  Enviroment variables:"
+    echo "  -d          daemonize"
+    echo "  Environment variables:"
     echo "  REPOROOT    override the default markdown_revealjs url"
     echo "              E.g. if you want to play your slides offline,"
     echo "              set the REPOROOT to the local markdown_revealjs."
@@ -94,6 +127,20 @@ CMD=(
     "${PANDOC_OPTS}"
     "${@:2}"
 )
+if [[ $daemonize == 1 ]]; then
+  CMD+=("-V daemonize")
+fi
 
 eval "${CMD[@]}"
 # echo "${CMD[@]}"
+}
+
+if [[ $daemonize == 1 ]]; then
+  browser-sync start -s $(dirname "$MD") -f $(dirname "$MD") --index "${MD%.*}.html" &
+  while true; do
+    revealjs "${args[@]}"
+    inotifywait -e modify "$MD" || true
+  done
+else
+    revealjs "${args[@]}"
+fi
