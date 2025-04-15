@@ -5,7 +5,7 @@ set -e # exit on error
 # kill children processes when exit
 # https://aweirdimagination.net/2020/06/28/kill-child-jobs-on-script-exit/
 cleanup() {
-    pkill -P $$ # kill all processes whose parent is this process
+    pkill -P $$ || true # kill all processes whose parent is this process
 }
 for sig in INT QUIT HUP TERM; do
   trap "
