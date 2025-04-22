@@ -18,6 +18,7 @@ trap cleanup EXIT
 TEMPLATE="$(dirname $(realpath --relative-to=. $0))/../share/markdown_revealjs/template.html"
 INCLUDE_FILES="$(dirname $(realpath --relative-to=. $0))/../lib/lua-filters/include-files/include-files.lua"
 INCLUDE_CODE_FILES="$(dirname $(realpath --relative-to=. $0))/../lib/lua-filters/include-code-files/include-code-files.lua"
+REVEALJS_CODEBLOCK="$(dirname $(realpath --relative-to=. $0))/../lib/lua-filters/revealjs-codeblock/revealjs-codeblock.lua"
 
 DAEMONIZE=0
 ARGS=()
@@ -125,6 +126,9 @@ CMD=(
     "-L" "${INCLUDE_FILES}"
     # include cide files
     "-L" "${INCLUDE_CODE_FILES}"
+    # use revealjs provided highlight (highlight.js)
+    "-L" "${REVEALJS_CODEBLOCK}"
+    "--no-highlight"
     "--mathjax"
     "-o ${MD%.*}.html"
     "${PANDOC_OPTS}"

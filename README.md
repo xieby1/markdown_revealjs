@@ -184,6 +184,44 @@ left aligned
 ```
 :::
 
+# Auto Animate
+
+## Code {data-auto-animate=""}
+
+~~~markdown
+```python {data-id="code-animation" data-line-numbers=""}
+class Miao:
+  def __init__(self):
+    pass
+```
+~~~
+
+```python {data-id="code-animation" data-line-numbers=""}
+class Miao:
+  def __init__(self):
+    pass
+```
+
+## Code {data-auto-animate=""}
+
+~~~markdown
+```python {data-id="code-animation" data-line-numbers=""}
+# This is a class
+class Miao:
+  # This is a func def
+  def __init__(self):
+    pass
+```
+~~~
+
+```python {data-id="code-animation" data-line-numbers=""}
+# This is a class
+class Miao:
+  # This is a func def
+  def __init__(self):
+    pass
+```
+
 # Backgrounds
 
 Did you notice that every page has a default background?
