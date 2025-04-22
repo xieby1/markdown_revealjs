@@ -26,10 +26,13 @@ $endif$
   </style>
 $if(theme)$
   <link rel="stylesheet" href="$reporoot-url$/lib/reveal.js/dist/theme/$theme$.css" id="theme">
-  <link rel="stylesheet" href="$reporoot-url$/share/markdown_revealjs/github.css" id="theme">
 $else$
   <link rel="stylesheet" href="$reporoot-url$/lib/reveal.js/dist/theme/black.css" id="theme">
-  <link rel="stylesheet" href="$reporoot-url$/share/markdown_revealjs/github-dark.css" id="theme">
+$endif$
+$if(code-theme)$
+  <link rel="stylesheet" href="$reporoot-url$/share/markdown_revealjs/$code-theme$.css" id="theme">
+$else$
+  <link rel="stylesheet" href="$reporoot-url$/share/markdown_revealjs/stackoverflow-light.css" id="theme">
 $endif$
 $for(css)$
   <link rel="stylesheet" href="$css$"/>

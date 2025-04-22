@@ -106,6 +106,7 @@ CMD=(
     "-t revealjs"
     "--template=${TEMPLATE}"
     "-V theme=white"
+    "-V code-theme=stackoverflow-light"
     "-V reporoot-url=${REPOROOT}"
     "-V width=1200"
     "-V height=700"
