@@ -13,3 +13,6 @@
 [submodule "lib/MathJax"]
 	path = lib/MathJax
 	url = https://github.com/mathjax/MathJax
+[submodule "lib/lua-filters"]
+	path = lib/lua-filters
+	url = https://github.com/pandoc/lua-filters/

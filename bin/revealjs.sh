@@ -16,8 +16,8 @@ done
 trap cleanup EXIT
 
 TEMPLATE="$(dirname $(realpath --relative-to=. $0))/../share/markdown_revealjs/template.html"
-INCLUDE_FILES="$(dirname $(realpath --relative-to=. $0))/../share/markdown_revealjs/include-files.lua"
-INCLUDE_CODE_FILES="$(dirname $(realpath --relative-to=. $0))/../share/markdown_revealjs/include-code-files.lua"
+INCLUDE_FILES="$(dirname $(realpath --relative-to=. $0))/../lib/lua-filters/include-files/include-files.lua"
+INCLUDE_CODE_FILES="$(dirname $(realpath --relative-to=. $0))/../lib/lua-filters/include-code-files/include-code-files.lua"
 
 DAEMONIZE=0
 ARGS=()

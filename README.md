@@ -43,7 +43,7 @@ It's simple and esay!
 ## First
 
 ```bash
-git clone https://github.com/xieby1/markdown_revealjs
+git clone --recurse-submodules https://github.com/xieby1/markdown_revealjs
 ```
 
 ## Second
@@ -368,7 +368,7 @@ Then you can go back to the labeled slide ⬆️ [Label and Link](#label_and_lin
 
 ```bash
 # download by git
-git clone https://github.com/xieby1/markdown_revealjs
+git clone --recurse-submodules https://github.com/xieby1/markdown_revealjs
 # or download the source code without .git
 wget https://github.com/xieby1/markdown_revealjs/archive/master.tar.gz
 tar xzf master.tar.gz
