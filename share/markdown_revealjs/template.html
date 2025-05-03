@@ -671,6 +671,37 @@ $endif$
         });
       })
     </script>
+    <script>
+      // inspired by [quarto-cli: revealjs presentation: hiding footer and slide menu control for a specific slide #825](https://github.com/quarto-dev/quarto-cli/discussions/825)
+      { // a local scope
+        // generate a function that can hide class by selectorList
+        function gen_hide_class_bySelector(className, selectorList) {
+          return function(event) {
+            const display = (Array.from(event.currentSlide.classList).indexOf(className) !== -1) ? "none" : null;
+            for (const sel of selectorList) {
+              const ele = document.querySelector(sel)
+              if (ele) ele.style.display = display;
+            }
+          }
+        }
+        nochrome = gen_hide_class_bySelector("nochrome", [
+          "#headerl", "#headerr", "#footerl", "#footerr",
+          ".navigate-left", ".navigate-right", ".navigate-up", ".navigate-down",
+          "#customcontrols", ".slide-menu-button",
+          ".simplemenubar",
+          ".verticator",
+          ".slide-number",
+        ])
+        Reveal.on("ready", nochrome )
+        Reveal.on('ready', () => { Reveal.on( 'slidechanged', nochrome ); })
+
+        Reveal.on("ready", () => {
+          for (const sel of ["h1.noheading", "h2.noheading", "h3.noheading", "h4.noheading", "h5.noheading", "h6.noheading" ])
+            for (const ele of document.querySelectorAll(sel))
+              ele.style.display = "none";
+        })
+      }
+    </script>
   $for(include-after)$
   $include-after$
   $endfor$

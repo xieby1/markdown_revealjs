@@ -314,6 +314,26 @@ Just use the markdown horizontal break `---`, like this
 
 Force starting a new slide!
 
+# Not Displaying Heading and Chrome
+
+## Not Displaying This Heading {.noheading}
+
+```md
+## Not Displaying This Heading {.noheading}
+```
+
+## Not Displaying The Chrome in This Slide {.nochrome}
+
+```md
+## Not Displaying The Chrome in This Slide {.nochrome}
+```
+
+## Not Displaying Both heading and Chrome {.noheading .nochrome}
+
+```md
+## Not Displaying Both heading and Chrome {.noheading .nochrome}
+```
+
 # Include Files
 
 ## include files normally
