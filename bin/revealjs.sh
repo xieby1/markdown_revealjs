@@ -21,12 +21,18 @@ INCLUDE_CODE_FILES="$(dirname $(realpath --relative-to=. $0))/../lib/lua-filters
 REVEALJS_CODEBLOCK="$(dirname $(realpath --relative-to=. $0))/../lib/lua-filters/revealjs-codeblock/revealjs-codeblock.lua"
 
 DAEMONIZE=0
+PORT=7782
 ARGS=()
 while [[ $# -gt 0 ]]; do
   case "$1" in
     -d)
       DAEMONIZE=1
       shift  # 跳过-d参数
+      ;;
+    -p)
+      shift
+      PORT="$1"
+      shift
       ;;
     *)
       ARGS+=("$1")  # 将其他参数加入数组
@@ -42,6 +48,7 @@ usage() {
     echo "[REPOROOT=<Path>] ${0##*/} [-h] [-d] <input.md> [pandoc args]"
     echo "  Use pandoc convert <input.md> to input.html."
     echo "  -d          daemonize"
+    echo "  -p <port>   daemonize port default 7782"
     echo "  Environment variables:"
     echo "  REPOROOT    override the default markdown_revealjs url"
     echo "              E.g. if you want to play your slides offline,"
@@ -117,6 +124,7 @@ CMD=(
     "-V menu"
     "-V verticator"
     "-V showSlideNumber=all"
+    "-V daemonize-port=${PORT}"
     "--slide-level=6"
     # table of content
     "--toc"
@@ -144,7 +152,7 @@ eval "${CMD[@]}"
 }
 
 if [[ $DAEMONIZE == 1 ]]; then
-  browser-sync start -s $(dirname "$MD") -f "$MD" --index "${MD%.*}.html" &
+  browser-sync start --port "$PORT" -s $(dirname "$MD") -f "$MD" --index "${MD%.*}.html" &
   while true; do
     revealjs "${ARGS[@]}"
     inotifywait -e modify "$MD" || true
