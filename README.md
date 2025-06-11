@@ -186,24 +186,11 @@ left aligned
 
 # Ascii Art with CJK
 
-`cjk2ch` lang tag gracefully handled mono fonts width,
+Auto detect and gracefully handled mono fonts width,
 
 where CJK and Latin characters are mixed
 
-~~~cjk2ch
-```cjk2ch
-┌─────────────┐
-│no more ┌────┼────┐
-│        │不会│!!!!│
-│mismatch│错位│，。│
-└────────┼────┘！！│
-         └─────────┘
 ```
-~~~
-
-renders:
-
-```cjk2ch
 ┌─────────────┐
 │no more ┌────┼────┐
 │        │不会│!!!!│
