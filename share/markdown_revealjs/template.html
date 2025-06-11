@@ -344,6 +344,11 @@ $endif$
       // Full list of configuration options available at:
       // https://revealjs.com/config/
       Reveal.initialize({
+        highlight: {
+          // disable the default highlight plugin
+          // I will handle highlight.js below, to disable auto detection of language
+          highlightOnLoad: false,
+        },
         // Display controls in the bottom right corner
         controls: $controls$,
 
@@ -644,6 +649,22 @@ $if(verticator)$
           Verticator,
 $endif$
         ],
+      }).then(() => {
+        // Disable auto detection of language
+        // this function is based on
+        // * reveal.js/plugin/highlight/plugin.js
+        // * https://revealjs.com/code/
+        Array.from( Reveal.getRevealElement().querySelectorAll( 'pre code' ) ).forEach( block => {
+          if (block.classList.length > 0) {
+            if (! block.classList[0].startsWith("language-"))
+              block.classList.replace(block.classList[0], "language-"+block.classList[0])
+          } else {
+            block.classList.add("language-none");
+          }
+
+          const highlight = Reveal.getPlugin('highlight');
+          highlight.highlightBlock(block);
+        } );
       });
       Reveal.addKeyBinding( { keyCode: 9,  key: "Tab",   description: "Left"  }, () => {Reveal.left()} )
       Reveal.addKeyBinding( { keyCode: 13, key: "Enter", description: "Right" }, () => {Reveal.right()} )
