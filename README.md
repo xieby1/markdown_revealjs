@@ -184,6 +184,21 @@ left aligned
 ```
 :::
 
+# Ascii Art with CJK
+
+Gracefully handled mono fonts width,
+
+where CJK and Latin characters are mixed
+
+```
+┌─────────────┐
+│no more ┌────┼────┐
+│        │不会│!!!!│
+│mismatch│错位│，。│
+└────────┼────┘！！│
+         └─────────┘
+```
+
 # Auto Animate
 
 ## Code {data-auto-animate=""}
