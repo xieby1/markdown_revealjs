@@ -27,19 +27,26 @@ function cjk2ch(selector) {
         append_buffer = "";
       }
     }
+
+    function span(char, width) {
+      flush_buffer()
+      const span = document.createElement('span');
+      span.textContent = char;
+      span.style.display = 'inline-block';
+      span.style.width = width;
+      span.style.textAlign = 'center';
+      element.appendChild(span);
+    }
     // 遍历每个字符
     for (const char of text) {
       // 完整 CJK 字符范围（汉字+标点+日文假名+韩文）
       const cjkRegex = /[\u3000-\u303f\u4e00-\u9fff\u3040-\u309f\u30a0-\u30ff\uff00-\uff9f\uac00-\ud7af]/;
+      // 一些符号（比如画线框的符号）在某些cjk mono字体里（比如noto）被设计成了全宽度
+      const symRegex = /[\u2500-\u257f]/
       if (cjkRegex.test(char)) {
-        flush_buffer()
-        // 如果是 CJK 字符，包裹 span 并设置 2ch 宽度
-        const span = document.createElement('span');
-        span.textContent = char;
-        span.style.display = 'inline-block';
-        span.style.width = '2ch';
-        span.style.textAlign = 'center';
-        element.appendChild(span);
+        span(char, "2ch")
+      } else if (symRegex.test(char)) {
+        span(char, "1ch")
       } else {
         // 非 CJK 字符直接插入append_buffer
         append_buffer += char;
