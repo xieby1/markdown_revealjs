@@ -12,7 +12,7 @@
 // * 能不能写一个javascript代码，吧pre code里的每个字都放入一个等宽的span里？
 // * 我可不可以只把cjk字符装进span，设置宽度为2ch，其他字符都不用管？这样可行吗？
 // So I get the following perfect solution!
-document.addEventListener('DOMContentLoaded', () => {
+function cjk2ch() {
   const elements = document.querySelectorAll("pre code");
   elements.forEach(element => {
     // 获取原始文本
@@ -37,4 +37,4 @@ document.addEventListener('DOMContentLoaded', () => {
       }
     }
   });
-});
+};
