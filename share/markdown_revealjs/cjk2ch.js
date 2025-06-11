@@ -19,11 +19,20 @@ function cjk2ch(selector) {
     const text = element.textContent;
     // 清空元素内容
     element.innerHTML = '';
+    // append_buffer可以避免html里一个字一行，不好看
+    append_buffer = "";
+    function flush_buffer() {
+      if (append_buffer != "") {
+        element.append(append_buffer);
+        append_buffer = "";
+      }
+    }
     // 遍历每个字符
     for (const char of text) {
       // 完整 CJK 字符范围（汉字+标点+日文假名+韩文）
       const cjkRegex = /[\u3000-\u303f\u4e00-\u9fff\u3040-\u309f\u30a0-\u30ff\uff00-\uff9f\uac00-\ud7af]/;
       if (cjkRegex.test(char)) {
+        flush_buffer()
         // 如果是 CJK 字符，包裹 span 并设置 2ch 宽度
         const span = document.createElement('span');
         span.textContent = char;
@@ -32,9 +41,10 @@ function cjk2ch(selector) {
         span.style.textAlign = 'center';
         element.appendChild(span);
       } else {
-        // 非 CJK 字符直接插入文本
-        element.appendChild(document.createTextNode(char));
+        // 非 CJK 字符直接插入append_buffer
+        append_buffer += char;
       }
     }
+    flush_buffer()
   });
 };
