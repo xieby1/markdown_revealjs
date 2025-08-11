@@ -152,7 +152,7 @@ eval "${CMD[@]}"
 }
 
 if [[ $DAEMONIZE == 1 ]]; then
-  browser-sync start --port "$PORT" -s $(dirname "$MD") -f "$MD" --index "${MD%.*}.html" &
+  browser-sync start --port "$PORT" -s . -f "$MD" --index "${MD%.*}.html" &
   while true; do
     revealjs "${ARGS[@]}"
     inotifywait -e modify "$MD" || true
