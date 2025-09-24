@@ -69,7 +69,7 @@ function Inlines(inlines)
     if img.attr.attributes.clip then
       local l,t,r,b = string.match(img.attr.attributes.clip, '(%d+)%%%s*(%d+)%%%s*(%d+)%%%s*(%d+)%%')
       l=tonumber(l); t=tonumber(t); r=tonumber(r); b=tonumber(b);
-      print("clip: ", l, t, r, b)
+      -- print("clip: ", l, t, r, b)
       html_content = string.format(
         [[<div style="display:flex; justify-content:center;">
           <div style="overflow:hidden; width:%fpx; height:%fpx;
