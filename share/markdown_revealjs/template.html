@@ -1,0 +1,755 @@
+<!DOCTYPE html>
+<!-- Export by pandoc -D revealjs, pandoc version 2.14.03 -->
+<!-- pandoc-types 1.22.1, texmath 0.12.3.2, skylighting 0.10.5.2, -->
+<!-- citeproc 0.4.0.1, ipynb 0.1.0.2 -->
+<html$if(lang)$ lang="$lang$"$endif$$if(dir)$ dir="$dir$"$endif$>
+<head>
+  <meta charset="utf-8">
+  <meta name="generator" content="pandoc">
+$for(author-meta)$
+  <meta name="author" content="$author-meta$">
+$endfor$
+$if(date-meta)$
+  <meta name="dcterms.date" content="$date-meta$">
+$endif$
+$if(keywords)$
+  <meta name="keywords" content="$for(keywords)$$keywords$$sep$, $endfor$">
+$endif$
+  <title>$if(title-prefix)$$title-prefix$ – $endif$$pagetitle$</title>
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes, minimal-ui">
+  <link rel="stylesheet" href="$reporoot-url$/lib/reveal.js/dist/reset.css">
+  <link rel="stylesheet" href="$reporoot-url$/lib/reveal.js/dist/reveal.css">
+  <style>
+    $styles.html()$
+  </style>
+$if(theme)$
+  <link rel="stylesheet" href="$reporoot-url$/lib/reveal.js/dist/theme/$theme$.css" id="theme">
+$else$
+  <link rel="stylesheet" href="$reporoot-url$/lib/reveal.js/dist/theme/black.css" id="theme">
+$endif$
+$if(code-theme)$
+  <link rel="stylesheet" href="$reporoot-url$/share/markdown_revealjs/$code-theme$.css" id="theme">
+$else$
+  <link rel="stylesheet" href="$reporoot-url$/share/markdown_revealjs/stackoverflow-light.css" id="theme">
+$endif$
+$for(css)$
+  <link rel="stylesheet" href="$css$"/>
+$endfor$
+$if(math)$
+  $math$
+$endif$
+$for(header-includes)$
+  $header-includes$
+$endfor$
+$if(lxgw)$
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/lxgw-wenkai-webfont@1.6.0/lxgwwenkai-regular.css"/>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/lxgw-wenkai-webfont@1.6.0/lxgwwenkaimono-regular.css"/>
+<style>
+  /* copy from reset.css */
+  html, body, div, span, applet, object, iframe,
+  h1, h2, h3, h4, h5, h6,
+  p, blockquote, pre, a, abbr, acronym, address,
+  big, cite, code, del, dfn, em, img, ins, kbd,
+  q, s, samp, small, strike, strong, sub, sup,
+  tt, var, b, u, i, center, dl, dt, dd,
+  ol, ul, li, fieldset, form, label, legend,
+  table, caption, tbody, tfoot, thead,
+  tr, th, td, article, aside, canvas, details,
+  embed, figure, figcaption, footer, header,
+  hgroup, main, menu, nav, output, ruby,
+  section, summary, time, mark, audio, video,
+  /* copy from white.css */
+  .reveal h1, .reveal h2, .reveal h3,
+  .reveal h4, .reveal h5, .reveal h6
+  {
+    font-family: "LXGW WenKai"
+  }
+  code {
+    font-family: "LXGW WenKai Mono"
+  }
+</style>
+$endif$
+<!-- Split font file using cn-font-split -->
+<link href='$reporoot-url$/fonts/Noto_Color_Emoji/dist/main.css' rel='stylesheet'>
+<style>
+/* See themes/white.css */
+:root {
+    --r-main-font: Source Sans Pro, Helvetica, Noto Color Emoji, sans-serif;
+    --r-main-font: Source Sans Pro, Helvetica, Noto Color Emoji, sans-serif;
+}
+</style>
+$if(chalkboard)$
+  <link rel="stylesheet" href="$reporoot-url$/lib/reveal.js-plugins/chalkboard/style.css">
+  <link rel="stylesheet" href="$reporoot-url$/lib/font-awesome/5.15.4/css/all.min.css">
+  <link rel="stylesheet" href="$reporoot-url$/lib/reveal.js-plugins/customcontrols/style.css">
+$endif$
+$if(simplemenu)$
+  <link rel="stylesheet" href="$reporoot-url$/lib/reveal.js-simplemenu/simpleMenu.css">
+$endif$
+<!-- revealjs.sh customized styles -->
+<style>
+.reveal section img {
+    margin: 0 0;
+    /* override default border color */
+    border: transparent;
+}
+
+.reveal p {
+    margin: 0 0;
+}
+
+/* no margin in styled code div, the same to unstyled code */
+div.sourceCode {
+    margin: 0;
+}
+.reveal pre {
+    display: flex;
+    justify-content: center;
+    line-height: 1.0em;
+    width: fit-content;
+    max-width: 100%;
+}
+
+.reveal pre code {
+    max-height: none;
+}
+
+a.sourceLine {
+    /* styled code line is higher than unstyled, make them the same */
+    line-height: 0;
+}
+
+[role="doc-toc"] > ul {
+    /* multiple column in first level TOC */
+    column-width: $if(toc-column-width)$ $toc-column-width$ $else$ 290px $endif$;
+    width: $if(toc-width)$ $toc-width$ $else$ 1200px $endif$;
+    column-rule-style: solid;
+    /* no margin in first level TOC */
+    margin: $if(toc-margin)$ $toc-margin$ $else$ 0 0 0 0 $endif$;
+}
+
+[role="doc-toc"] ul {
+    /* no bullet */
+    list-style-type: none;
+    /* no margin, no padding in TOC ul */
+    margin-block-start: 0;
+    margin-block-end: 0;
+    padding-inline-start: 0;
+}
+
+/* change first level toc background */
+nav > ul > li > a {
+    background: lightgrey;
+}
+
+/* Long table overflow */
+/* https://stackoverflow.com/questions/23989463/how-to-set-tbody-height-with-overflow-scroll */
+thead tr th {
+    position: sticky;
+    top: 0;
+}
+table {
+    border-collapse: collapse;
+}
+
+/* Center the table, make the scroll bar right beside the table */
+/* https://www.joshwcomeau.com/css/center-a-div/ */
+.longtable {
+    overflow-y: auto;
+    max-width: fit-content;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+/* enable multiple columns */
+/* https://stackoverflow.com/questions/30861845 */
+.container {
+  display: flex;
+  align-items: center;
+}
+.col {
+  flex: auto;
+}
+
+/* not to capitalise my titles */
+/* https://stackoverflow.com/questions/47057398 */
+.reveal h1,
+.reveal h2,
+.reveal h3,
+.reveal h4,
+.reveal h5 {
+    text-transform: none;
+}
+
+/* make customcontrols hiden when print-pdf */
+@media print {
+  .slide-menu-button,
+  #customcontrols {
+    visibility: hidden;
+  }
+}
+
+/* make customcontrols always collapse */
+@media only screen and (min-width: 500px) {
+  #customcontrols > button {
+      display: block;
+  }
+  #customcontrols > ul {
+    position: fixed;
+    left: 54px;
+    bottom: 64px;
+    list-style-type: none;
+    overflow: hidden;
+    margin: 0;
+    border: 1px solid var(--r-link-color);
+    border-radius: 5px;
+    padding: 10px;
+    background-color: var(--r-background-color)
+  }
+}
+</style>
+</head>
+<body>
+$for(include-before)$
+$include-before$
+$endfor$
+  <div class="reveal">
+    <div class="slides">
+
+$if(title)$
+<section id="$idprefix$title-slide"$for(title-slide-attributes/pairs)$ $it.key$="$it.value$"$endfor$
+         $if(simplemenu)$data-sminvisible=true$endif$>
+  <h1 class="title">$title$</h1>
+$if(subtitle)$
+  <p class="subtitle">$subtitle$</p>
+$endif$
+$for(author)$
+  <p class="author">$author$</p>
+$endfor$
+$for(institute)$
+  <p class="institute">$institute$</p>
+$endfor$
+$if(date)$
+  <p class="date">$date$</p>
+$endif$
+</section>
+$endif$
+$if(toc)$
+<section id="$idprefix$TOC"
+         $if(simplemenu)$data-sminvisible=true$endif$>
+<nav role="doc-toc"> 
+$if(toc-title)$
+<h2 id="$idprefix$toc-title">$toc-title$</h2>
+$endif$
+$table-of-contents$
+</nav>
+</section>
+$endif$
+
+$body$
+    </div>
+  </div>
+  <div id=headerl style="position:absolute; top:0;    left:0;  padding:0.5em; font-size:16pt;">$headerl$</div>
+  <div id=headerr style="position:absolute; top:0;    right:0; padding:0.5em; font-size:16pt;">$headerr$</div>
+  <div id=footerl style="position:absolute; bottom:0; left:0;  padding:0.5em; font-size:16pt;">$footerl$</div>
+  <div id=footerr style="position:absolute; bottom:0; right:0; padding:0.5em; font-size:16pt;">$footerr$</div>
+
+  <script src="$reporoot-url$/lib/reveal.js/dist/reveal.js"></script>
+
+  <!-- reveal.js plugins -->
+  <script src="$reporoot-url$/lib/reveal.js/plugin/notes/notes.js"></script>
+  <script src="$reporoot-url$/lib/reveal.js/plugin/search/search.js"></script>
+  <script src="$reporoot-url$/lib/reveal.js/plugin/zoom/zoom.js"></script>
+  <script src="$reporoot-url$/lib/reveal.js/plugin/highlight/highlight.js"></script>
+$if(mathjax)$
+  <script src="$reporoot-url$/lib/reveal.js/plugin/math/math.js"></script>
+$endif$
+$if(chalkboard)$
+  <script src="$reporoot-url$/lib/reveal.js-plugins/chalkboard/plugin.js"></script>
+  <script src="$reporoot-url$/lib/reveal.js-plugins/customcontrols/plugin.js"></script>
+$endif$
+$if(simplemenu)$
+  <script src="$reporoot-url$/lib/reveal.js-simplemenu/simpleMenu.js"></script>
+$endif$
+$if(menu)$
+  <script src="$reporoot-url$/lib/reveal.js-menu/menu.js"></script>
+$endif$
+$if(verticator)$
+  <script src="$reporoot-url$/lib/reveal.js-verticator/plugin/verticator/verticator.js"></script>
+$endif$
+$if(title-slide-background-image)$
+  <script>
+  var title_slide = document.getElementById("title-slide")
+  title_slide.setAttribute("data-background-image", "$title-slide-background-image$")
+  </script>
+$endif$
+$if(toc-slide-background-image)$
+  <script>
+  var toc_slide = document.getElementById("TOC")
+  if (toc_slide)
+    toc_slide.setAttribute("data-background-image", "$toc-slide-background-image$")
+  </script>
+$endif$
+$if(level1-slide-background-image)$
+  <script>
+  // inspired by https://github.com/hakimel/reveal.js/issues/1227
+  for (var slide of document.getElementsByClassName('slide level1')){
+    if (!(slide.getAttribute('data-background') ||
+          slide.getAttribute('data-background-color') ||
+          slide.getAttribute('data-background-image') ||
+          slide.getAttribute('data-background-video') ||
+          slide.getAttribute('data-background-iframe'))){
+      slide.setAttribute('data-background-image', '$level1-slide-background-image$')
+    }
+  }
+  </script>
+$endif$
+$if(level2-slide-background-image)$
+  <script>
+  for (var slide of document.getElementsByClassName('slide level2')){
+    if (!(slide.getAttribute('data-background') ||
+          slide.getAttribute('data-background-color') ||
+          slide.getAttribute('data-background-image') ||
+          slide.getAttribute('data-background-video') ||
+          slide.getAttribute('data-background-iframe'))){
+      slide.setAttribute('data-background-image', '$level2-slide-background-image$')
+    }
+  }
+  </script>
+$endif$
+$if(level3-slide-background-image)$
+  <script>
+  for (var slide of document.getElementsByClassName('slide level3')){
+    if (!(slide.getAttribute('data-background') ||
+          slide.getAttribute('data-background-color') ||
+          slide.getAttribute('data-background-image') ||
+          slide.getAttribute('data-background-video') ||
+          slide.getAttribute('data-background-iframe'))){
+      slide.setAttribute('data-background-image', '$level3-slide-background-image$')
+    }
+  }
+  </script>
+$endif$
+$if(background-size)$
+  <script>
+  for (var slide of document.getElementsByTagName('section')){
+    if (!(slide.getAttribute('data-background-size'))){
+      slide.setAttribute('data-background-size', '$background-size$')
+    }
+  }
+  </script>
+$endif$
+  <script>
+
+      // Full list of configuration options available at:
+      // https://revealjs.com/config/
+      Reveal.initialize({
+        highlight: {
+          // disable the default highlight plugin
+          // I will handle highlight.js below, to disable auto detection of language
+          highlightOnLoad: false,
+        },
+        // Display controls in the bottom right corner
+        controls: $controls$,
+
+        // Help the user learn the controls by providing hints, for example by
+        // bouncing the down arrow when they first encounter a vertical slide
+        controlsTutorial: $controlsTutorial$,
+
+        // Determines where controls appear, "edges" or "bottom-right"
+        controlsLayout: '$controlsLayout$',
+
+        // Visibility rule for backwards navigation arrows; "faded", "hidden"
+        // or "visible"
+        controlsBackArrows: '$controlsBackArrows$',
+
+        // Display a presentation progress bar
+        progress: $progress$,
+
+        // Display the page number of the current slide
+        // * h.v Horizontal . Vertical slide number (default)
+        // * h/v Horizontal / Vertical slide number
+        // * c Flattened slide number, including both horizontal and vertical slides
+        // * c/t Flattened slide number / total slides
+        slideNumber: slide => {
+            let slideEndCount = document.getElementsByClassName("slide-count-end")[0]
+            let endCount = slideEndCount ?
+                Reveal.getSlidePastCount( slideEndCount ) + 1 :
+                Reveal.getTotalSlides();
+            // see reveal.js/js/controllers/slidenumber.js
+            // Offset the current slide number by 1 to make it 1-indexed
+            let horizontalOffset = slide && slide.dataset.visibility === 'uncounted' ? 0 : 1;
+            return [
+                Reveal.getSlidePastCount( slide ) + horizontalOffset,
+                '/',
+                endCount,
+            ];
+        },
+
+        // 'all', 'print', or 'speaker'
+        showSlideNumber: '$showSlideNumber$',
+
+        // Add the current slide number to the URL hash so that reloading the
+        // page/copying the URL will return you to the same slide
+        hash: $hash$,
+
+        // Start with 1 for the hash rather than 0
+        hashOneBasedIndex: $hashOneBasedIndex$,
+
+        // Flags if we should monitor the hash and change slides accordingly
+        respondToHashChanges: $respondToHashChanges$,
+
+        // Push each slide change to the browser history
+        history: $history$,
+
+        // Enable keyboard shortcuts for navigation
+        keyboard: $keyboard$,
+
+        // Enable the slide overview mode
+        overview: $overview$,
+
+        // Disables the default reveal.js slide layout (scaling and centering)
+        // so that you can use custom CSS layout
+        disableLayout: false,
+
+        // Vertical centering of slides
+        center: $center$,
+
+        // Enables touch navigation on devices with touch input
+        touch: $touch$,
+
+        // Loop the presentation
+        loop: $loop$,
+
+        // Change the presentation direction to be RTL
+        rtl: $rtl$,
+
+        // see https://revealjs.com/vertical-slides/#navigation-mode
+        navigationMode: '$navigationMode$',
+
+        // Randomizes the order of slides each time the presentation loads
+        shuffle: $shuffle$,
+
+        // Turns fragments on and off globally
+        fragments: $fragments$,
+
+        // Flags whether to include the current fragment in the URL,
+        // so that reloading brings you to the same fragment position
+        fragmentInURL: $fragmentInURL$,
+
+        // Flags if the presentation is running in an embedded mode,
+        // i.e. contained within a limited portion of the screen
+        embedded: $embedded$,
+
+        // Flags if we should show a help overlay when the questionmark
+        // key is pressed
+        help: $help$,
+
+        // Flags if it should be possible to pause the presentation (blackout)
+        pause: $pause$,
+
+        // Flags if speaker notes should be visible to all viewers
+        showNotes: $showNotes$,
+
+        // Global override for autoplaying embedded media (null/true/false)
+        autoPlayMedia: $autoPlayMedia$,
+
+        // Global override for preloading lazy-loaded iframes (null/true/false)
+        preloadIframes: $preloadIframes$,
+
+        // Number of milliseconds between automatically proceeding to the
+        // next slide, disabled when set to 0, this value can be overwritten
+        // by using a data-autoslide attribute on your slides
+        autoSlide: $autoSlide$,
+
+        // Stop auto-sliding after user input
+        autoSlideStoppable: $autoSlideStoppable$,
+
+        // Use this method for navigation when auto-sliding
+        autoSlideMethod: $autoSlideMethod$,
+
+        // Specify the average time in seconds that you think you will spend
+        // presenting each slide. This is used to show a pacing timer in the
+        // speaker view
+        defaultTiming: $defaultTiming$,
+
+        // Enable slide navigation via mouse wheel
+        mouseWheel: $mouseWheel$,
+
+        // The display mode that will be used to show slides
+        display: '$display$',
+
+        // Hide cursor if inactive
+        hideInactiveCursor: $hideInactiveCursor$,
+
+        // Time before the cursor is hidden (in ms)
+        hideCursorTime: $hideCursorTime$,
+
+        // Opens links in an iframe preview overlay
+        previewLinks: $previewLinks$,
+
+        // Transition style (none/fade/slide/convex/concave/zoom)
+        transition: '$transition$',
+
+        // Transition speed (default/fast/slow)
+        transitionSpeed: '$transitionSpeed$',
+
+        // Transition style for full page slide backgrounds
+        // (none/fade/slide/convex/concave/zoom)
+        backgroundTransition: '$backgroundTransition$',
+
+        // Number of slides away from the current that are visible
+        viewDistance: $viewDistance$,
+
+        // Number of slides away from the current that are visible on mobile
+        // devices. It is advisable to set this to a lower number than
+        // viewDistance in order to save resources.
+        mobileViewDistance: $mobileViewDistance$,
+$if(parallaxBackgroundImage)$
+
+        // Parallax background image
+        parallaxBackgroundImage: '$parallaxBackgroundImage$', // e.g. "'https://s3.amazonaws.com/hakim-static/reveal-js/reveal-parallax-1.jpg'"
+$else$
+$if(background-image)$
+
+       // Parallax background image
+       parallaxBackgroundImage: '$background-image$', // e.g. "'https://s3.amazonaws.com/hakim-static/reveal-js/reveal-parallax-1.jpg'"
+$endif$
+$endif$
+$if(parallaxBackgroundSize)$
+
+        // Parallax background size
+        parallaxBackgroundSize: '$parallaxBackgroundSize$', // CSS syntax, e.g. "2100px 900px"
+$endif$
+$if(parallaxBackgroundHorizontal)$
+
+        // Amount to move parallax background (horizontal and vertical) on slide change
+        // Number, e.g. 100
+        parallaxBackgroundHorizontal: $parallaxBackgroundHorizontal$,
+$endif$
+$if(parallaxBackgroundVertical)$
+
+        parallaxBackgroundVertical: $parallaxBackgroundVertical$,
+$endif$
+$if(width)$
+
+        // The "normal" size of the presentation, aspect ratio will be preserved
+        // when the presentation is scaled to fit different resolutions. Can be
+        // specified using percentage units.
+        width: $width$,
+$endif$
+$if(height)$
+
+        height: $height$,
+$endif$
+$if(margin)$
+
+        // Factor of the display size that should remain empty around the content
+        margin: $margin$,
+$endif$
+$if(minScale)$
+
+        // Bounds for smallest/largest possible scale to apply to content
+        minScale: $minScale$,
+$endif$
+$if(maxScale)$
+
+        maxScale: $maxScale$,
+$endif$
+$if(mathjax)$
+
+        math: {
+          mathjax: '$reporoot-url$/lib/MathJax/es5/tex-chtml-full.js',
+          config: 'TeX-AMS_HTML-full',
+          tex2jax: {
+            inlineMath: [['\\(','\\)']],
+            displayMath: [['\\[','\\]']],
+            balanceBraces: true,
+            processEscapes: false,
+            processRefs: true,
+            processEnvironments: true,
+            preview: 'TeX',
+            skipTags: ['script','noscript','style','textarea','pre','code'],
+            ignoreClass: 'tex2jax_ignore',
+            processClass: 'tex2jax_process'
+          },
+        },
+$endif$
+$if(chalkboard)$
+
+        chalkboard: {
+          theme: "whiteboard",
+        },
+$endif$
+$if(simplemenu)$
+        simplemenu: {
+          barhtml: {
+            header: "<div class='simplemenubar'><ul class='simplemenu'></ul></div>",
+            footer: "",
+          },
+          menubarclass: "simplemenubar",
+          menuclass: "simplemenu",
+          csspath: false,
+        },
+$endif$
+$if(menu)$
+        menu: {
+          sticky: true,
+        },
+$endif$
+        customcontrols: {
+          controls: [
+            {
+              icon: '<i class="fas fa-expand"></i>',
+              title: 'Toggle fullscreen',
+              action: 'document.documentElement.requestFullscreen()'
+            },
+            {
+              icon: '<i class="fa fa-th"></i>',
+              title: 'Toggle overview (O,Esc)',
+              action: 'Reveal.toggleOverview();'
+            },
+$if(chalkboard)$
+            { icon: '<i class="fa fa-pen-square"></i>',
+              title: 'Toggle chalkboard (B)',
+              action: 'RevealChalkboard.toggleChalkboard();'
+            },
+            { icon: '<i class="fa fa-pen"></i>',
+              title: 'Toggle notes canvas (C)',
+              action: 'RevealChalkboard.toggleNotesCanvas();'
+            },
+$endif$
+            {
+              icon: '<i class="fa fa-print"></i>',
+              title: 'Print PDF Mode',
+              action: "window.location.search = 'print-pdf';"
+            },
+          ]
+        },
+        // reveal.js plugins
+        plugins: [
+          RevealHighlight,
+$if(mathjax)$
+          RevealMath,
+$endif$
+$if(chalkboard)$
+          RevealChalkboard,
+          RevealCustomControls,
+$endif$
+          RevealNotes,
+          RevealSearch,
+          RevealZoom,
+$if(simplemenu)$
+          Simplemenu,
+$endif$
+$if(menu)$
+          RevealMenu,
+$endif$
+$if(verticator)$
+          Verticator,
+$endif$
+        ],
+      }).then(() => {
+        // Disable auto detection of language
+        // this function is based on
+        // * reveal.js/plugin/highlight/plugin.js
+        // * https://revealjs.com/code/
+        Array.from( Reveal.getRevealElement().querySelectorAll( 'pre code' ) ).forEach( block => {
+          if (block.classList.length > 0) {
+            if (! block.classList[0].startsWith("language-"))
+              block.classList.replace(block.classList[0], "language-"+block.classList[0])
+          } else {
+            block.classList.add("language-none");
+          }
+
+          const highlight = Reveal.getPlugin('highlight');
+          highlight.highlightBlock(block);
+        } );
+      });
+      Reveal.addKeyBinding( { keyCode: 9,  key: "Tab",   description: "Left"  }, () => {Reveal.left()} )
+      Reveal.addKeyBinding( { keyCode: 13, key: "Enter", description: "Right" }, () => {Reveal.right()} )
+      // make customcontrols collapsed by default
+      Reveal.on("ready", event => {
+        var div = document.querySelector("div#customcontrols");
+        div.classList.add('collapsed');
+        document.addEventListener("resize", event => {
+          // make sure customcontrols are collapsed
+          var div = document.querySelector("div#customcontrols");
+          div.classList.add('collapsed');
+        });
+      });
+    </script>
+    <script>
+      const headerl = document.getElementById("headerl");
+      const headerr = document.getElementById("headerr");
+      const footerl = document.getElementById("footerl");
+      const footerr = document.getElementById("footerr");
+      Reveal.on('pdf-ready', () => {
+        document.querySelectorAll('.pdf-page').forEach(page => {
+          page.appendChild(headerl.cloneNode(true));
+          page.appendChild(headerr.cloneNode(true));
+          page.appendChild(footerl.cloneNode(true));
+          page.appendChild(footerr.cloneNode(true));
+        });
+      })
+    </script>
+    <script>
+      // inspired by [quarto-cli: revealjs presentation: hiding footer and slide menu control for a specific slide #825](https://github.com/quarto-dev/quarto-cli/discussions/825)
+      { // a local scope
+        // generate a function that can hide class by selectorList
+        function gen_hide_class_bySelector(className, selectorList) {
+          return function(event) {
+            const display = (Array.from(event.currentSlide.classList).indexOf(className) !== -1) ? "none" : null;
+            for (const sel of selectorList) {
+              const ele = document.querySelector(sel)
+              if (ele) ele.style.display = display;
+            }
+          }
+        }
+        nochrome = gen_hide_class_bySelector("nochrome", [
+          "#headerl", "#headerr", "#footerl", "#footerr",
+          ".navigate-left", ".navigate-right", ".navigate-up", ".navigate-down",
+          "#customcontrols", ".slide-menu-button",
+          ".simplemenubar",
+          ".verticator",
+          ".slide-number",
+        ])
+        Reveal.on("ready", nochrome )
+        Reveal.on('ready', () => { Reveal.on( 'slidechanged', nochrome ); })
+
+        Reveal.on("ready", () => {
+          for (const sel of ["h1.noheading", "h2.noheading", "h3.noheading", "h4.noheading", "h5.noheading", "h6.noheading" ])
+            for (const ele of document.querySelectorAll(sel))
+              ele.style.display = "none";
+        })
+      }
+    </script>
+    <script src="$reporoot-url$/share/markdown_revealjs/cjk2ch.js"></script>
+    <script>document.addEventListener('DOMContentLoaded', cjk2ch("code:not(:has(span))"))</script>
+  $for(include-after)$
+  $include-after$
+  $endfor$
+  $if(daemonize)$
+  <script id="__bs_script__">//<![CDATA[
+    (function() {
+      try {
+        var script = document.createElement('script');
+        if ('async') {
+          script.async = true;
+        }
+        script.src = 'http://HOST:$daemonize-port$/browser-sync/browser-sync-client.js?v=3.0.2'.replace("HOST", location.hostname);
+        if (document.body) {
+          document.body.appendChild(script);
+        } else if (document.head) {
+          document.head.appendChild(script);
+        }
+      } catch (e) {
+        console.error("Browsersync: could not append script tag", e);
+      }
+    })()
+  //]]></script>
+  $endif$
+  </body>
+</html>
