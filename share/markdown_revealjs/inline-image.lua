@@ -24,9 +24,12 @@ function Inlines(inlines)
     local img = inlines[1]
     local ext = string.sub(img.src, -3, -1)
 
+    local img_width
+    local img_height
+    local div_content
     if ext == "svg" then
       -- svg = "<svg ...>...</svg>"
-      local svg = (function() -- begin of a local scope
+      div_content = (function() -- begin of a local scope
         -- handle ~ in img.src
         local path = img.src
         if string.sub(path, 1, 1) == "~" then
@@ -40,19 +43,22 @@ function Inlines(inlines)
         -- Pattern to match the entire <svg> tag and its content
         return content:match("<svg.*</svg>")
       end) () -- end of a local scope
-      local svg_width = string.match(svg, '<svg[^>]*width=["\']?([^ >"\']*)')
-      local svg_height = string.match(svg, '<svg[^>]*height=["\']?([^ >"\']*)')
-      local scale=1
-      if img.attr.attributes.width then
-        scale = to_px(img.attr.attributes.width) / to_px(svg_width)
-      elseif img.attr.attributes.height then
-        scale = to_px(img.attr.attributes.height) / to_px(svg_height)
-      end
-      inlines[1] = pandoc.RawInline("html", string.format(
-        '<div style="transform:scale(%f); margin:%fpx %fpx; display:flex;justify-content:center;">%s</div>',
-        scale, (scale-1)/2*to_px(svg_width), (scale-1)/2*to_px(svg_height), svg
-      ))
+      img_width = string.match(div_content, '<svg[^>]*width=["\']?([^ >"\']*)')
+      img_height = string.match(div_content, '<svg[^>]*height=["\']?([^ >"\']*)')
+    else
+      return nil -- This means that the pandoc object should remain unchanged.
     end
+
+    local scale=1
+    if img.attr.attributes.width then
+      scale = to_px(img.attr.attributes.width) / to_px(img_width)
+    elseif img.attr.attributes.height then
+      scale = to_px(img.attr.attributes.height) / to_px(img_height)
+    end
+    inlines[1] = pandoc.RawInline("html", string.format(
+      '<div style="transform:scale(%f); margin:%fpx %fpx; display:flex;justify-content:center;">%s</div>',
+      scale, (scale-1)/2*to_px(img_width), (scale-1)/2*to_px(img_height), div_content
+    ))
   end
   return inlines
 end
