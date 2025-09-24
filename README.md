@@ -420,10 +420,12 @@ include a plotly.py plot
 # Inline SVG
 
 ```markdown
-![](local/svg/file.svg)
+You can specify width or height, the image will be scaled automatically
+
+![](local/svg/file.svg){height=500px}
 ```
 
-![](./images/test-inline.svg){style=""}
+![](./images/test-inline.svg){height=500px}
 
 # Label and Link {#label_and_link}
 
