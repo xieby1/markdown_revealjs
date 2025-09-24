@@ -419,26 +419,40 @@ include a plotly.py plot
 
 # Inline SVG
 
-```markdown
-You can specify width or height, the image will be scaled automatically
+You can specify `scale=<num>`
 
-![](local/svg/file.svg){height=500px}
+The image will be scaled to `<num>`
+
+```markdown
+![](local/svg/file.svg){scale=1.5}
 ```
 
-![](./images/test-inline.svg){height=500px}
+![](./images/test-inline.svg){scale=1.5}
+
+## Inline SVG another example
+
+You can also specify `width=<len>` or `height=<len>`
+
+The image will be scaled to width/height with ratio kept
+
+```markdown
+![](local/svg/file.svg){height=300px}
+```
+
+![](./images/test-inline.svg){height=300px}
 
 ## clip
 
-```markdown
 You clip the image by clip="top% right% bottom% left%"
 
-![](local/svg/file.svg){height=500px clip="50% 100% 100% 50%"}
+```markdown
+![](local/svg/file.svg){height=300px clip="50% 100% 100% 50%"}
 ```
 ::: {style="font-size:0.6em;"}
 The clipped part will be applied gradient effect automatically!
 :::
 
-![](./images/test-inline.svg){height=500px clip="50% 100% 100% 50%"}
+![](./images/test-inline.svg){height=300px clip="50% 100% 100% 50%"}
 
 
 # Label and Link {#label_and_link}

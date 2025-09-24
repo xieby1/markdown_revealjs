@@ -1,3 +1,4 @@
+-- TODO: enhance tonumber to handle '%' for scale and clip
 local function to_px(value_unit)
   local value = tonumber(string.match(value_unit, "%d+"))
   local unit = string.match(value_unit, "%a+")
@@ -50,7 +51,9 @@ function Inlines(inlines)
     end
 
     local scale=1
-    if img.attr.attributes.width then
+    if img.attr.attributes.scale then
+      scale = tonumber(img.attr.attributes.scale)
+    elseif img.attr.attributes.width then
       scale = to_px(img.attr.attributes.width) / to_px(img_width)
     elseif img.attr.attributes.height then
       scale = to_px(img.attr.attributes.height) / to_px(img_height)
