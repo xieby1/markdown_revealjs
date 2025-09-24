@@ -55,10 +55,35 @@ function Inlines(inlines)
     elseif img.attr.attributes.height then
       scale = to_px(img.attr.attributes.height) / to_px(img_height)
     end
-    inlines[1] = pandoc.RawInline("html", string.format(
-      '<div style="transform:scale(%f); margin:%fpx %fpx; display:flex;justify-content:center;">%s</div>',
+
+    local html_content = string.format(
+      [[<div style="transform:scale(%f);
+        margin:%fpx %fpx;
+        display:flex; justify-content:center;"
+      >%s</div>]],
       scale, (scale-1)/2*to_px(img_width), (scale-1)/2*to_px(img_height), div_content
-    ))
+    )
+
+    local width = scale * to_px(img_width)
+    local height = scale * to_px(img_height)
+    if img.attr.attributes.clip then
+      local l,t,r,b = string.match(img.attr.attributes.clip, '(%d+)%%%s*(%d+)%%%s*(%d+)%%%s*(%d+)%%')
+      l=tonumber(l); t=tonumber(t); r=tonumber(r); b=tonumber(b);
+      print("clip: ", l, t, r, b)
+      html_content = string.format(
+        [[<div style="display:flex; justify-content:center;">
+          <div style="overflow:hidden; width:%fpx; height:%fpx;">
+          <div style="transform:translate(%fpx,%fpx); width:%fpx; height:%fpx;">
+          %s
+          </div>
+          </div>
+          </div>]],
+        width*(r-l)/100, height*(b-t)/100,
+        width*( -l)/100, height*( -t)/100, width, height,
+        html_content
+      )
+    end
+    inlines[1] = pandoc.RawInline("html", html_content)
   end
   return inlines
 end
