@@ -72,13 +72,28 @@ function Inlines(inlines)
       print("clip: ", l, t, r, b)
       html_content = string.format(
         [[<div style="display:flex; justify-content:center;">
-          <div style="overflow:hidden; width:%fpx; height:%fpx;">
+          <div style="overflow:hidden; width:%fpx; height:%fpx;
+            mask-mode:alpha; mask-composite:intersect;%s
+          ">
           <div style="transform:translate(%fpx,%fpx); width:%fpx; height:%fpx;">
           %s
           </div>
           </div>
           </div>]],
         width*(r-l)/100, height*(b-t)/100,
+        (function ()
+          local gradients = {}
+          if l~=0 then   table.insert(gradients, "linear-gradient(to right, transparent 0%, black 10%)") end
+          if t~=0 then   table.insert(gradients, "linear-gradient(to bottom,transparent 0%, black 10%)") end
+          if r~=100 then table.insert(gradients, "linear-gradient(to left,  transparent 0%, black 10%)") end
+          if b~=100 then table.insert(gradients, "linear-gradient(to top,   transparent 0%, black 10%)") end
+          local gradients_str = table.concat(gradients, ",")
+          if gradients_str ~= "" then
+            gradients_str = string.format("mask-image:%s;", gradients_str)
+          end
+          -- print(gradients_str)
+          return gradients_str
+        end)(),
         width*( -l)/100, height*( -t)/100, width, height,
         html_content
       )

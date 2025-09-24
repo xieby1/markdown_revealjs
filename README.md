@@ -427,6 +427,20 @@ You can specify width or height, the image will be scaled automatically
 
 ![](./images/test-inline.svg){height=500px}
 
+## clip
+
+```markdown
+You clip the image by clip="left% top% right% bottom%"
+
+![](local/svg/file.svg){height=500px clip="50% 50% 100% 100%"}
+```
+::: {style="font-size:0.6em;"}
+The clipped part will be applied gradient effect automatically!
+:::
+
+![](./images/test-inline.svg){height=500px clip="50% 50% 100% 100%"}
+
+
 # Label and Link {#label_and_link}
 
 You can label a slide by adding a name to its heading
