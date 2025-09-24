@@ -417,6 +417,14 @@ include a plotly.py plot
 ::::
 :::
 
+# Inline SVG
+
+```markdown
+![](local/svg/file.svg)
+```
+
+![](./images/test-inline.svg){style=""}
+
 # Label and Link {#label_and_link}
 
 You can label a slide by adding a name to its heading

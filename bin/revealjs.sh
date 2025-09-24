@@ -19,6 +19,7 @@ TEMPLATE="$(dirname $(realpath --relative-to=. $0))/../share/markdown_revealjs/t
 INCLUDE_FILES="$(dirname $(realpath --relative-to=. $0))/../lib/lua-filters/include-files/include-files.lua"
 INCLUDE_CODE_FILES="$(dirname $(realpath --relative-to=. $0))/../lib/lua-filters/include-code-files/include-code-files.lua"
 REVEALJS_CODEBLOCK="$(dirname $(realpath --relative-to=. $0))/../lib/lua-filters/revealjs-codeblock/revealjs-codeblock.lua"
+INLINE_IMAGE="$(dirname $(realpath --relative-to=. $0))/../share/markdown_revealjs/inline-image.lua"
 
 DAEMONIZE=0
 PORT=7782
@@ -137,6 +138,7 @@ CMD=(
     "-L" "${INCLUDE_CODE_FILES}"
     # use revealjs provided highlight (highlight.js)
     "-L" "${REVEALJS_CODEBLOCK}"
+    "-L" "${INLINE_IMAGE}"
     "--no-highlight"
     "--mathjax"
     "-o ${MD%.*}.html"
