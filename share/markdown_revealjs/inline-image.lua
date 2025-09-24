@@ -61,15 +61,15 @@ function Inlines(inlines)
         margin:%fpx %fpx;
         display:flex; justify-content:center;"
       >%s</div>]],
-      scale, (scale-1)/2*to_px(img_width), (scale-1)/2*to_px(img_height), div_content
+      scale, (scale-1)/2*to_px(img_height), (scale-1)/2*to_px(img_width), div_content
     )
 
     local width = scale * to_px(img_width)
     local height = scale * to_px(img_height)
     if img.attr.attributes.clip then
-      local l,t,r,b = string.match(img.attr.attributes.clip, '(%d+)%%%s*(%d+)%%%s*(%d+)%%%s*(%d+)%%')
-      l=tonumber(l); t=tonumber(t); r=tonumber(r); b=tonumber(b);
-      -- print("clip: ", l, t, r, b)
+      local t,r,b,l = string.match(img.attr.attributes.clip, '(%d+)%%%s*(%d+)%%%s*(%d+)%%%s*(%d+)%%')
+      t=tonumber(t); r=tonumber(r); b=tonumber(b); l=tonumber(l);
+      -- print("clip: ", t, r, b, l)
       html_content = string.format(
         [[<div style="display:flex; justify-content:center;">
           <div style="overflow:hidden; width:%fpx; height:%fpx;
@@ -83,10 +83,10 @@ function Inlines(inlines)
         width*(r-l)/100, height*(b-t)/100,
         (function ()
           local gradients = {}
-          if l~=0 then   table.insert(gradients, "linear-gradient(to right, transparent 0%, black 10%)") end
           if t~=0 then   table.insert(gradients, "linear-gradient(to bottom,transparent 0%, black 10%)") end
           if r~=100 then table.insert(gradients, "linear-gradient(to left,  transparent 0%, black 10%)") end
           if b~=100 then table.insert(gradients, "linear-gradient(to top,   transparent 0%, black 10%)") end
+          if l~=0 then   table.insert(gradients, "linear-gradient(to right, transparent 0%, black 10%)") end
           local gradients_str = table.concat(gradients, ",")
           if gradients_str ~= "" then
             gradients_str = string.format("mask-image:%s;", gradients_str)
