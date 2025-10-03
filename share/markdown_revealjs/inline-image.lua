@@ -58,6 +58,7 @@ function Inlines(inlines)
     elseif img.attr.attributes.height then
       scale = to_px(img.attr.attributes.height) / to_px(img_height)
     end
+    local gradient = img.attr.attributes.gradient or 10
 
     local html_content = string.format(
       [[<div style="transform:scale(%f);
@@ -86,10 +87,11 @@ function Inlines(inlines)
         width*(r-l)/100, height*(b-t)/100,
         (function ()
           local gradients = {}
-          if t~=0 then   table.insert(gradients, "linear-gradient(to bottom,transparent 0%, black 10%)") end
-          if r~=100 then table.insert(gradients, "linear-gradient(to left,  transparent 0%, black 10%)") end
-          if b~=100 then table.insert(gradients, "linear-gradient(to top,   transparent 0%, black 10%)") end
-          if l~=0 then   table.insert(gradients, "linear-gradient(to right, transparent 0%, black 10%)") end
+          local template = "linear-gradient(to %s,transparent 0%%, black %d%%)"
+          if t~=0 then   table.insert(gradients, string.format(template, "bottom", gradient)) end
+          if r~=100 then table.insert(gradients, string.format(template, "left",   gradient)) end
+          if b~=100 then table.insert(gradients, string.format(template, "top",    gradient)) end
+          if l~=0 then   table.insert(gradients, string.format(template, "right",  gradient)) end
           local gradients_str = table.concat(gradients, ",")
           if gradients_str ~= "" then
             gradients_str = string.format("mask-image:%s;", gradients_str)

@@ -454,6 +454,19 @@ The clipped part will be applied gradient effect automatically!
 
 ![](./images/test-inline.svg){height=300px clip="50% 100% 100% 50%"}
 
+## gradient
+
+The default gradient range is 10% of the clipped border.
+
+You can adjust gradient range percentage by `gradient=xx`
+
+for example no gradient:
+
+```markdown
+![](local/svg/file.svg){height=300px clip="50% 100% 100% 50%" gradient=0}
+```
+
+![](./images/test-inline.svg){height=300px clip="50% 100% 100% 50%" gradient=0}
 
 # Label and Link {#label_and_link}
 
