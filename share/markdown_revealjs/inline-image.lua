@@ -29,8 +29,7 @@ function Inlines(inlines)
     local img_height
     local div_content
     if ext == "svg" then
-      -- svg = "<svg ...>...</svg>"
-      div_content = (function() -- begin of a local scope
+      do
         -- handle ~ in img.src
         local path = img.src
         if string.sub(path, 1, 1) == "~" then
@@ -38,12 +37,15 @@ function Inlines(inlines)
         end
 
         local file = io.open(path, "r")
-        if not file then return "inline-image.lua: NOT FOUND: " .. img.src end
+        if not file then
+          print("inline-image.lua: ignore non-existing file: " .. img.src)
+          return
+        end
         local content = file:read("*a")
         file:close()
         -- Pattern to match the entire <svg> tag and its content
-        return content:match("<svg.*</svg>")
-      end) () -- end of a local scope
+        div_content = content:match("<svg.*</svg>")
+      end
       img_width = string.match(div_content, '<svg[^>]*width=["\']?([^ >"\']*)')
       img_height = string.match(div_content, '<svg[^>]*height=["\']?([^ >"\']*)')
     else
