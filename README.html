@@ -1,0 +1,1853 @@
+<!DOCTYPE html>
+<!-- Export by pandoc -D revealjs, pandoc version 2.14.03 -->
+<!-- pandoc-types 1.22.1, texmath 0.12.3.2, skylighting 0.10.5.2, -->
+<!-- citeproc 0.4.0.1, ipynb 0.1.0.2 -->
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="generator" content="pandoc">
+  <meta name="author" content="xieby1">
+  <title>Markdown RevealJS</title>
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes, minimal-ui">
+  <link rel="stylesheet" href="https://xieby1.github.io/markdown_revealjs/lib/reveal.js/dist/reset.css">
+  <link rel="stylesheet" href="https://xieby1.github.io/markdown_revealjs/lib/reveal.js/dist/reveal.css">
+  <style>
+    code{white-space: pre-wrap;}
+    span.smallcaps{font-variant: small-caps;}
+    div.columns{display: flex; gap: min(4vw, 1.5em);}
+    div.column{flex: auto; overflow-x: auto;}
+    div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+    /* The extra [class] is a hack that increases specificity enough to
+       override a similar rule in reveal.js */
+    ul.task-list[class]{list-style: none;}
+    ul.task-list li input[type="checkbox"] {
+      font-size: inherit;
+      width: 0.8em;
+      margin: 0 0.8em 0.2em -1.6em;
+      vertical-align: middle;
+    }
+  </style>
+  <link rel="stylesheet" href="https://xieby1.github.io/markdown_revealjs/lib/reveal.js/dist/theme/white.css" id="theme">
+  <link rel="stylesheet" href="https://xieby1.github.io/markdown_revealjs/share/markdown_revealjs/stackoverflow-light.css" id="theme">
+<!-- Split font file using cn-font-split -->
+<link href='https://xieby1.github.io/markdown_revealjs/fonts/Noto_Color_Emoji/dist/main.css' rel='stylesheet'>
+<style>
+/* See themes/white.css */
+:root {
+    --r-main-font: Source Sans Pro, Helvetica, Noto Color Emoji, sans-serif;
+    --r-main-font: Source Sans Pro, Helvetica, Noto Color Emoji, sans-serif;
+}
+</style>
+  <link rel="stylesheet" href="https://xieby1.github.io/markdown_revealjs/lib/reveal.js-plugins/chalkboard/style.css">
+  <link rel="stylesheet" href="https://xieby1.github.io/markdown_revealjs/lib/font-awesome/5.15.4/css/all.min.css">
+  <link rel="stylesheet" href="https://xieby1.github.io/markdown_revealjs/lib/reveal.js-plugins/customcontrols/style.css">
+  <link rel="stylesheet" href="https://xieby1.github.io/markdown_revealjs/lib/reveal.js-simplemenu/simpleMenu.css">
+<!-- revealjs.sh customized styles -->
+<style>
+.reveal section img {
+    margin: 0 0;
+    /* override default border color */
+    border: transparent;
+}
+
+.reveal p {
+    margin: 0 0;
+}
+
+/* no margin in styled code div, the same to unstyled code */
+div.sourceCode {
+    margin: 0;
+}
+.reveal pre {
+    display: flex;
+    justify-content: center;
+    line-height: 1.0em;
+    width: fit-content;
+    max-width: 100%;
+}
+
+.reveal pre code {
+    max-height: none;
+}
+
+a.sourceLine {
+    /* styled code line is higher than unstyled, make them the same */
+    line-height: 0;
+}
+
+[role="doc-toc"] > ul {
+    /* multiple column in first level TOC */
+    column-width:  290px ;
+    width:  1200px ;
+    column-rule-style: solid;
+    /* no margin in first level TOC */
+    margin:  0 0 0 0 ;
+}
+
+[role="doc-toc"] ul {
+    /* no bullet */
+    list-style-type: none;
+    /* no margin, no padding in TOC ul */
+    margin-block-start: 0;
+    margin-block-end: 0;
+    padding-inline-start: 0;
+}
+
+/* change first level toc background */
+nav > ul > li > a {
+    background: lightgrey;
+}
+
+/* Long table overflow */
+/* https://stackoverflow.com/questions/23989463/how-to-set-tbody-height-with-overflow-scroll */
+thead tr th {
+    position: sticky;
+    top: 0;
+}
+table {
+    border-collapse: collapse;
+}
+
+/* Center the table, make the scroll bar right beside the table */
+/* https://www.joshwcomeau.com/css/center-a-div/ */
+.longtable {
+    overflow-y: auto;
+    max-width: fit-content;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+/* enable multiple columns */
+/* https://stackoverflow.com/questions/30861845 */
+.container {
+  display: flex;
+  align-items: center;
+}
+.col {
+  flex: auto;
+}
+
+/* not to capitalise my titles */
+/* https://stackoverflow.com/questions/47057398 */
+.reveal h1,
+.reveal h2,
+.reveal h3,
+.reveal h4,
+.reveal h5 {
+    text-transform: none;
+}
+
+/* make customcontrols hiden when print-pdf */
+@media print {
+  .slide-menu-button,
+  #customcontrols {
+    visibility: hidden;
+  }
+}
+
+/* make customcontrols always collapse */
+@media only screen and (min-width: 500px) {
+  #customcontrols > button {
+      display: block;
+  }
+  #customcontrols > ul {
+    position: fixed;
+    left: 54px;
+    bottom: 64px;
+    list-style-type: none;
+    overflow: hidden;
+    margin: 0;
+    border: 1px solid var(--r-link-color);
+    border-radius: 5px;
+    padding: 10px;
+    background-color: var(--r-background-color)
+  }
+}
+</style>
+</head>
+<body>
+  <div class="reveal">
+    <div class="slides">
+
+<section id="title-slide"
+         data-sminvisible=true>
+  <h1 class="title">Markdown RevealJS</h1>
+  <p class="author"><img src="https://xieby1.github.io/markdown_revealjs/images/me.png" style="height:1.5em;">xieby1</p>
+  <p class="date">🎉2022.06.10</p>
+</section>
+<section id="TOC"
+         data-sminvisible=true>
+<nav role="doc-toc"> 
+<ul>
+<li><a href="#/intro" id="/toc-intro"><span
+class="toc-section-number">1</span> Intro</a></li>
+<li><a href="#/installation" id="/toc-installation"><span
+class="toc-section-number">2</span> Installation</a></li>
+<li><a href="#/quick-start" id="/toc-quick-start"><span
+class="toc-section-number">3</span> Quick Start</a></li>
+<li><a href="#/themes" id="/toc-themes"><span
+class="toc-section-number">4</span> Themes</a></li>
+<li><a href="#/advanced-syntax" id="/toc-advanced-syntax"><span
+class="toc-section-number">5</span> Advanced Syntax</a></li>
+<li><a href="#/alignment" id="/toc-alignment"><span
+class="toc-section-number">6</span> Alignment</a></li>
+<li><a href="#/ascii-art-with-cjk" id="/toc-ascii-art-with-cjk"><span
+class="toc-section-number">7</span> Ascii Art with CJK</a></li>
+<li><a href="#/auto-animate" id="/toc-auto-animate"><span
+class="toc-section-number">8</span> Auto Animate</a></li>
+<li><a href="#/backgrounds" id="/toc-backgrounds"><span
+class="toc-section-number">9</span> Backgrounds</a></li>
+<li><a href="#/fragments" id="/toc-fragments"><span
+class="toc-section-number">10</span> Fragments</a></li>
+<li><a href="#/headings-and-slides" id="/toc-headings-and-slides"><span
+class="toc-section-number">11</span> Headings and slides</a></li>
+<li><a href="#/not-displaying-heading-and-chrome"
+id="/toc-not-displaying-heading-and-chrome"><span
+class="toc-section-number">12</span> Not Displaying Heading and
+Chrome</a></li>
+<li><a href="#/include-files" id="/toc-include-files"><span
+class="toc-section-number">13</span> Include Files</a></li>
+<li><a href="#/inline-svg" id="/toc-inline-svg"><span
+class="toc-section-number">14</span> Inline SVG</a></li>
+<li><a href="#/label_and_link" id="/toc-label_and_link"><span
+class="toc-section-number">15</span> Label and Link</a></li>
+<li><a href="#/localization-offline-mode"
+id="/toc-localization-offline-mode"><span
+class="toc-section-number">16</span> Localization (Offline
+mode)</a></li>
+<li><a href="#/long-table" id="/toc-long-table"><span
+class="toc-section-number">17</span> Long Table</a></li>
+<li><a href="#/math" id="/toc-math"><span
+class="toc-section-number">18</span> Math</a></li>
+<li><a href="#/multiple-columns" id="/toc-multiple-columns"><span
+class="toc-section-number">19</span> Multiple columns</a></li>
+<li><a href="#/pandoc-options" id="/toc-pandoc-options"><span
+class="toc-section-number">20</span> Pandoc Options</a></li>
+<li><a href="#/slide-number-end" id="/toc-slide-number-end"><span
+class="toc-section-number">21</span> Slide Number End</a></li>
+<li><a href="#/toc-resident" id="/toc-toc-resident"><span
+class="toc-section-number">22</span> TOC (resident)</a></li>
+<li><a href="#/toc-full" id="/toc-toc-full"><span
+class="toc-section-number">23</span> TOC (full)</a></li>
+<li><a href="#/qna" id="/toc-qna"><span
+class="toc-section-number">24</span> QnA</a></li>
+<li><a href="#/backup-slides" id="/toc-backup-slides"><span
+class="toc-section-number">25</span> Backup Slides</a></li>
+</ul>
+</nav>
+</section>
+
+<section>
+<section id="intro" class="title-slide slide level1" data-number="1"
+data-stack-name="Intro">
+<h1 data-number="1" data-stack-name="Intro"><span
+class="header-section-number">1</span> Intro</h1>
+<p>A Simple Easy Converter</p>
+<h2>
+Markdown ➡ Reveal.js
+</h2>
+<ul>
+<li>Based on Pandoc</li>
+<li>Auto-generated TOC</li>
+<li>Touch-device friendly</li>
+<li>Header footer supported</li>
+</ul>
+</section>
+<section id="demo" class="title-slide slide level2" data-number="1.1">
+<h2 data-number="1.1"><span class="header-section-number">1.1</span>
+Demo</h2>
+<p>This README.md is converted to revealjs, see it <a
+href="https://xieby1.github.io/markdown_revealjs/README.html">here</a>.</p>
+</section>
+
+<section id="how-it-works" class="title-slide slide level2"
+data-number="1.2">
+<h2 data-number="1.2"><span class="header-section-number">1.2</span> How
+it works</h2>
+<p>Bash script + Template file + Pandoc</p>
+<p>It’s simple and esay!</p>
+</section>
+</section>
+<section>
+<section id="installation" class="title-slide slide level1"
+data-number="2" data-stack-name="Install">
+<h1 data-number="2" data-stack-name="Install"><span
+class="header-section-number">2</span> Installation</h1>
+
+</section>
+<section id="first" class="title-slide slide level2" data-number="2.1">
+<h2 data-number="2.1"><span class="header-section-number">2.1</span>
+First</h2>
+<pre ><code class="bash">git clone --recurse-submodules https://github.com/xieby1/markdown_revealjs</code></pre>
+</section>
+
+<section id="second" class="title-slide slide level2" data-number="2.2">
+<h2 data-number="2.2"><span class="header-section-number">2.2</span>
+Second</h2>
+<p><a href="https://github.com/jgm/pandoc">Install latest
+pandoc</a>.</p>
+<p>Note: Ubuntu 22’s apt-installed pandoc is too old.</p>
+<div class="fragment">
+<p>👍That’s it!</p>
+<p>🎊You’ve installed markdown_revealjs!</p>
+</div>
+</section>
+
+<section id="third-optional" class="title-slide slide level2"
+data-number="2.3">
+<h2 data-number="2.3"><span class="header-section-number">2.3</span>
+Third (Optional)</h2>
+<p>Add revealjs.sh to your PATH env.</p>
+<pre ><code class="bash">ln -s &lt;path/to&gt;/revealjs.sh /usr/bin/
+# or /usr/local/bin/, or ~/.local/bin/</code></pre>
+</section>
+</section>
+<section>
+<section id="quick-start" class="title-slide slide level1"
+data-number="3" data-stack-name="Quick Start">
+<h1 data-number="3" data-stack-name="Quick Start"><span
+class="header-section-number">3</span> Quick Start</h1>
+
+</section>
+<section id="first-page" class="title-slide slide level2"
+data-number="3.1">
+<h2 data-number="3.1"><span class="header-section-number">3.1</span>
+First Page</h2>
+<p>Add the metadata (title, author, date)</p>
+<p>to top of your markdown file.</p>
+<p>These info will become the first page of your slide.</p>
+<pre ><code class="markdown">% markdown_revealjs !
+% xieby1
+% 2022.06.24</code></pre>
+</section>
+
+<section id="basic-syntax" class="title-slide slide level2"
+data-number="3.2">
+<h2 data-number="3.2"><span class="header-section-number">3.2</span>
+Basic Syntax</h2>
+<table>
+<thead>
+<tr class="header">
+<th>syntax</th>
+<th>meaning</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>1st-level header</td>
+<td>New horizontal slide</td>
+</tr>
+<tr class="even">
+<td>2nd/3rd/4th/5th/6th-level header</td>
+<td>New vertical slide</td>
+</tr>
+</tbody>
+</table>
+</section>
+
+<section id="convert" class="title-slide slide level2"
+data-number="3.3">
+<h2 data-number="3.3"><span class="header-section-number">3.3</span>
+Convert!</h2>
+<pre ><code class="bash">$ revealjs.sh &lt;input.md&gt;
+# will generate input.html</code></pre>
+<p>🐱</p>
+<p>It’s simple and easy, right?</p>
+</section>
+
+<section id="daemonize" class="title-slide slide level2"
+data-number="3.4">
+<h2 data-number="3.4"><span class="header-section-number">3.4</span>
+daemonize</h2>
+<pre ><code class="bash">$ revealjs.sh -d &lt;input.md&gt;
+# will auto refresh browser when input.md is changed</code></pre>
+</section>
+</section>
+<section>
+<section id="themes" class="title-slide slide level1" data-number="4"
+data-stack-name="Themes">
+<h1 data-number="4" data-stack-name="Themes"><span
+class="header-section-number">4</span> Themes</h1>
+<p>Here are predefined themes (template),</p>
+<p>just download the source markdown,</p>
+<p>and <span
+style="font-size: 1.5em;"><code>revealjs.sh xxx.md</code></span>!</p>
+<p>Enjoy the themes below🎉</p>
+<p>🔽🔽🔽</p>
+</section>
+<section id="开芯院" class="title-slide slide level2" data-number="4.1">
+<h2 data-number="4.1"><span class="header-section-number">4.1</span>
+开芯院</h2>
+<p><a
+href="https://github.com/xieby1/markdown_revealjs/blob/main/themes/bosc/index.md">themes/bosc/index.md</a></p>
+<iframe src="./themes/bosc/index.html" style="width:800px; height: 450px;">
+</iframe>
+</section>
+
+<section id="龙芯" class="title-slide slide level2" data-number="4.2">
+<h2 data-number="4.2"><span class="header-section-number">4.2</span>
+龙芯</h2>
+<p><a
+href="https://github.com/xieby1/markdown_revealjs/blob/main/themes/loongson/index.md">themes/loongson/index.md</a></p>
+<iframe src="./themes/loongson/index.html" style="width:800px; height: 450px;">
+</iframe>
+</section>
+
+<section id="微处理器研究中心" class="title-slide slide level2"
+data-number="4.3">
+<h2 data-number="4.3"><span class="header-section-number">4.3</span>
+微处理器研究中心</h2>
+<p><a
+href="https://github.com/xieby1/markdown_revealjs/blob/main/themes/ict_mtrc_proposal/index.md">themes/ict_mtrc_proposal/index.md</a></p>
+<iframe src="./themes/ict_mtrc_proposal/index.html" style="width:800px; height: 450px;">
+</iframe>
+</section>
+
+<section id="国科大计算所答辩" class="title-slide slide level2"
+data-number="4.4">
+<h2 data-number="4.4"><span class="header-section-number">4.4</span>
+国科大计算所答辩</h2>
+<p><a
+href="https://github.com/xieby1/markdown_revealjs/blob/main/themes/ucas_ict_thesis/index.md">themes/ucas_ict_thesis/index.md</a></p>
+<iframe src="./themes/ucas_ict_thesis/index.html" style="width:800px; height: 450px;">
+</iframe>
+</section>
+</section>
+<section id="advanced-syntax" class="title-slide slide level1"
+data-number="5" data-name="Advanced Syntax ...">
+<h1 data-number="5" data-name="Advanced Syntax ..."><span
+class="header-section-number">5</span> Advanced Syntax</h1>
+<p>Sorted in alphabet.</p>
+</section>
+
+<section>
+<section id="alignment" class="title-slide slide level1"
+data-number="6">
+<h1 data-number="6"><span class="header-section-number">6</span>
+Alignment</h1>
+<p>All elements</p>
+<p>in Reveal.JS</p>
+<p>are centered</p>
+<p>by default.</p>
+<p>😺</p>
+</section>
+<section id="left-alignment" class="title-slide slide level2"
+data-number="6.1">
+<h2 data-number="6.1"><span class="header-section-number">6.1</span>
+Left Alignment</h2>
+<div style="display:inline-block; text-align:left;">
+<p>If you prefer to left align</p>
+<p>all children elements.</p>
+<p>Add these styles</p>
+<p>to the parent element.</p>
+<p>😽</p>
+<pre ><code class="md">:::{style="display:inline-block; text-align:left;"}
+things here are all
+
+left aligned
+
+!
+:::</code></pre>
+</div>
+</section>
+</section>
+<section id="ascii-art-with-cjk" class="title-slide slide level1"
+data-number="7">
+<h1 data-number="7"><span class="header-section-number">7</span> Ascii
+Art with CJK</h1>
+<p>Auto detect and gracefully handled mono fonts width,</p>
+<p>where CJK and Latin characters are mixed</p>
+<pre ><code >┌─────────────┐
+│no more ┌────┼────┐
+│        │不会│!!!!│
+│mismatch│错位│，。│
+└────────┼────┘！！│
+         └─────────┘</code></pre>
+</section>
+
+<section>
+<section id="auto-animate" class="title-slide slide level1"
+data-number="8">
+<h1 data-number="8"><span class="header-section-number">8</span> Auto
+Animate</h1>
+
+</section>
+<section id="code" class="title-slide slide level2" data-number="8.1"
+data-auto-animate="">
+<h2 data-number="8.1" data-auto-animate=""><span
+class="header-section-number">8.1</span> Code</h2>
+<pre ><code class="markdown">```python {data-id="code-animation" data-line-numbers=""}
+class Miao:
+  def __init__(self):
+    pass
+```</code></pre>
+<pre data-id="code-animation"><code class="python" data-line-numbers="">class Miao:
+  def __init__(self):
+    pass</code></pre>
+</section>
+
+<section id="code-1" class="title-slide slide level2" data-number="8.2"
+data-auto-animate="">
+<h2 data-number="8.2" data-auto-animate=""><span
+class="header-section-number">8.2</span> Code</h2>
+<pre ><code class="markdown">```python {data-id="code-animation" data-line-numbers=""}
+# This is a class
+class Miao:
+  # This is a func def
+  def __init__(self):
+    pass
+```</code></pre>
+<pre data-id="code-animation"><code class="python" data-line-numbers=""># This is a class
+class Miao:
+  # This is a func def
+  def __init__(self):
+    pass</code></pre>
+</section>
+</section>
+<section>
+<section id="backgrounds" class="title-slide slide level1"
+data-number="9">
+<h1 data-number="9"><span class="header-section-number">9</span>
+Backgrounds</h1>
+<p>Did you notice that every page has a default background?</p>
+</section>
+<section id="default-backgrounds" class="title-slide slide level2"
+data-number="9.1">
+<h2 data-number="9.1"><span class="header-section-number">9.1</span>
+Default Backgrounds</h2>
+<p>Set default backgrounds in yml front matter, like</p>
+<pre ><code class="yml">title-slide-background-image: &lt;URL&gt;
+toc-slide-background-image: &lt;URL&gt;
+level1-slide-background-image: &lt;URL&gt;
+level2-slide-background-image: &lt;URL&gt;
+level3-slide-background-image: &lt;URL&gt;
+background-size: &lt;CSS background-size&gt;</code></pre>
+</section>
+
+<section id="per-slide-backgrounds" class="title-slide slide level2"
+data-number="9.2" data-background-color="LightPink">
+<h2 data-number="9.2" data-background-color="LightPink"><span
+class="header-section-number">9.2</span> Per-Slide Backgrounds</h2>
+<p>Set per-slide background, like</p>
+<pre ><code class="markdown"># Per-Slide Backgrounds {data-background-color="LightPink"}</code></pre>
+<p>More info about background see:</p>
+<ul>
+<li>RevealJS: <a
+href="https://revealjs.com/backgrounds/">backgrounds</a></li>
+<li>Pandoc Extension: <a
+href="https://pandoc.org/MANUAL.html#extension-header_attributes">header_attributes</a></li>
+</ul>
+</section>
+</section>
+<section>
+<section id="fragments" class="title-slide slide level1"
+data-number="10">
+<h1 data-number="10"><span class="header-section-number">10</span>
+Fragments</h1>
+<ul>
+<li>RevealJS: <a
+href="https://revealjs.com/fragments/">fragments</a></li>
+</ul>
+</section>
+<section id="multi-lines" class="title-slide slide level2"
+data-number="10.1">
+<h2 data-number="10.1"><span class="header-section-number">10.1</span>
+Multi Lines</h2>
+<div class="fragment">
+<ul>
+<li>Pandoc Extension: <a
+href="https://pandoc.org/MANUAL.html#extension-fenced_divs">fenced_divs</a></li>
+</ul>
+</div>
+<div class="fragment">
+<pre ><code class="markdown">::: {.fragment}
+Your content here
+:::</code></pre>
+</div>
+</section>
+
+<section id="one-line" class="title-slide slide level2"
+data-number="10.2">
+<h2 data-number="10.2"><span class="header-section-number">10.2</span>
+One Line</h2>
+<ul>
+<li>Pandoc Extension: <a
+href="https://pandoc.org/MANUAL.html#extension-bracketed_spans">bracketed_spans</a></li>
+</ul>
+<p><span class="fragment">It’s in one line!</span> <span
+class="fragment">🐱</span> <span class="fragment">🐶</span> <span
+class="fragment">🐹</span></p>
+<div class="fragment">
+<pre ><code >[It's in one line!]{.fragment}
+[🐱]{.fragment}
+[🐶]{.fragment}
+[🐹]{.fragment}</code></pre>
+</div>
+</section>
+</section>
+<section>
+<section id="headings-and-slides" class="title-slide slide level1"
+data-number="11">
+<h1 data-number="11"><span class="header-section-number">11</span>
+Headings and slides</h1>
+<p>Normally, each level of heading will start a new slide.</p>
+</section>
+<section id="heading-not-start-a-new-slide"
+class="title-slide slide level2" data-number="11.1">
+<h2 data-number="11.1"><span class="header-section-number">11.1</span>
+Heading not start a new slide</h2>
+<p>If you want a heading that doesn a new slide, like this</p>
+<h3>
+Level-3 Heading!
+</h3>
+<p>Just use html heading!</p>
+<pre ><code class="html">&lt;h3&gt;Level-3 Heading!&lt;/h3&gt;</code></pre>
+</section>
+
+<section id="force-starting-a-new-slide"
+class="title-slide slide level2" data-number="11.2">
+<h2 data-number="11.2"><span class="header-section-number">11.2</span>
+Force starting a new slide</h2>
+<p>If you want to start a new slide without headings.</p>
+<p>Just use the markdown horizontal break <code>---</code>, like
+this</p>
+</section>
+<section class="slide level6" data-number="11.2.0.0.0.1">
+
+<p>Force starting a new slide!</p>
+</section>
+</section>
+<section>
+<section id="not-displaying-heading-and-chrome"
+class="title-slide slide level1" data-number="12">
+<h1 data-number="12"><span class="header-section-number">12</span> Not
+Displaying Heading and Chrome</h1>
+
+</section>
+<section id="not-displaying-this-heading"
+class="title-slide slide level2 noheading" data-number="12.1">
+<h2 class="noheading" data-number="12.1"><span
+class="header-section-number">12.1</span> Not Displaying This
+Heading</h2>
+<pre ><code class="md">## Not Displaying This Heading {.noheading}</code></pre>
+</section>
+
+<section id="not-displaying-the-chrome-in-this-slide"
+class="title-slide slide level2 nochrome" data-number="12.2">
+<h2 class="nochrome" data-number="12.2"><span
+class="header-section-number">12.2</span> Not Displaying The Chrome in
+This Slide</h2>
+<pre ><code class="md">## Not Displaying The Chrome in This Slide {.nochrome}</code></pre>
+</section>
+
+<section id="not-displaying-both-heading-and-chrome"
+class="title-slide slide level2 noheading nochrome" data-number="12.3">
+<h2 class="noheading nochrome" data-number="12.3"><span
+class="header-section-number">12.3</span> Not Displaying Both heading
+and Chrome</h2>
+<pre ><code class="md">## Not Displaying Both heading and Chrome {.noheading .nochrome}</code></pre>
+</section>
+</section>
+<section>
+<section id="include-files" class="title-slide slide level1"
+data-number="13">
+<h1 data-number="13"><span class="header-section-number">13</span>
+Include Files</h1>
+
+</section>
+<section id="include-files-normally" class="title-slide slide level2"
+data-number="13.1">
+<h2 data-number="13.1"><span class="header-section-number">13.1</span>
+include files normally</h2>
+<p>This file is include by</p>
+<pre ><code >```{.include}
+./included.md
+```</code></pre>
+<p>More details:
+https://github.com/pandoc/lua-filters/blob/master/include-files/include-files.lua</p>
+</section>
+
+<section id="include-files-in-code-block"
+class="title-slide slide level2" data-number="13.2">
+<h2 data-number="13.2"><span class="header-section-number">13.2</span>
+include files in code block</h2>
+<pre ><code >``` {include="./helloworld.c"}
+```</code></pre>
+<pre ><code class="c">#include &lt;stdio.h&gt;
+int main(void);
+
+int main(void)
+{
+    printf("Hello, world! \n");
+    
+    return 0;
+}
+</code></pre>
+<p>More details:
+https://github.com/pandoc/lua-filters/blob/master/include-code-files/include-code-files.lua</p>
+</section>
+
+<section id="example-chart.js" class="title-slide slide level2"
+data-number="13.3">
+<h2 data-number="13.3"><span class="header-section-number">13.3</span>
+example: Chart.js</h2>
+<div class="container">
+<div class="col">
+<p>include a chart.js plot</p>
+<pre ><code >``` {.include}
+./plots/chartjs.html
+```</code></pre>
+</div>
+<div class="col">
+<!-- https://stackoverflow.com/questions/72509195/how-to-center-a-chart-js-graph -->
+<div style="height: 300px; display: flex; justify-content: center;">
+<canvas id="myChart">
+</canvas>
+</div>
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+<script>
+
+const ctx = document.getElementById('myChart');
+
+new Chart(ctx, {
+  type: 'bar',
+  data: {
+    labels: ['Red', 'Blue', 'Yellow', 'Green', 'Purple', 'Orange'],
+    datasets: [{
+      label: '# of Votes',
+      data: [12, 19, 3, 5, 2, 3],
+      borderWidth: 1
+    }]
+  },
+  options: {
+    scales: {
+      y: {
+        beginAtZero: true
+      }
+    }
+  }
+});
+
+</script>
+</div>
+</div>
+</section>
+
+<section id="example-plotly.py" class="title-slide slide level2"
+data-number="13.4">
+<h2 data-number="13.4"><span class="header-section-number">13.4</span>
+example: Plotly.py</h2>
+<div class="container">
+<div class="col">
+<p>include a plotly.py plot</p>
+<pre ><code >``` {.include}
+./plots/plotlypy.html
+```</code></pre>
+</div>
+<div class="col">
+<div>
+<script type="text/javascript">window.PlotlyConfig = {MathJaxConfig: 'local'};</script>
+<script charset="utf-8" src="https://cdnjs.cloudflare.com/ajax/libs/plotly.js/2.35.3/plotly.min.js"></script>
+<div id="dd7b8543-881a-4978-a8c8-93c29d187313" class="plotly-graph-div"
+style="height:100%; width:100%;">
+
+</div>
+<script type="text/javascript">window.PLOTLYENV=window.PLOTLYENV || {};                                    if (document.getElementById("dd7b8543-881a-4978-a8c8-93c29d187313")) {                    Plotly.newPlot(                        "dd7b8543-881a-4978-a8c8-93c29d187313",                        [{"x":[1,2,3,4],"y":[1,3,1,4],"type":"bar"}],                        {"template":{"data":{"barpolar":[{"marker":{"line":{"color":"white","width":0.5},"pattern":{"fillmode":"overlay","size":10,"solidity":0.2}},"type":"barpolar"}],"bar":[{"error_x":{"color":"#2a3f5f"},"error_y":{"color":"#2a3f5f"},"marker":{"line":{"color":"white","width":0.5},"pattern":{"fillmode":"overlay","size":10,"solidity":0.2}},"type":"bar"}],"carpet":[{"aaxis":{"endlinecolor":"#2a3f5f","gridcolor":"#C8D4E3","linecolor":"#C8D4E3","minorgridcolor":"#C8D4E3","startlinecolor":"#2a3f5f"},"baxis":{"endlinecolor":"#2a3f5f","gridcolor":"#C8D4E3","linecolor":"#C8D4E3","minorgridcolor":"#C8D4E3","startlinecolor":"#2a3f5f"},"type":"carpet"}],"choropleth":[{"colorbar":{"outlinewidth":0,"ticks":""},"type":"choropleth"}],"contourcarpet":[{"colorbar":{"outlinewidth":0,"ticks":""},"type":"contourcarpet"}],"contour":[{"colorbar":{"outlinewidth":0,"ticks":""},"colorscale":[[0.0,"#0d0887"],[0.1111111111111111,"#46039f"],[0.2222222222222222,"#7201a8"],[0.3333333333333333,"#9c179e"],[0.4444444444444444,"#bd3786"],[0.5555555555555556,"#d8576b"],[0.6666666666666666,"#ed7953"],[0.7777777777777778,"#fb9f3a"],[0.8888888888888888,"#fdca26"],[1.0,"#f0f921"]],"type":"contour"}],"heatmapgl":[{"colorbar":{"outlinewidth":0,"ticks":""},"colorscale":[[0.0,"#0d0887"],[0.1111111111111111,"#46039f"],[0.2222222222222222,"#7201a8"],[0.3333333333333333,"#9c179e"],[0.4444444444444444,"#bd3786"],[0.5555555555555556,"#d8576b"],[0.6666666666666666,"#ed7953"],[0.7777777777777778,"#fb9f3a"],[0.8888888888888888,"#fdca26"],[1.0,"#f0f921"]],"type":"heatmapgl"}],"heatmap":[{"colorbar":{"outlinewidth":0,"ticks":""},"colorscale":[[0.0,"#0d0887"],[0.1111111111111111,"#46039f"],[0.2222222222222222,"#7201a8"],[0.3333333333333333,"#9c179e"],[0.4444444444444444,"#bd3786"],[0.5555555555555556,"#d8576b"],[0.6666666666666666,"#ed7953"],[0.7777777777777778,"#fb9f3a"],[0.8888888888888888,"#fdca26"],[1.0,"#f0f921"]],"type":"heatmap"}],"histogram2dcontour":[{"colorbar":{"outlinewidth":0,"ticks":""},"colorscale":[[0.0,"#0d0887"],[0.1111111111111111,"#46039f"],[0.2222222222222222,"#7201a8"],[0.3333333333333333,"#9c179e"],[0.4444444444444444,"#bd3786"],[0.5555555555555556,"#d8576b"],[0.6666666666666666,"#ed7953"],[0.7777777777777778,"#fb9f3a"],[0.8888888888888888,"#fdca26"],[1.0,"#f0f921"]],"type":"histogram2dcontour"}],"histogram2d":[{"colorbar":{"outlinewidth":0,"ticks":""},"colorscale":[[0.0,"#0d0887"],[0.1111111111111111,"#46039f"],[0.2222222222222222,"#7201a8"],[0.3333333333333333,"#9c179e"],[0.4444444444444444,"#bd3786"],[0.5555555555555556,"#d8576b"],[0.6666666666666666,"#ed7953"],[0.7777777777777778,"#fb9f3a"],[0.8888888888888888,"#fdca26"],[1.0,"#f0f921"]],"type":"histogram2d"}],"histogram":[{"marker":{"pattern":{"fillmode":"overlay","size":10,"solidity":0.2}},"type":"histogram"}],"mesh3d":[{"colorbar":{"outlinewidth":0,"ticks":""},"type":"mesh3d"}],"parcoords":[{"line":{"colorbar":{"outlinewidth":0,"ticks":""}},"type":"parcoords"}],"pie":[{"automargin":true,"type":"pie"}],"scatter3d":[{"line":{"colorbar":{"outlinewidth":0,"ticks":""}},"marker":{"colorbar":{"outlinewidth":0,"ticks":""}},"type":"scatter3d"}],"scattercarpet":[{"marker":{"colorbar":{"outlinewidth":0,"ticks":""}},"type":"scattercarpet"}],"scattergeo":[{"marker":{"colorbar":{"outlinewidth":0,"ticks":""}},"type":"scattergeo"}],"scattergl":[{"marker":{"colorbar":{"outlinewidth":0,"ticks":""}},"type":"scattergl"}],"scattermapbox":[{"marker":{"colorbar":{"outlinewidth":0,"ticks":""}},"type":"scattermapbox"}],"scatterpolargl":[{"marker":{"colorbar":{"outlinewidth":0,"ticks":""}},"type":"scatterpolargl"}],"scatterpolar":[{"marker":{"colorbar":{"outlinewidth":0,"ticks":""}},"type":"scatterpolar"}],"scatter":[{"fillpattern":{"fillmode":"overlay","size":10,"solidity":0.2},"type":"scatter"}],"scatterternary":[{"marker":{"colorbar":{"outlinewidth":0,"ticks":""}},"type":"scatterternary"}],"surface":[{"colorbar":{"outlinewidth":0,"ticks":""},"colorscale":[[0.0,"#0d0887"],[0.1111111111111111,"#46039f"],[0.2222222222222222,"#7201a8"],[0.3333333333333333,"#9c179e"],[0.4444444444444444,"#bd3786"],[0.5555555555555556,"#d8576b"],[0.6666666666666666,"#ed7953"],[0.7777777777777778,"#fb9f3a"],[0.8888888888888888,"#fdca26"],[1.0,"#f0f921"]],"type":"surface"}],"table":[{"cells":{"fill":{"color":"#EBF0F8"},"line":{"color":"white"}},"header":{"fill":{"color":"#C8D4E3"},"line":{"color":"white"}},"type":"table"}]},"layout":{"annotationdefaults":{"arrowcolor":"#2a3f5f","arrowhead":0,"arrowwidth":1},"autotypenumbers":"strict","coloraxis":{"colorbar":{"outlinewidth":0,"ticks":""}},"colorscale":{"diverging":[[0,"#8e0152"],[0.1,"#c51b7d"],[0.2,"#de77ae"],[0.3,"#f1b6da"],[0.4,"#fde0ef"],[0.5,"#f7f7f7"],[0.6,"#e6f5d0"],[0.7,"#b8e186"],[0.8,"#7fbc41"],[0.9,"#4d9221"],[1,"#276419"]],"sequential":[[0.0,"#0d0887"],[0.1111111111111111,"#46039f"],[0.2222222222222222,"#7201a8"],[0.3333333333333333,"#9c179e"],[0.4444444444444444,"#bd3786"],[0.5555555555555556,"#d8576b"],[0.6666666666666666,"#ed7953"],[0.7777777777777778,"#fb9f3a"],[0.8888888888888888,"#fdca26"],[1.0,"#f0f921"]],"sequentialminus":[[0.0,"#0d0887"],[0.1111111111111111,"#46039f"],[0.2222222222222222,"#7201a8"],[0.3333333333333333,"#9c179e"],[0.4444444444444444,"#bd3786"],[0.5555555555555556,"#d8576b"],[0.6666666666666666,"#ed7953"],[0.7777777777777778,"#fb9f3a"],[0.8888888888888888,"#fdca26"],[1.0,"#f0f921"]]},"colorway":["#636efa","#EF553B","#00cc96","#ab63fa","#FFA15A","#19d3f3","#FF6692","#B6E880","#FF97FF","#FECB52"],"font":{"color":"#2a3f5f"},"geo":{"bgcolor":"white","lakecolor":"white","landcolor":"white","showlakes":true,"showland":true,"subunitcolor":"#C8D4E3"},"hoverlabel":{"align":"left"},"hovermode":"closest","mapbox":{"style":"light"},"paper_bgcolor":"white","plot_bgcolor":"white","polar":{"angularaxis":{"gridcolor":"#EBF0F8","linecolor":"#EBF0F8","ticks":""},"bgcolor":"white","radialaxis":{"gridcolor":"#EBF0F8","linecolor":"#EBF0F8","ticks":""}},"scene":{"xaxis":{"backgroundcolor":"white","gridcolor":"#DFE8F3","gridwidth":2,"linecolor":"#EBF0F8","showbackground":true,"ticks":"","zerolinecolor":"#EBF0F8"},"yaxis":{"backgroundcolor":"white","gridcolor":"#DFE8F3","gridwidth":2,"linecolor":"#EBF0F8","showbackground":true,"ticks":"","zerolinecolor":"#EBF0F8"},"zaxis":{"backgroundcolor":"white","gridcolor":"#DFE8F3","gridwidth":2,"linecolor":"#EBF0F8","showbackground":true,"ticks":"","zerolinecolor":"#EBF0F8"}},"shapedefaults":{"line":{"color":"#2a3f5f"}},"ternary":{"aaxis":{"gridcolor":"#DFE8F3","linecolor":"#A2B1C6","ticks":""},"baxis":{"gridcolor":"#DFE8F3","linecolor":"#A2B1C6","ticks":""},"bgcolor":"white","caxis":{"gridcolor":"#DFE8F3","linecolor":"#A2B1C6","ticks":""}},"title":{"x":0.05},"xaxis":{"automargin":true,"gridcolor":"#EBF0F8","linecolor":"#EBF0F8","ticks":"","title":{"standoff":15},"zerolinecolor":"#EBF0F8","zerolinewidth":2},"yaxis":{"automargin":true,"gridcolor":"#EBF0F8","linecolor":"#EBF0F8","ticks":"","title":{"standoff":15},"zerolinecolor":"#EBF0F8","zerolinewidth":2}}},"shapes":[{"line":{"color":"#636EFA","width":10},"type":"line","x0":2.5,"x1":3.5,"y0":0.9,"y1":0.9},{"line":{"color":"white","width":6},"type":"line","x0":2.5,"x1":3.5,"y0":0.9,"y1":0.9}],"margin":{"l":0,"r":0,"t":0,"b":0},"paper_bgcolor":"rgba(0,0,0,0)","plot_bgcolor":"rgba(0,0,0,0)"},                        {"displayModeBar": false, "responsive": true}                    )                };</script>
+</div>
+</div>
+</div>
+</section>
+</section>
+<section>
+<section id="inline-svg" class="title-slide slide level1"
+data-number="14">
+<h1 data-number="14"><span class="header-section-number">14</span>
+Inline SVG</h1>
+<p>You can specify <code>scale=&lt;num&gt;</code></p>
+<p>The image will be scaled to <code>&lt;num&gt;</code></p>
+<pre ><code class="markdown">![](local/svg/file.svg){scale=1.5}</code></pre>
+<p><div style="transform:scale(1.500000);
+        margin:64.000000px 64.000000px;
+        display:flex; justify-content:center;"
+      ><svg width="256px" height="256px" xmlns="http://www.w3.org/2000/svg">
+  <rect width="100%" height="100%" rx="20%" ry="20%" fill="black"/>
+  <text x="50%" y="30%" text-anchor="middle" dominant-baseline="middle" font-size="18" font-weight="bold" fill="white">
+    This svg is inlined!
+  </text>
+  <text x="50%" y="70%" text-anchor="middle" dominant-baseline="middle" font-size="12" font-weight="bold" fill="white">
+    So you can select these texts
+  </text>
+</svg></div></p>
+</section>
+<section id="inline-svg-another-example"
+class="title-slide slide level2" data-number="14.1">
+<h2 data-number="14.1"><span class="header-section-number">14.1</span>
+Inline SVG another example</h2>
+<p>You can also specify <code>width=&lt;len&gt;</code> or
+<code>height=&lt;len&gt;</code></p>
+<p>The image will be scaled to width/height with ratio kept</p>
+<pre ><code class="markdown">![](local/svg/file.svg){height=300px}</code></pre>
+<p><div style="transform:scale(1.171875);
+        margin:22.000000px 22.000000px;
+        display:flex; justify-content:center;"
+      ><svg width="256px" height="256px" xmlns="http://www.w3.org/2000/svg">
+  <rect width="100%" height="100%" rx="20%" ry="20%" fill="black"/>
+  <text x="50%" y="30%" text-anchor="middle" dominant-baseline="middle" font-size="18" font-weight="bold" fill="white">
+    This svg is inlined!
+  </text>
+  <text x="50%" y="70%" text-anchor="middle" dominant-baseline="middle" font-size="12" font-weight="bold" fill="white">
+    So you can select these texts
+  </text>
+</svg></div></p>
+</section>
+
+<section id="clip" class="title-slide slide level2" data-number="14.2">
+<h2 data-number="14.2"><span class="header-section-number">14.2</span>
+clip</h2>
+<p>You clip the image by clip=“top% right% bottom% left%”</p>
+<pre ><code class="markdown">![](local/svg/file.svg){height=300px clip="50% 100% 100% 50%"}</code></pre>
+<div style="font-size:0.6em;">
+<p>The clipped part will be applied gradient effect automatically!</p>
+</div>
+<p><div style="display:flex; justify-content:center;">
+          <div style="overflow:hidden; width:150.000000px; height:150.000000px;
+            mask-mode:alpha; mask-composite:intersect;mask-image:linear-gradient(to bottom,transparent 0%, black 10%),linear-gradient(to right,transparent 0%, black 10%);
+          ">
+          <div style="transform:translate(-150.000000px,-150.000000px); width:300.000000px; height:300.000000px;">
+          <div style="transform:scale(1.171875);
+        margin:22.000000px 22.000000px;
+        display:flex; justify-content:center;"
+      ><svg width="256px" height="256px" xmlns="http://www.w3.org/2000/svg">
+  <rect width="100%" height="100%" rx="20%" ry="20%" fill="black"/>
+  <text x="50%" y="30%" text-anchor="middle" dominant-baseline="middle" font-size="18" font-weight="bold" fill="white">
+    This svg is inlined!
+  </text>
+  <text x="50%" y="70%" text-anchor="middle" dominant-baseline="middle" font-size="12" font-weight="bold" fill="white">
+    So you can select these texts
+  </text>
+</svg></div>
+          </div>
+          </div>
+          </div></p>
+</section>
+
+<section id="gradient" class="title-slide slide level2"
+data-number="14.3">
+<h2 data-number="14.3"><span class="header-section-number">14.3</span>
+gradient</h2>
+<p>The default gradient range is 10% of the clipped border.</p>
+<p>You can adjust gradient range percentage by
+<code>gradient=xx</code></p>
+<p>for example no gradient:</p>
+<pre ><code class="markdown">![](local/svg/file.svg){height=300px clip="50% 100% 100% 50%" gradient=0}</code></pre>
+<p><div style="display:flex; justify-content:center;">
+          <div style="overflow:hidden; width:150.000000px; height:150.000000px;
+            mask-mode:alpha; mask-composite:intersect;mask-image:linear-gradient(to bottom,transparent 0%, black 0%),linear-gradient(to right,transparent 0%, black 0%);
+          ">
+          <div style="transform:translate(-150.000000px,-150.000000px); width:300.000000px; height:300.000000px;">
+          <div style="transform:scale(1.171875);
+        margin:22.000000px 22.000000px;
+        display:flex; justify-content:center;"
+      ><svg width="256px" height="256px" xmlns="http://www.w3.org/2000/svg">
+  <rect width="100%" height="100%" rx="20%" ry="20%" fill="black"/>
+  <text x="50%" y="30%" text-anchor="middle" dominant-baseline="middle" font-size="18" font-weight="bold" fill="white">
+    This svg is inlined!
+  </text>
+  <text x="50%" y="70%" text-anchor="middle" dominant-baseline="middle" font-size="12" font-weight="bold" fill="white">
+    So you can select these texts
+  </text>
+</svg></div>
+          </div>
+          </div>
+          </div></p>
+</section>
+</section>
+<section>
+<section id="label_and_link" class="title-slide slide level1"
+data-number="15">
+<h1 data-number="15"><span class="header-section-number">15</span> Label
+and Link</h1>
+<p>You can label a slide by adding a name to its heading</p>
+<pre ><code class="md"># Label and Link {#label_and_link}</code></pre>
+</section>
+<section id="link" class="title-slide slide level2" data-number="15.1">
+<h2 data-number="15.1"><span class="header-section-number">15.1</span>
+Link</h2>
+<p>Then you can go back to the labeled slide ⬆️ <a
+href="#/label_and_link">Label and Link</a>⬆️ .</p>
+<pre ><code class="md">[Label and Link](#label_and_link)</code></pre>
+</section>
+</section>
+<section>
+<section id="localization-offline-mode" class="title-slide slide level1"
+data-number="16">
+<h1 data-number="16"><span class="header-section-number">16</span>
+Localization (Offline mode)</h1>
+<p><code>markdown_revealjs</code> can be used completely offline!</p>
+</section>
+<section id="download-this-repo" class="title-slide slide level2"
+data-number="16.1">
+<h2 data-number="16.1"><span class="header-section-number">16.1</span>
+Download this repo</h2>
+<pre ><code class="bash"># download by git
+git clone --recurse-submodules https://github.com/xieby1/markdown_revealjs
+# or download the source code without .git
+wget https://github.com/xieby1/markdown_revealjs/archive/master.tar.gz
+tar xzf master.tar.gz</code></pre>
+</section>
+
+<section id="run-revealjs.sh-against-local-repo"
+class="title-slide slide level2" data-number="16.2">
+<h2 data-number="16.2"><span class="header-section-number">16.2</span>
+Run revealjs.sh against local repo</h2>
+<p>Assuming the path to the local repo is <code>&lt;REPO&gt;</code></p>
+<pre ><code class="bash">REPOROOT=&lt;REPO&gt; &lt;REPO&gt;/bin/revealjs.sh &lt;MD File&gt;</code></pre>
+<p>Then you can view your slides completely offline!</p>
+</section>
+</section>
+<section>
+<section id="long-table" class="title-slide slide level1"
+data-number="17">
+<h1 data-number="17"><span class="header-section-number">17</span> Long
+Table</h1>
+<p>Bother by long table?</p>
+<div class="fragment">
+<p>Then use wrap your long table</p>
+<p>with <span style="font-size:1.5em;"><code>.longtable</code></span>
+like below</p>
+<pre ><code class="md">::: {.longtable style="height: 300px;"}
+&lt;your long table here&gt;
+:::</code></pre>
+</div>
+</section>
+<section id="example" class="title-slide slide level2"
+data-number="17.1">
+<h2 data-number="17.1"><span class="header-section-number">17.1</span>
+Example</h2>
+<div class="longtable" style="height: 500px;">
+<table>
+<thead>
+<tr class="header">
+<th>This</th>
+<th>is</th>
+<th>a</th>
+<th>long</th>
+<th>vertical</th>
+<th>table</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>1</td>
+<td>2</td>
+<td>3</td>
+<td>4</td>
+<td>5</td>
+<td>6</td>
+</tr>
+<tr class="even">
+<td>2</td>
+<td>2</td>
+<td>3</td>
+<td>4</td>
+<td>5</td>
+<td>6</td>
+</tr>
+<tr class="odd">
+<td>3</td>
+<td>2</td>
+<td>3</td>
+<td>4</td>
+<td>5</td>
+<td>6</td>
+</tr>
+<tr class="even">
+<td>4</td>
+<td>2</td>
+<td>3</td>
+<td>4</td>
+<td>5</td>
+<td>6</td>
+</tr>
+<tr class="odd">
+<td>5</td>
+<td>2</td>
+<td>3</td>
+<td>4</td>
+<td>5</td>
+<td>6</td>
+</tr>
+<tr class="even">
+<td>6</td>
+<td>2</td>
+<td>3</td>
+<td>4</td>
+<td>5</td>
+<td>6</td>
+</tr>
+<tr class="odd">
+<td>7</td>
+<td>2</td>
+<td>3</td>
+<td>4</td>
+<td>5</td>
+<td>6</td>
+</tr>
+<tr class="even">
+<td>8</td>
+<td>2</td>
+<td>3</td>
+<td>4</td>
+<td>5</td>
+<td>6</td>
+</tr>
+<tr class="odd">
+<td>9</td>
+<td>2</td>
+<td>3</td>
+<td>4</td>
+<td>5</td>
+<td>6</td>
+</tr>
+<tr class="even">
+<td>10</td>
+<td>2</td>
+<td>3</td>
+<td>4</td>
+<td>5</td>
+<td>6</td>
+</tr>
+<tr class="odd">
+<td>11</td>
+<td>2</td>
+<td>3</td>
+<td>4</td>
+<td>5</td>
+<td>6</td>
+</tr>
+<tr class="even">
+<td>12</td>
+<td>2</td>
+<td>3</td>
+<td>4</td>
+<td>5</td>
+<td>6</td>
+</tr>
+<tr class="odd">
+<td>13</td>
+<td>2</td>
+<td>3</td>
+<td>4</td>
+<td>5</td>
+<td>6</td>
+</tr>
+<tr class="even">
+<td>14</td>
+<td>2</td>
+<td>3</td>
+<td>4</td>
+<td>5</td>
+<td>6</td>
+</tr>
+<tr class="odd">
+<td>15</td>
+<td>2</td>
+<td>3</td>
+<td>4</td>
+<td>5</td>
+<td>6</td>
+</tr>
+<tr class="even">
+<td>16</td>
+<td>2</td>
+<td>3</td>
+<td>4</td>
+<td>5</td>
+<td>6</td>
+</tr>
+<tr class="odd">
+<td>17</td>
+<td>2</td>
+<td>3</td>
+<td>4</td>
+<td>5</td>
+<td>6</td>
+</tr>
+<tr class="even">
+<td>18</td>
+<td>2</td>
+<td>3</td>
+<td>4</td>
+<td>5</td>
+<td>6</td>
+</tr>
+<tr class="odd">
+<td>19</td>
+<td>2</td>
+<td>3</td>
+<td>4</td>
+<td>5</td>
+<td>6</td>
+</tr>
+<tr class="even">
+<td>20</td>
+<td>2</td>
+<td>3</td>
+<td>4</td>
+<td>5</td>
+<td>6</td>
+</tr>
+</tbody>
+</table>
+</div>
+</section>
+</section>
+<section id="math" class="title-slide slide level1" data-number="18">
+<h1 data-number="18"><span class="header-section-number">18</span>
+Math</h1>
+<p>Write latex math equation like this</p>
+<pre ><code class="latex">$$
+F = G \frac{m_1 \times m_2}{R^2}
+$$</code></pre>
+<p><span class="math display">\[
+F = G \frac{m_1 \times m_2}{R^2}
+\]</span></p>
+</section>
+
+<section>
+<section id="multiple-columns" class="title-slide slide level1"
+data-number="19">
+<h1 data-number="19"><span class="header-section-number">19</span>
+Multiple columns</h1>
+<ul>
+<li>Pandoc Extension: <a
+href="https://pandoc.org/MANUAL.html#extension-fenced_divs">fenced_divs</a></li>
+<li>Builtin CSS class: container and col</li>
+</ul>
+</section>
+<section id="two-column-example" class="title-slide slide level2"
+data-number="19.1">
+<h2 data-number="19.1"><span class="header-section-number">19.1</span>
+Two-column Example</h2>
+<div class="container">
+<div class="col">
+<p>It is two columns!</p>
+<p>This is column 1</p>
+</div>
+<div class="col">
+<p>This is column 2</p>
+<pre ><code >::: {.container}
+:::: {.col}
+Column 1
+::::
+:::: {.col}
+Column 2
+::::
+:::</code></pre>
+</div>
+</div>
+<p>You can add as many columns as possible.</p>
+</section>
+
+<section id="multiple-column-vertical-alignment-top"
+class="title-slide slide level2" data-number="19.2">
+<h2 data-number="19.2"><span class="header-section-number">19.2</span>
+Multiple-column Vertical Alignment (Top)</h2>
+<div class="container" style="align-items: flex-start;">
+<div class="col">
+<h3>
+col1
+</h3>
+<ul>
+<li>Default is center alignment</li>
+<li>This is top alignment</li>
+</ul>
+</div>
+<div class="col">
+<h3>
+col2
+</h3>
+<p>Top alignment code:</p>
+<pre ><code >::: {.container style="align-items: flex-start;"}
+:::: {.col}
+col1
+::::
+:::: {.col}
+col2
+::::
+:::</code></pre>
+</div>
+</div>
+</section>
+
+<section id="multiple-column-vertical-alignment-bottom"
+class="title-slide slide level2" data-number="19.3">
+<h2 data-number="19.3"><span class="header-section-number">19.3</span>
+Multiple-column Vertical Alignment (Bottom)</h2>
+<div class="container" style="align-items: flex-end;">
+<div class="col">
+<ul>
+<li>Default is center alignment</li>
+<li>This is bottom alignment</li>
+</ul>
+<h3>
+col1
+</h3>
+</div>
+<div class="col">
+<p>Top alignment code:</p>
+<pre ><code >::: {.container style="align-items: flex-end;"}
+:::: {.col}
+col1
+::::
+:::: {.col}
+col2
+::::
+:::</code></pre>
+<h3>
+col2
+</h3>
+</div>
+</div>
+</section>
+</section>
+<section>
+<section id="pandoc-options" class="title-slide slide level1"
+data-number="20">
+<h1 data-number="20"><span class="header-section-number">20</span>
+Pandoc Options</h1>
+<p>Because <code>markdown_revealjs</code> is just</p>
+<p><span style="font-size:1.5em;">a shell wrapper of pandoc</span>.</p>
+<div class="fragment">
+<p>You can <span style="font-size:1.5em;">override</span> them!</p>
+</div>
+<div class="fragment" style="font-size: 0.5em;">
+<p>See pandoc available options by <code>pandoc -h</code></p>
+</div>
+</section>
+<section id="metadata-in-.md-file-lower-priority"
+class="title-slide slide level2" data-number="20.1">
+<h2 data-number="20.1"><span class="header-section-number">20.1</span>
+Metadata in .md file (lower priority)</h2>
+<p>Override in md file metadata, like</p>
+<pre ><code class="md">pandoc-opts: "&lt;PANDOC OPTIONS&gt;"</code></pre>
+<p>Example:</p>
+<pre ><code class="md">---
+title: Markdown RevealJS
+author: xieby1
+date: 2022.06.10
+...
+pandoc-opts: "--toc=false"
+---</code></pre>
+</section>
+
+<section id="cli-options-higher-priority"
+class="title-slide slide level2" data-number="20.2">
+<h2 data-number="20.2"><span class="header-section-number">20.2</span>
+CLI Options (higher priority)</h2>
+<p>Override by appending <code>reveal.sh</code> command, like</p>
+<pre ><code >reveal.sh &lt;MD File&gt; &lt;PANDOC OPTIONS&gt;</code></pre>
+<p>Example:</p>
+<pre ><code class="bash">reveal.sh README.md --toc=false</code></pre>
+</section>
+</section>
+<section>
+<section id="slide-number-end" class="title-slide slide level1"
+data-number="21">
+<h1 data-number="21"><span class="header-section-number">21</span> Slide
+Number End</h1>
+<p>Slides after the specific slides</p>
+<p>can be excluded from the <strong>total slide number</strong>.</p>
+</section>
+<section class="slide level6" data-number="21.0.0.0.0.1">
+
+<p>Think about a situation where,</p>
+<p>in your PhD defense,</p>
+<p>there are several <strong>backup slides</strong> at the end.</p>
+<p>You do not want them counted to the total slide number.</p>
+</section>
+<section id="slide-count-end" class="title-slide slide level2"
+data-number="21.1">
+<h2 data-number="21.1"><span class="header-section-number">21.1</span>
+<code>.slide-count-end</code></h2>
+<p>Add <code>.slide-count-end</code> to the heading of the slide,</p>
+<pre ><code class="md"># Heading {.slide-count-end}</code></pre>
+</section>
+
+<section id="example-1" class="title-slide slide level2"
+data-number="21.2">
+<h2 data-number="21.2"><span class="header-section-number">21.2</span>
+Example</h2>
+<p>In this README, <code>.slide-count-end</code> is added to slide <a
+href="#/qna">QnA</a>.</p>
+<p>Therefore, the slides after <a href="#/qna">QnA</a>, like <a
+href="#/backup-slides">Backup Slides</a></p>
+<p>are not counted to total slide number</p>
+</section>
+</section>
+<section>
+<section id="toc-resident" class="title-slide slide level1"
+data-number="22">
+<h1 data-number="22"><span class="header-section-number">22</span> TOC
+(resident)</h1>
+<p>See,</p>
+<p>some key TOC entries are resident at the top of the slides?</p>
+</section>
+<section id="two-types-of-attributes" class="title-slide slide level2"
+data-number="22.1" data-auto-animate="1">
+<h2 data-number="22.1" data-auto-animate="1"><span
+class="header-section-number">22.1</span> Two Types of Attributes</h2>
+<ul>
+<li>Top slide without subsequent vertical slides
+<ul>
+<li><code>data-name="&lt;TOC_Entry_Name&gt;"</code></li>
+</ul></li>
+<li>Top slide with subsequent vertical slides
+<ul>
+<li><code>data-stack-name="&lt;TOC_Entry_Name&gt;"</code></li>
+</ul></li>
+<li>Example:</li>
+</ul>
+<div class="container">
+<div class="col">
+<pre ><code class="md">...
+# H1 {data-name="h1"}
+
+# H2 {data-stack-name="h2"}
+
+## H2_1
+...</code></pre>
+</div>
+<div class="col">
+<p><img src="./images/resident_toc.svg" style="width: 500px;"></p>
+</div>
+</div>
+</section>
+<section id="two-types-of-attributes-details"
+class="title-slide slide level3" data-number="22.1.1"
+data-auto-animate="1">
+<h3 data-number="22.1.1" data-auto-animate="1"><span
+class="header-section-number">22.1.1</span> Two Types of Attributes:
+details</h3>
+<p><img src="./images/resident_toc.svg" style="width: 1000px;"></p>
+</section>
+
+
+<section id="hide-resident-toc" class="title-slide slide level2"
+data-number="22.2" data-sminvisible="true">
+<h2 data-number="22.2" data-sminvisible="true"><span
+class="header-section-number">22.2</span> Hide Resident TOC</h2>
+<p>Want to hide resident TOC in specific slides?</p>
+<p>Add <code>data-sminvisible=true</code> to the slide heading, like</p>
+<pre ><code class="md">## Hide Resident TOC {data-sminvisible=true}
+
+...</code></pre>
+</section>
+
+<section id="more-example" class="title-slide slide level2"
+data-number="22.3">
+<h2 data-number="22.3"><span class="header-section-number">22.3</span>
+More Example</h2>
+<p>My <a href="#/国科大计算所答辩">国科大计算所答辩</a> theme use
+resident TOC</p>
+<iframe src="./themes/ucas_ict_thesis.html" style="width:800px; height: 450px;">
+</iframe>
+</section>
+
+<section id="want-to-know-more" class="title-slide slide level2"
+data-number="22.4">
+<h2 data-number="22.4"><span class="header-section-number">22.4</span>
+Want to know more?</h2>
+<p>Resident TOC is implemented based on revealjs plugin:</p>
+<p><a
+href="https://github.com/martinomagnifico/reveal.js-simplemenu">martinomagnifico/reveal.js-simplemenu</a>.</p>
+</section>
+</section>
+<section>
+<section id="toc-full" class="title-slide slide level1"
+data-number="23">
+<h1 data-number="23"><span class="header-section-number">23</span> TOC
+(full)</h1>
+
+</section>
+<section id="toc-depth" class="title-slide slide level2"
+data-number="23.1">
+<h2 data-number="23.1"><span class="header-section-number">23.1</span>
+TOC Depth</h2>
+<p>Default TOC depth is 2.</p>
+<p>You can override it in yml front matter, like</p>
+<pre ><code class="yml">toc-depth: 1</code></pre>
+</section>
+
+<section id="toc-columns" class="title-slide slide level2"
+data-number="23.2">
+<h2 data-number="23.2"><span class="header-section-number">23.2</span>
+TOC Columns</h2>
+<p>The number of TOC columns is controlled by yml front matter:</p>
+<ul>
+<li><code>toc-width</code> for TOC width</li>
+<li><code>toc-column-width</code> for TOC’s column width</li>
+<li><code>toc-margin</code> for TOC’s margin</li>
+</ul>
+<p>Therefore, by adjusting these two variable,</p>
+<p>you can control how many TOC columns you have.</p>
+</section>
+<section id="default-values-3-column-toc"
+class="title-slide slide level3" data-number="23.2.1">
+<h3 data-number="23.2.1"><span
+class="header-section-number">23.2.1</span> Default Values (3-column
+TOC)</h3>
+<ul>
+<li>Remember the default slide width is 1200px.</li>
+<li>The default <code>toc-column-width</code> is <code>290px</code></li>
+<li>The default <code>toc-margin</code> is <code>0 0 0 0</code></li>
+<li>Thus a 3-column toc is presented.</li>
+</ul>
+</section>
+
+<section id="column-toc" class="title-slide slide level3"
+data-number="23.2.2">
+<h3 data-number="23.2.2"><span
+class="header-section-number">23.2.2</span> 1-column TOC</h3>
+<p>Here is an example of 1-column TOC</p>
+<pre ><code class="yml">toc-width: 1200px
+toc-column-width: unset
+toc-margin: 0 400px</code></pre>
+</section>
+
+</section>
+<section id="qna" class="title-slide slide level1 slide-count-end"
+data-number="24">
+<h1 class="slide-count-end" data-number="24"><span
+class="header-section-number">24</span> QnA</h1>
+<ul>
+<li>Problems?</li>
+<li>tips?</li>
+<li>Advice?</li>
+</ul>
+<p>New issue and pull request is welcome!</p>
+</section>
+
+<section>
+<section id="backup-slides" class="title-slide slide level1"
+data-number="25">
+<h1 data-number="25"><span class="header-section-number">25</span>
+Backup Slides</h1>
+<p>Test the functionality of <a href="#/slide-number-end">Slide Number
+End</a>.</p>
+<p>From this slide on,</p>
+<p>the total slide number ends counting.</p>
+</section>
+<section id="level-2-backup-slides" class="title-slide slide level2"
+data-number="25.1">
+<h2 data-number="25.1"><span class="header-section-number">25.1</span>
+Level-2 Backup Slides</h2>
+<p>🐱</p>
+</section>
+
+<section id="another-level-2-backup-slides"
+class="title-slide slide level2" data-number="25.2">
+<h2 data-number="25.2"><span class="header-section-number">25.2</span>
+Another Level-2 Backup Slides</h2>
+<p>🐈</p>
+</section>
+</section>
+    </div>
+  </div>
+  <div id=headerl style="position:absolute; top:0;    left:0;  padding:0.5em; font-size:16pt;"><img src="https://xieby1.github.io/markdown_revealjs/images/me.png" style="height:1.2em;"></div>
+  <div id=headerr style="position:absolute; top:0;    right:0; padding:0.5em; font-size:16pt;"><a href="https://github.com/xieby1/markdown_revealjs"><img src="https://github.com/fluidicon.png" style="width:16pt;">Github
+Repo</a></div>
+  <div id=footerl style="position:absolute; bottom:0; left:0;  padding:0.5em; font-size:16pt;">↙️
+by xieby1</div>
+  <div id=footerr style="position:absolute; bottom:0; right:0; padding:0.5em; font-size:16pt;"></div>
+
+  <script src="https://xieby1.github.io/markdown_revealjs/lib/reveal.js/dist/reveal.js"></script>
+
+  <!-- reveal.js plugins -->
+  <script src="https://xieby1.github.io/markdown_revealjs/lib/reveal.js/plugin/notes/notes.js"></script>
+  <script src="https://xieby1.github.io/markdown_revealjs/lib/reveal.js/plugin/search/search.js"></script>
+  <script src="https://xieby1.github.io/markdown_revealjs/lib/reveal.js/plugin/zoom/zoom.js"></script>
+  <script src="https://xieby1.github.io/markdown_revealjs/lib/reveal.js/plugin/highlight/highlight.js"></script>
+  <script src="https://xieby1.github.io/markdown_revealjs/lib/reveal.js/plugin/math/math.js"></script>
+  <script src="https://xieby1.github.io/markdown_revealjs/lib/reveal.js-plugins/chalkboard/plugin.js"></script>
+  <script src="https://xieby1.github.io/markdown_revealjs/lib/reveal.js-plugins/customcontrols/plugin.js"></script>
+  <script src="https://xieby1.github.io/markdown_revealjs/lib/reveal.js-simplemenu/simpleMenu.js"></script>
+  <script src="https://xieby1.github.io/markdown_revealjs/lib/reveal.js-menu/menu.js"></script>
+  <script src="https://xieby1.github.io/markdown_revealjs/lib/reveal.js-verticator/plugin/verticator/verticator.js"></script>
+  <script>
+  var title_slide = document.getElementById("title-slide")
+  title_slide.setAttribute("data-background-image", "https://xieby1.github.io/markdown_revealjs/images/liquid-cheese.svg")
+  </script>
+  <script>
+  var toc_slide = document.getElementById("TOC")
+  if (toc_slide)
+    toc_slide.setAttribute("data-background-image", "https://xieby1.github.io/markdown_revealjs/images/liquid-cheese.svg")
+  </script>
+  <script>
+  // inspired by https://github.com/hakimel/reveal.js/issues/1227
+  for (var slide of document.getElementsByClassName('slide level1')){
+    if (!(slide.getAttribute('data-background') ||
+          slide.getAttribute('data-background-color') ||
+          slide.getAttribute('data-background-image') ||
+          slide.getAttribute('data-background-video') ||
+          slide.getAttribute('data-background-iframe'))){
+      slide.setAttribute('data-background-image', 'https://xieby1.github.io/markdown_revealjs/images/liquid-cheese.svg')
+    }
+  }
+  </script>
+  <script>
+  for (var slide of document.getElementsByClassName('slide level2')){
+    if (!(slide.getAttribute('data-background') ||
+          slide.getAttribute('data-background-color') ||
+          slide.getAttribute('data-background-image') ||
+          slide.getAttribute('data-background-video') ||
+          slide.getAttribute('data-background-iframe'))){
+      slide.setAttribute('data-background-image', 'https://xieby1.github.io/markdown_revealjs/images/liquid-cheese_shallow.svg')
+    }
+  }
+  </script>
+  <script>
+  for (var slide of document.getElementsByClassName('slide level3')){
+    if (!(slide.getAttribute('data-background') ||
+          slide.getAttribute('data-background-color') ||
+          slide.getAttribute('data-background-image') ||
+          slide.getAttribute('data-background-video') ||
+          slide.getAttribute('data-background-iframe'))){
+      slide.setAttribute('data-background-image', 'https://xieby1.github.io/markdown_revealjs/images/liquid-cheese_shallow.svg')
+    }
+  }
+  </script>
+  <script>
+  for (var slide of document.getElementsByTagName('section')){
+    if (!(slide.getAttribute('data-background-size'))){
+      slide.setAttribute('data-background-size', 'cover')
+    }
+  }
+  </script>
+  <script>
+
+      // Full list of configuration options available at:
+      // https://revealjs.com/config/
+      Reveal.initialize({
+        highlight: {
+          // disable the default highlight plugin
+          // I will handle highlight.js below, to disable auto detection of language
+          highlightOnLoad: false,
+        },
+        // Display controls in the bottom right corner
+        controls: true,
+
+        // Help the user learn the controls by providing hints, for example by
+        // bouncing the down arrow when they first encounter a vertical slide
+        controlsTutorial: true,
+
+        // Determines where controls appear, "edges" or "bottom-right"
+        controlsLayout: 'bottom-right',
+
+        // Visibility rule for backwards navigation arrows; "faded", "hidden"
+        // or "visible"
+        controlsBackArrows: 'faded',
+
+        // Display a presentation progress bar
+        progress: true,
+
+        // Display the page number of the current slide
+        // * h.v Horizontal . Vertical slide number (default)
+        // * h/v Horizontal / Vertical slide number
+        // * c Flattened slide number, including both horizontal and vertical slides
+        // * c/t Flattened slide number / total slides
+        slideNumber: slide => {
+            let slideEndCount = document.getElementsByClassName("slide-count-end")[0]
+            let endCount = slideEndCount ?
+                Reveal.getSlidePastCount( slideEndCount ) + 1 :
+                Reveal.getTotalSlides();
+            // see reveal.js/js/controllers/slidenumber.js
+            // Offset the current slide number by 1 to make it 1-indexed
+            let horizontalOffset = slide && slide.dataset.visibility === 'uncounted' ? 0 : 1;
+            return [
+                Reveal.getSlidePastCount( slide ) + horizontalOffset,
+                '/',
+                endCount,
+            ];
+        },
+
+        // 'all', 'print', or 'speaker'
+        showSlideNumber: 'all',
+
+        // Add the current slide number to the URL hash so that reloading the
+        // page/copying the URL will return you to the same slide
+        hash: true,
+
+        // Start with 1 for the hash rather than 0
+        hashOneBasedIndex: false,
+
+        // Flags if we should monitor the hash and change slides accordingly
+        respondToHashChanges: true,
+
+        // Push each slide change to the browser history
+        history: false,
+
+        // Enable keyboard shortcuts for navigation
+        keyboard: true,
+
+        // Enable the slide overview mode
+        overview: true,
+
+        // Disables the default reveal.js slide layout (scaling and centering)
+        // so that you can use custom CSS layout
+        disableLayout: false,
+
+        // Vertical centering of slides
+        center: true,
+
+        // Enables touch navigation on devices with touch input
+        touch: false,
+
+        // Loop the presentation
+        loop: false,
+
+        // Change the presentation direction to be RTL
+        rtl: false,
+
+        // see https://revealjs.com/vertical-slides/#navigation-mode
+        navigationMode: 'default',
+
+        // Randomizes the order of slides each time the presentation loads
+        shuffle: false,
+
+        // Turns fragments on and off globally
+        fragments: true,
+
+        // Flags whether to include the current fragment in the URL,
+        // so that reloading brings you to the same fragment position
+        fragmentInURL: true,
+
+        // Flags if the presentation is running in an embedded mode,
+        // i.e. contained within a limited portion of the screen
+        embedded: false,
+
+        // Flags if we should show a help overlay when the questionmark
+        // key is pressed
+        help: true,
+
+        // Flags if it should be possible to pause the presentation (blackout)
+        pause: true,
+
+        // Flags if speaker notes should be visible to all viewers
+        showNotes: false,
+
+        // Global override for autoplaying embedded media (null/true/false)
+        autoPlayMedia: null,
+
+        // Global override for preloading lazy-loaded iframes (null/true/false)
+        preloadIframes: null,
+
+        // Number of milliseconds between automatically proceeding to the
+        // next slide, disabled when set to 0, this value can be overwritten
+        // by using a data-autoslide attribute on your slides
+        autoSlide: 0,
+
+        // Stop auto-sliding after user input
+        autoSlideStoppable: true,
+
+        // Use this method for navigation when auto-sliding
+        autoSlideMethod: null,
+
+        // Specify the average time in seconds that you think you will spend
+        // presenting each slide. This is used to show a pacing timer in the
+        // speaker view
+        defaultTiming: null,
+
+        // Enable slide navigation via mouse wheel
+        mouseWheel: false,
+
+        // The display mode that will be used to show slides
+        display: 'block',
+
+        // Hide cursor if inactive
+        hideInactiveCursor: true,
+
+        // Time before the cursor is hidden (in ms)
+        hideCursorTime: 5000,
+
+        // Opens links in an iframe preview overlay
+        previewLinks: false,
+
+        // Transition style (none/fade/slide/convex/concave/zoom)
+        transition: 'slide',
+
+        // Transition speed (default/fast/slow)
+        transitionSpeed: 'default',
+
+        // Transition style for full page slide backgrounds
+        // (none/fade/slide/convex/concave/zoom)
+        backgroundTransition: 'fade',
+
+        // Number of slides away from the current that are visible
+        viewDistance: 3,
+
+        // Number of slides away from the current that are visible on mobile
+        // devices. It is advisable to set this to a lower number than
+        // viewDistance in order to save resources.
+        mobileViewDistance: 2,
+
+        // The "normal" size of the presentation, aspect ratio will be preserved
+        // when the presentation is scaled to fit different resolutions. Can be
+        // specified using percentage units.
+        width: 1200,
+
+        height: 700,
+
+        math: {
+          mathjax: 'https://xieby1.github.io/markdown_revealjs/lib/MathJax/es5/tex-chtml-full.js',
+          config: 'TeX-AMS_HTML-full',
+          tex2jax: {
+            inlineMath: [['\\(','\\)']],
+            displayMath: [['\\[','\\]']],
+            balanceBraces: true,
+            processEscapes: false,
+            processRefs: true,
+            processEnvironments: true,
+            preview: 'TeX',
+            skipTags: ['script','noscript','style','textarea','pre','code'],
+            ignoreClass: 'tex2jax_ignore',
+            processClass: 'tex2jax_process'
+          },
+        },
+
+        chalkboard: {
+          theme: "whiteboard",
+        },
+        simplemenu: {
+          barhtml: {
+            header: "<div class='simplemenubar'><ul class='simplemenu'></ul></div>",
+            footer: "",
+          },
+          menubarclass: "simplemenubar",
+          menuclass: "simplemenu",
+          csspath: false,
+        },
+        menu: {
+          sticky: true,
+        },
+        customcontrols: {
+          controls: [
+            {
+              icon: '<i class="fas fa-expand"></i>',
+              title: 'Toggle fullscreen',
+              action: 'document.documentElement.requestFullscreen()'
+            },
+            {
+              icon: '<i class="fa fa-th"></i>',
+              title: 'Toggle overview (O,Esc)',
+              action: 'Reveal.toggleOverview();'
+            },
+            { icon: '<i class="fa fa-pen-square"></i>',
+              title: 'Toggle chalkboard (B)',
+              action: 'RevealChalkboard.toggleChalkboard();'
+            },
+            { icon: '<i class="fa fa-pen"></i>',
+              title: 'Toggle notes canvas (C)',
+              action: 'RevealChalkboard.toggleNotesCanvas();'
+            },
+            {
+              icon: '<i class="fa fa-print"></i>',
+              title: 'Print PDF Mode',
+              action: "window.location.search = 'print-pdf';"
+            },
+          ]
+        },
+        // reveal.js plugins
+        plugins: [
+          RevealHighlight,
+          RevealMath,
+          RevealChalkboard,
+          RevealCustomControls,
+          RevealNotes,
+          RevealSearch,
+          RevealZoom,
+          Simplemenu,
+          RevealMenu,
+          Verticator,
+        ],
+      }).then(() => {
+        // Disable auto detection of language
+        // this function is based on
+        // * reveal.js/plugin/highlight/plugin.js
+        // * https://revealjs.com/code/
+        Array.from( Reveal.getRevealElement().querySelectorAll( 'pre code' ) ).forEach( block => {
+          if (block.classList.length > 0) {
+            if (! block.classList[0].startsWith("language-"))
+              block.classList.replace(block.classList[0], "language-"+block.classList[0])
+          } else {
+            block.classList.add("language-none");
+          }
+
+          const highlight = Reveal.getPlugin('highlight');
+          highlight.highlightBlock(block);
+        } );
+      });
+      Reveal.addKeyBinding( { keyCode: 9,  key: "Tab",   description: "Left"  }, () => {Reveal.left()} )
+      Reveal.addKeyBinding( { keyCode: 13, key: "Enter", description: "Right" }, () => {Reveal.right()} )
+      // make customcontrols collapsed by default
+      Reveal.on("ready", event => {
+        var div = document.querySelector("div#customcontrols");
+        div.classList.add('collapsed');
+        document.addEventListener("resize", event => {
+          // make sure customcontrols are collapsed
+          var div = document.querySelector("div#customcontrols");
+          div.classList.add('collapsed');
+        });
+      });
+    </script>
+    <script>
+      const headerl = document.getElementById("headerl");
+      const headerr = document.getElementById("headerr");
+      const footerl = document.getElementById("footerl");
+      const footerr = document.getElementById("footerr");
+      Reveal.on('pdf-ready', () => {
+        document.querySelectorAll('.pdf-page').forEach(page => {
+          page.appendChild(headerl.cloneNode(true));
+          page.appendChild(headerr.cloneNode(true));
+          page.appendChild(footerl.cloneNode(true));
+          page.appendChild(footerr.cloneNode(true));
+        });
+      })
+    </script>
+    <script>
+      // inspired by [quarto-cli: revealjs presentation: hiding footer and slide menu control for a specific slide #825](https://github.com/quarto-dev/quarto-cli/discussions/825)
+      { // a local scope
+        // generate a function that can hide class by selectorList
+        function gen_hide_class_bySelector(className, selectorList) {
+          return function(event) {
+            const display = (Array.from(event.currentSlide.classList).indexOf(className) !== -1) ? "none" : null;
+            for (const sel of selectorList) {
+              const ele = document.querySelector(sel)
+              if (ele) ele.style.display = display;
+            }
+          }
+        }
+        nochrome = gen_hide_class_bySelector("nochrome", [
+          "#headerl", "#headerr", "#footerl", "#footerr",
+          ".navigate-left", ".navigate-right", ".navigate-up", ".navigate-down",
+          "#customcontrols", ".slide-menu-button",
+          ".simplemenubar",
+          ".verticator",
+          ".slide-number",
+        ])
+        Reveal.on("ready", nochrome )
+        Reveal.on('ready', () => { Reveal.on( 'slidechanged', nochrome ); })
+
+        Reveal.on("ready", () => {
+          for (const sel of ["h1.noheading", "h2.noheading", "h3.noheading", "h4.noheading", "h5.noheading", "h6.noheading" ])
+            for (const ele of document.querySelectorAll(sel))
+              ele.style.display = "none";
+        })
+      }
+    </script>
+    <script src="https://xieby1.github.io/markdown_revealjs/share/markdown_revealjs/cjk2ch.js"></script>
+    <script>document.addEventListener('DOMContentLoaded', cjk2ch("code:not(:has(span))"))</script>
+      </body>
+</html>

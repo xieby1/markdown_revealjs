@@ -1,0 +1,667 @@
+<!DOCTYPE html>
+<!-- Export by pandoc -D revealjs, pandoc version 2.14.03 -->
+<!-- pandoc-types 1.22.1, texmath 0.12.3.2, skylighting 0.10.5.2, -->
+<!-- citeproc 0.4.0.1, ipynb 0.1.0.2 -->
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="generator" content="pandoc">
+  <meta name="author" content="xieby1 👨‍🏫导师XXX">
+  <title>xieby1的中国科学院计算技术研究所答辩模板</title>
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes, minimal-ui">
+  <link rel="stylesheet" href="https://xieby1.github.io/markdown_revealjs/lib/reveal.js/dist/reset.css">
+  <link rel="stylesheet" href="https://xieby1.github.io/markdown_revealjs/lib/reveal.js/dist/reveal.css">
+  <style>
+    code{white-space: pre-wrap;}
+    span.smallcaps{font-variant: small-caps;}
+    div.columns{display: flex; gap: min(4vw, 1.5em);}
+    div.column{flex: auto; overflow-x: auto;}
+    div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+    /* The extra [class] is a hack that increases specificity enough to
+       override a similar rule in reveal.js */
+    ul.task-list[class]{list-style: none;}
+    ul.task-list li input[type="checkbox"] {
+      font-size: inherit;
+      width: 0.8em;
+      margin: 0 0.8em 0.2em -1.6em;
+      vertical-align: middle;
+    }
+  </style>
+  <link rel="stylesheet" href="https://xieby1.github.io/markdown_revealjs/lib/reveal.js/dist/theme/white.css" id="theme">
+  <link rel="stylesheet" href="https://xieby1.github.io/markdown_revealjs/share/markdown_revealjs/stackoverflow-light.css" id="theme">
+<!-- Split font file using cn-font-split -->
+<link href='https://xieby1.github.io/markdown_revealjs/fonts/Noto_Color_Emoji/dist/main.css' rel='stylesheet'>
+<style>
+/* See themes/white.css */
+:root {
+    --r-main-font: Source Sans Pro, Helvetica, Noto Color Emoji, sans-serif;
+    --r-main-font: Source Sans Pro, Helvetica, Noto Color Emoji, sans-serif;
+}
+</style>
+  <link rel="stylesheet" href="https://xieby1.github.io/markdown_revealjs/lib/reveal.js-plugins/chalkboard/style.css">
+  <link rel="stylesheet" href="https://xieby1.github.io/markdown_revealjs/lib/font-awesome/5.15.4/css/all.min.css">
+  <link rel="stylesheet" href="https://xieby1.github.io/markdown_revealjs/lib/reveal.js-plugins/customcontrols/style.css">
+  <link rel="stylesheet" href="https://xieby1.github.io/markdown_revealjs/lib/reveal.js-simplemenu/simpleMenu.css">
+<!-- revealjs.sh customized styles -->
+<style>
+.reveal section img {
+    margin: 0 0;
+    /* override default border color */
+    border: transparent;
+}
+
+.reveal p {
+    margin: 0 0;
+}
+
+/* no margin in styled code div, the same to unstyled code */
+div.sourceCode {
+    margin: 0;
+}
+.reveal pre {
+    display: flex;
+    justify-content: center;
+    line-height: 1.0em;
+    width: fit-content;
+    max-width: 100%;
+}
+
+.reveal pre code {
+    max-height: none;
+}
+
+a.sourceLine {
+    /* styled code line is higher than unstyled, make them the same */
+    line-height: 0;
+}
+
+[role="doc-toc"] > ul {
+    /* multiple column in first level TOC */
+    column-width:  290px ;
+    width:  1200px ;
+    column-rule-style: solid;
+    /* no margin in first level TOC */
+    margin:  0 0 0 0 ;
+}
+
+[role="doc-toc"] ul {
+    /* no bullet */
+    list-style-type: none;
+    /* no margin, no padding in TOC ul */
+    margin-block-start: 0;
+    margin-block-end: 0;
+    padding-inline-start: 0;
+}
+
+/* change first level toc background */
+nav > ul > li > a {
+    background: lightgrey;
+}
+
+/* Long table overflow */
+/* https://stackoverflow.com/questions/23989463/how-to-set-tbody-height-with-overflow-scroll */
+thead tr th {
+    position: sticky;
+    top: 0;
+}
+table {
+    border-collapse: collapse;
+}
+
+/* Center the table, make the scroll bar right beside the table */
+/* https://www.joshwcomeau.com/css/center-a-div/ */
+.longtable {
+    overflow-y: auto;
+    max-width: fit-content;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+/* enable multiple columns */
+/* https://stackoverflow.com/questions/30861845 */
+.container {
+  display: flex;
+  align-items: center;
+}
+.col {
+  flex: auto;
+}
+
+/* not to capitalise my titles */
+/* https://stackoverflow.com/questions/47057398 */
+.reveal h1,
+.reveal h2,
+.reveal h3,
+.reveal h4,
+.reveal h5 {
+    text-transform: none;
+}
+
+/* make customcontrols hiden when print-pdf */
+@media print {
+  .slide-menu-button,
+  #customcontrols {
+    visibility: hidden;
+  }
+}
+
+/* make customcontrols always collapse */
+@media only screen and (min-width: 500px) {
+  #customcontrols > button {
+      display: block;
+  }
+  #customcontrols > ul {
+    position: fixed;
+    left: 54px;
+    bottom: 64px;
+    list-style-type: none;
+    overflow: hidden;
+    margin: 0;
+    border: 1px solid var(--r-link-color);
+    border-radius: 5px;
+    padding: 10px;
+    background-color: var(--r-background-color)
+  }
+}
+</style>
+</head>
+<body>
+  <div class="reveal">
+    <div class="slides">
+
+<section id="title-slide"
+         data-sminvisible=true>
+  <h1 class="title">xieby1的中国科学院计算技术研究所答辩模板</h1>
+  <p class="author"><img src="https://xieby1.github.io/markdown_revealjs/images/me.png" style="height:1.5em;">xieby1<br/><span
+style="font-size:1.5em;">👨‍🏫</span>导师XXX</p>
+  <p class="date">2024年4月11日</p>
+</section>
+
+<section id="研究背景" class="title-slide slide level1" data-number="1"
+data-name="背景">
+<h1 data-number="1" data-name="背景"><span
+class="header-section-number">1</span> 研究背景</h1>
+<p><img src="https://xieby1.github.io/markdown_revealjs/themes/ucas_ict_thesis/ucas_full.svg" style="width: 1000px;"></p>
+</section>
+
+<section id="相关工作" class="title-slide slide level1" data-number="2"
+data-name="相关工作">
+<h1 data-number="2" data-name="相关工作"><span
+class="header-section-number">2</span> 相关工作</h1>
+<p><img src="https://xieby1.github.io/markdown_revealjs/themes/ucas_ict_thesis/ict_full.svg" style="width: 1000px;"></p>
+</section>
+
+<section>
+<section id="研究内容壹" class="title-slide slide level1"
+data-number="3" data-stack-name="壹">
+<h1 data-number="3" data-stack-name="壹"><span
+class="header-section-number">3</span> 研究内容壹</h1>
+<p>🐱喵喵</p>
+</section>
+<section id="研究内容壹-壹" class="title-slide slide level2"
+data-number="3.1">
+<h2 data-number="3.1"><span class="header-section-number">3.1</span>
+研究内容壹-壹</h2>
+
+</section>
+<section id="研究内容壹-壹-壹" class="title-slide slide level3"
+data-number="3.1.1">
+<h3 data-number="3.1.1"><span class="header-section-number">3.1.1</span>
+研究内容壹-壹-壹</h3>
+
+</section>
+
+</section>
+<section id="研究内容贰" class="title-slide slide level1"
+data-number="4" data-name="贰">
+<h1 data-number="4" data-name="贰"><span
+class="header-section-number">4</span> 研究内容贰</h1>
+<p>🐶汪汪</p>
+</section>
+
+<section id="研究内容叁" class="title-slide slide level1"
+data-number="5" data-name="叁">
+<h1 data-number="5" data-name="叁"><span
+class="header-section-number">5</span> 研究内容叁</h1>
+<p>🐭吱吱</p>
+</section>
+
+<section id="总结和展望" class="title-slide slide level1"
+data-number="6" data-name="总">
+<h1 data-number="6" data-name="总"><span
+class="header-section-number">6</span> 总结和展望</h1>
+
+</section>
+
+<section id="谢谢" class="title-slide slide level1 slide-count-end"
+data-number="7"
+data-background-image="https://xieby1.github.io/markdown_revealjs/themes/ucas_ict_thesis/liquid-cheese_sky_title.svg"
+data-sminvisible="true">
+<h1 class="slide-count-end" data-number="7"
+data-background-image="https://xieby1.github.io/markdown_revealjs/themes/ucas_ict_thesis/liquid-cheese_sky_title.svg"
+data-sminvisible="true"><span class="header-section-number">7</span>
+谢谢</h1>
+<p>🎊</p>
+</section>
+
+<section>
+<section id="备份幻灯片" class="title-slide slide level1"
+data-number="8">
+<h1 data-number="8"><span class="header-section-number">8</span>
+备份幻灯片</h1>
+
+</section>
+<section id="section" class="title-slide slide level2"
+data-number="8.1">
+<h2 data-number="8.1"><span class="header-section-number">8.1</span>
+🐈</h2>
+
+</section>
+
+<section id="section-1" class="title-slide slide level2"
+data-number="8.2">
+<h2 data-number="8.2"><span class="header-section-number">8.2</span>
+🐱</h2>
+
+</section>
+</section>
+    </div>
+  </div>
+  <div id=headerl style="position:absolute; top:0;    left:0;  padding:0.5em; font-size:16pt;"><img src="https://xieby1.github.io/markdown_revealjs/themes/ucas_ict_thesis/ucas_logo.svg" style="height:0.8em; margin:0;"><span
+style="color:#01378c; font-size:0.8em;">中国科学院大学</span></div>
+  <div id=headerr style="position:absolute; top:0;    right:0; padding:0.5em; font-size:16pt;"><span
+style="color:#01378c; font-size:0.8em;">计算技术研究所</span><img src="https://xieby1.github.io/markdown_revealjs/themes/ucas_ict_thesis/ict_logo.svg" style="height:0.8em; margin:0;"></div>
+  <div id=footerl style="position:absolute; bottom:0; left:0;  padding:0.5em; font-size:16pt;"><span
+style="color:#01378c; font-size:0.8em;">xieby1的中国科学院计算技术研究所答辩模板・xieby1・2024年4月11日</span></div>
+  <div id=footerr style="position:absolute; bottom:0; right:0; padding:0.5em; font-size:16pt;"></div>
+
+  <script src="https://xieby1.github.io/markdown_revealjs/lib/reveal.js/dist/reveal.js"></script>
+
+  <!-- reveal.js plugins -->
+  <script src="https://xieby1.github.io/markdown_revealjs/lib/reveal.js/plugin/notes/notes.js"></script>
+  <script src="https://xieby1.github.io/markdown_revealjs/lib/reveal.js/plugin/search/search.js"></script>
+  <script src="https://xieby1.github.io/markdown_revealjs/lib/reveal.js/plugin/zoom/zoom.js"></script>
+  <script src="https://xieby1.github.io/markdown_revealjs/lib/reveal.js/plugin/highlight/highlight.js"></script>
+  <script src="https://xieby1.github.io/markdown_revealjs/lib/reveal.js/plugin/math/math.js"></script>
+  <script src="https://xieby1.github.io/markdown_revealjs/lib/reveal.js-plugins/chalkboard/plugin.js"></script>
+  <script src="https://xieby1.github.io/markdown_revealjs/lib/reveal.js-plugins/customcontrols/plugin.js"></script>
+  <script src="https://xieby1.github.io/markdown_revealjs/lib/reveal.js-simplemenu/simpleMenu.js"></script>
+  <script src="https://xieby1.github.io/markdown_revealjs/lib/reveal.js-menu/menu.js"></script>
+  <script src="https://xieby1.github.io/markdown_revealjs/lib/reveal.js-verticator/plugin/verticator/verticator.js"></script>
+  <script>
+  var title_slide = document.getElementById("title-slide")
+  title_slide.setAttribute("data-background-image", "https://xieby1.github.io/markdown_revealjs/themes/ucas_ict_thesis/liquid-cheese_sky_title.svg")
+  </script>
+  <script>
+  var toc_slide = document.getElementById("TOC")
+  if (toc_slide)
+    toc_slide.setAttribute("data-background-image", "https://xieby1.github.io/markdown_revealjs/themes/ucas_ict_thesis/liquid-cheese_sky_l1.svg")
+  </script>
+  <script>
+  // inspired by https://github.com/hakimel/reveal.js/issues/1227
+  for (var slide of document.getElementsByClassName('slide level1')){
+    if (!(slide.getAttribute('data-background') ||
+          slide.getAttribute('data-background-color') ||
+          slide.getAttribute('data-background-image') ||
+          slide.getAttribute('data-background-video') ||
+          slide.getAttribute('data-background-iframe'))){
+      slide.setAttribute('data-background-image', 'https://xieby1.github.io/markdown_revealjs/themes/ucas_ict_thesis/liquid-cheese_sky_l1.svg')
+    }
+  }
+  </script>
+  <script>
+  for (var slide of document.getElementsByClassName('slide level2')){
+    if (!(slide.getAttribute('data-background') ||
+          slide.getAttribute('data-background-color') ||
+          slide.getAttribute('data-background-image') ||
+          slide.getAttribute('data-background-video') ||
+          slide.getAttribute('data-background-iframe'))){
+      slide.setAttribute('data-background-image', 'https://xieby1.github.io/markdown_revealjs/themes/ucas_ict_thesis/liquid-cheese_sky_l2.svg')
+    }
+  }
+  </script>
+  <script>
+  for (var slide of document.getElementsByClassName('slide level3')){
+    if (!(slide.getAttribute('data-background') ||
+          slide.getAttribute('data-background-color') ||
+          slide.getAttribute('data-background-image') ||
+          slide.getAttribute('data-background-video') ||
+          slide.getAttribute('data-background-iframe'))){
+      slide.setAttribute('data-background-image', 'https://xieby1.github.io/markdown_revealjs/themes/ucas_ict_thesis/liquid-cheese_sky_l3.svg')
+    }
+  }
+  </script>
+  <script>
+  for (var slide of document.getElementsByTagName('section')){
+    if (!(slide.getAttribute('data-background-size'))){
+      slide.setAttribute('data-background-size', 'cover')
+    }
+  }
+  </script>
+  <script>
+
+      // Full list of configuration options available at:
+      // https://revealjs.com/config/
+      Reveal.initialize({
+        highlight: {
+          // disable the default highlight plugin
+          // I will handle highlight.js below, to disable auto detection of language
+          highlightOnLoad: false,
+        },
+        // Display controls in the bottom right corner
+        controls: true,
+
+        // Help the user learn the controls by providing hints, for example by
+        // bouncing the down arrow when they first encounter a vertical slide
+        controlsTutorial: true,
+
+        // Determines where controls appear, "edges" or "bottom-right"
+        controlsLayout: 'bottom-right',
+
+        // Visibility rule for backwards navigation arrows; "faded", "hidden"
+        // or "visible"
+        controlsBackArrows: 'faded',
+
+        // Display a presentation progress bar
+        progress: true,
+
+        // Display the page number of the current slide
+        // * h.v Horizontal . Vertical slide number (default)
+        // * h/v Horizontal / Vertical slide number
+        // * c Flattened slide number, including both horizontal and vertical slides
+        // * c/t Flattened slide number / total slides
+        slideNumber: slide => {
+            let slideEndCount = document.getElementsByClassName("slide-count-end")[0]
+            let endCount = slideEndCount ?
+                Reveal.getSlidePastCount( slideEndCount ) + 1 :
+                Reveal.getTotalSlides();
+            // see reveal.js/js/controllers/slidenumber.js
+            // Offset the current slide number by 1 to make it 1-indexed
+            let horizontalOffset = slide && slide.dataset.visibility === 'uncounted' ? 0 : 1;
+            return [
+                Reveal.getSlidePastCount( slide ) + horizontalOffset,
+                '/',
+                endCount,
+            ];
+        },
+
+        // 'all', 'print', or 'speaker'
+        showSlideNumber: 'all',
+
+        // Add the current slide number to the URL hash so that reloading the
+        // page/copying the URL will return you to the same slide
+        hash: true,
+
+        // Start with 1 for the hash rather than 0
+        hashOneBasedIndex: false,
+
+        // Flags if we should monitor the hash and change slides accordingly
+        respondToHashChanges: true,
+
+        // Push each slide change to the browser history
+        history: false,
+
+        // Enable keyboard shortcuts for navigation
+        keyboard: true,
+
+        // Enable the slide overview mode
+        overview: true,
+
+        // Disables the default reveal.js slide layout (scaling and centering)
+        // so that you can use custom CSS layout
+        disableLayout: false,
+
+        // Vertical centering of slides
+        center: true,
+
+        // Enables touch navigation on devices with touch input
+        touch: false,
+
+        // Loop the presentation
+        loop: false,
+
+        // Change the presentation direction to be RTL
+        rtl: false,
+
+        // see https://revealjs.com/vertical-slides/#navigation-mode
+        navigationMode: 'default',
+
+        // Randomizes the order of slides each time the presentation loads
+        shuffle: false,
+
+        // Turns fragments on and off globally
+        fragments: true,
+
+        // Flags whether to include the current fragment in the URL,
+        // so that reloading brings you to the same fragment position
+        fragmentInURL: true,
+
+        // Flags if the presentation is running in an embedded mode,
+        // i.e. contained within a limited portion of the screen
+        embedded: false,
+
+        // Flags if we should show a help overlay when the questionmark
+        // key is pressed
+        help: true,
+
+        // Flags if it should be possible to pause the presentation (blackout)
+        pause: true,
+
+        // Flags if speaker notes should be visible to all viewers
+        showNotes: false,
+
+        // Global override for autoplaying embedded media (null/true/false)
+        autoPlayMedia: null,
+
+        // Global override for preloading lazy-loaded iframes (null/true/false)
+        preloadIframes: null,
+
+        // Number of milliseconds between automatically proceeding to the
+        // next slide, disabled when set to 0, this value can be overwritten
+        // by using a data-autoslide attribute on your slides
+        autoSlide: 0,
+
+        // Stop auto-sliding after user input
+        autoSlideStoppable: true,
+
+        // Use this method for navigation when auto-sliding
+        autoSlideMethod: null,
+
+        // Specify the average time in seconds that you think you will spend
+        // presenting each slide. This is used to show a pacing timer in the
+        // speaker view
+        defaultTiming: null,
+
+        // Enable slide navigation via mouse wheel
+        mouseWheel: false,
+
+        // The display mode that will be used to show slides
+        display: 'block',
+
+        // Hide cursor if inactive
+        hideInactiveCursor: true,
+
+        // Time before the cursor is hidden (in ms)
+        hideCursorTime: 5000,
+
+        // Opens links in an iframe preview overlay
+        previewLinks: false,
+
+        // Transition style (none/fade/slide/convex/concave/zoom)
+        transition: 'slide',
+
+        // Transition speed (default/fast/slow)
+        transitionSpeed: 'default',
+
+        // Transition style for full page slide backgrounds
+        // (none/fade/slide/convex/concave/zoom)
+        backgroundTransition: 'fade',
+
+        // Number of slides away from the current that are visible
+        viewDistance: 3,
+
+        // Number of slides away from the current that are visible on mobile
+        // devices. It is advisable to set this to a lower number than
+        // viewDistance in order to save resources.
+        mobileViewDistance: 2,
+
+        // The "normal" size of the presentation, aspect ratio will be preserved
+        // when the presentation is scaled to fit different resolutions. Can be
+        // specified using percentage units.
+        width: 1200,
+
+        height: 700,
+
+        math: {
+          mathjax: 'https://xieby1.github.io/markdown_revealjs/lib/MathJax/es5/tex-chtml-full.js',
+          config: 'TeX-AMS_HTML-full',
+          tex2jax: {
+            inlineMath: [['\\(','\\)']],
+            displayMath: [['\\[','\\]']],
+            balanceBraces: true,
+            processEscapes: false,
+            processRefs: true,
+            processEnvironments: true,
+            preview: 'TeX',
+            skipTags: ['script','noscript','style','textarea','pre','code'],
+            ignoreClass: 'tex2jax_ignore',
+            processClass: 'tex2jax_process'
+          },
+        },
+
+        chalkboard: {
+          theme: "whiteboard",
+        },
+        simplemenu: {
+          barhtml: {
+            header: "<div class='simplemenubar'><ul class='simplemenu'></ul></div>",
+            footer: "",
+          },
+          menubarclass: "simplemenubar",
+          menuclass: "simplemenu",
+          csspath: false,
+        },
+        menu: {
+          sticky: true,
+        },
+        customcontrols: {
+          controls: [
+            {
+              icon: '<i class="fas fa-expand"></i>',
+              title: 'Toggle fullscreen',
+              action: 'document.documentElement.requestFullscreen()'
+            },
+            {
+              icon: '<i class="fa fa-th"></i>',
+              title: 'Toggle overview (O,Esc)',
+              action: 'Reveal.toggleOverview();'
+            },
+            { icon: '<i class="fa fa-pen-square"></i>',
+              title: 'Toggle chalkboard (B)',
+              action: 'RevealChalkboard.toggleChalkboard();'
+            },
+            { icon: '<i class="fa fa-pen"></i>',
+              title: 'Toggle notes canvas (C)',
+              action: 'RevealChalkboard.toggleNotesCanvas();'
+            },
+            {
+              icon: '<i class="fa fa-print"></i>',
+              title: 'Print PDF Mode',
+              action: "window.location.search = 'print-pdf';"
+            },
+          ]
+        },
+        // reveal.js plugins
+        plugins: [
+          RevealHighlight,
+          RevealMath,
+          RevealChalkboard,
+          RevealCustomControls,
+          RevealNotes,
+          RevealSearch,
+          RevealZoom,
+          Simplemenu,
+          RevealMenu,
+          Verticator,
+        ],
+      }).then(() => {
+        // Disable auto detection of language
+        // this function is based on
+        // * reveal.js/plugin/highlight/plugin.js
+        // * https://revealjs.com/code/
+        Array.from( Reveal.getRevealElement().querySelectorAll( 'pre code' ) ).forEach( block => {
+          if (block.classList.length > 0) {
+            if (! block.classList[0].startsWith("language-"))
+              block.classList.replace(block.classList[0], "language-"+block.classList[0])
+          } else {
+            block.classList.add("language-none");
+          }
+
+          const highlight = Reveal.getPlugin('highlight');
+          highlight.highlightBlock(block);
+        } );
+      });
+      Reveal.addKeyBinding( { keyCode: 9,  key: "Tab",   description: "Left"  }, () => {Reveal.left()} )
+      Reveal.addKeyBinding( { keyCode: 13, key: "Enter", description: "Right" }, () => {Reveal.right()} )
+      // make customcontrols collapsed by default
+      Reveal.on("ready", event => {
+        var div = document.querySelector("div#customcontrols");
+        div.classList.add('collapsed');
+        document.addEventListener("resize", event => {
+          // make sure customcontrols are collapsed
+          var div = document.querySelector("div#customcontrols");
+          div.classList.add('collapsed');
+        });
+      });
+    </script>
+    <script>
+      const headerl = document.getElementById("headerl");
+      const headerr = document.getElementById("headerr");
+      const footerl = document.getElementById("footerl");
+      const footerr = document.getElementById("footerr");
+      Reveal.on('pdf-ready', () => {
+        document.querySelectorAll('.pdf-page').forEach(page => {
+          page.appendChild(headerl.cloneNode(true));
+          page.appendChild(headerr.cloneNode(true));
+          page.appendChild(footerl.cloneNode(true));
+          page.appendChild(footerr.cloneNode(true));
+        });
+      })
+    </script>
+    <script>
+      // inspired by [quarto-cli: revealjs presentation: hiding footer and slide menu control for a specific slide #825](https://github.com/quarto-dev/quarto-cli/discussions/825)
+      { // a local scope
+        // generate a function that can hide class by selectorList
+        function gen_hide_class_bySelector(className, selectorList) {
+          return function(event) {
+            const display = (Array.from(event.currentSlide.classList).indexOf(className) !== -1) ? "none" : null;
+            for (const sel of selectorList) {
+              const ele = document.querySelector(sel)
+              if (ele) ele.style.display = display;
+            }
+          }
+        }
+        nochrome = gen_hide_class_bySelector("nochrome", [
+          "#headerl", "#headerr", "#footerl", "#footerr",
+          ".navigate-left", ".navigate-right", ".navigate-up", ".navigate-down",
+          "#customcontrols", ".slide-menu-button",
+          ".simplemenubar",
+          ".verticator",
+          ".slide-number",
+        ])
+        Reveal.on("ready", nochrome )
+        Reveal.on('ready', () => { Reveal.on( 'slidechanged', nochrome ); })
+
+        Reveal.on("ready", () => {
+          for (const sel of ["h1.noheading", "h2.noheading", "h3.noheading", "h4.noheading", "h5.noheading", "h6.noheading" ])
+            for (const ele of document.querySelectorAll(sel))
+              ele.style.display = "none";
+        })
+      }
+    </script>
+    <script src="https://xieby1.github.io/markdown_revealjs/share/markdown_revealjs/cjk2ch.js"></script>
+    <script>document.addEventListener('DOMContentLoaded', cjk2ch("code:not(:has(span))"))</script>
+      </body>
+</html>

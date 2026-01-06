@@ -1,0 +1,151 @@
+/* commit: 31a82ca */
+.simplemenubar {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-transition: -webkit-transform 0.8s cubic-bezier(0.26, 0.86, 0.44, 0.985);
+  transition: -webkit-transform 0.8s cubic-bezier(0.26, 0.86, 0.44, 0.985);
+  -o-transition: transform 0.8s cubic-bezier(0.26, 0.86, 0.44, 0.985);
+  transition: transform 0.8s cubic-bezier(0.26, 0.86, 0.44, 0.985);
+  transition: transform 0.8s cubic-bezier(0.26, 0.86, 0.44, 0.985), -webkit-transform 0.8s cubic-bezier(0.26, 0.86, 0.44, 0.985);
+  -webkit-transform: translateY(-100%);
+      -ms-transform: translateY(-100%);
+          transform: translateY(-100%);
+  color: inherit;
+  z-index: 2;
+  position: absolute;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  width: 100%;
+  font-size: 16pt;
+  line-height: 1;
+}
+.simplemenubar * {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+html:not(.print-pdf) body:not(.hide-simplemenubar) .reveal.ready:not(.hide-simplemenubar) .simplemenubar {
+  -webkit-transform: translateY(0);
+      -ms-transform: translateY(0);
+          transform: translateY(0);
+}
+body.hide-simplemenubar .reveal.ready .simplemenubar a {
+  -webkit-transition: opacity 0.8s cubic-bezier(0.26, 0.86, 0.44, 0.985);
+  -o-transition: opacity 0.8s cubic-bezier(0.26, 0.86, 0.44, 0.985);
+  transition: opacity 0.8s cubic-bezier(0.26, 0.86, 0.44, 0.985);
+}
+.simplemenubar.bottom {
+  -webkit-transform: translateY(100%);
+      -ms-transform: translateY(100%);
+          transform: translateY(100%);
+}
+.simplemenubar:before, .simplemenubar:after {
+  content: "";
+  position: absolute;
+  left: 0;
+  right: 0;
+  /* border-bottom: 1px solid currentColor; */
+  opacity: 0.3;
+}
+.simplemenubar:before {
+  top: 0;
+}
+.simplemenubar:after {
+  bottom: 0;
+}
+.simplemenubar:before {
+  opacity: 0;
+}
+.simplemenubar.bottom:after {
+  opacity: 0;
+}
+.simplemenubar.bottom:before {
+  opacity: 0.3;
+}
+.print-pdf .pdf-page:not(.hide-simplemenubar) .simplemenubar {
+  -webkit-transform: translateY(0);
+      -ms-transform: translateY(0);
+          transform: translateY(0);
+}
+.simplemenubar a {
+  -webkit-transition: opacity 0.2s ease-in-out;
+  -o-transition: opacity 0.2s ease-in-out;
+  transition: opacity 0.2s ease-in-out;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-font-smoothing: subpixel-antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  padding: 0.4em 0;
+}
+.simplemenubar > ul {
+  -webkit-transition: opacity 0.8s cubic-bezier(0.26, 0.86, 0.44, 0.985);
+  -o-transition: opacity 0.8s cubic-bezier(0.26, 0.86, 0.44, 0.985);
+  transition: opacity 0.8s cubic-bezier(0.26, 0.86, 0.44, 0.985);
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  list-style-type: none;
+  padding: 0;
+  margin: 0 auto;
+  /* gap: 1.5em; */
+}
+.simplemenubar > ul li {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  -webkit-box-flex: 1;
+      -ms-flex: 1;
+          flex: 1;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+.simplemenubar > ul li:before {
+  display: none;
+}
+.simplemenubar > ul li + li {
+  margin: 0;
+}
+.simplemenubar > ul a {
+  -webkit-box-flex: 0;
+      -ms-flex: 0;
+          flex: 0;
+  white-space: nowrap;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  opacity: 0.33;
+  padding: 0.5em;
+  color: currentColor;
+}
+.simplemenubar > ul a:hover {
+  color: currentColor;
+  opacity: 0.75;
+}
+.simplemenubar > ul li a.active, .simplemenubar > ul li.active a {
+  opacity: 1;
+}
+
+.hide-menu .simplemenu, .hide-menu .simplemenu, [data-state=hide-menu] .simplemenu {
+  opacity: 0;
+}
+
+.slides ~ .simplemenubar, .simplemenubar.bottom {
+  top: auto;
+  bottom: 0;
+}

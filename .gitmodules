@@ -1,0 +1,18 @@
+[submodule "reveal.js"]
+	path = lib/reveal.js
+	url = https://github.com/hakimel/reveal.js
+[submodule "lib/reveal.js-plugins"]
+	path = lib/reveal.js-plugins
+	url = https://github.com/rajgoel/reveal.js-plugins
+[submodule "lib/reveal.js-menu"]
+	path = lib/reveal.js-menu
+	url = https://github.com/denehyg/reveal.js-menu/
+[submodule "lib/reveal.js-verticator"]
+	path = lib/reveal.js-verticator
+	url = https://github.com/Martinomagnifico/reveal.js-verticator
+[submodule "lib/MathJax"]
+	path = lib/MathJax
+	url = https://github.com/mathjax/MathJax
+[submodule "lib/lua-filters"]
+	path = lib/lua-filters
+	url = https://github.com/pandoc/lua-filters/
